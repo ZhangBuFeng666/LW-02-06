@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: "Songti SC", "SimSun", "Noto Serif CJK SC", serif;
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+strong,
+button,
+input,
+select {
+  letter-spacing: 0;
+}

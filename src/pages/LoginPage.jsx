@@ -1,0 +1,82 @@
+import { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate, useOutletContext } from 'react-router-dom';
+import { ServiceContext } from '../contexts/ServiceContext';
+
+const LoginPage = () => {
+  const services = useContext(ServiceContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const outletContext = useOutletContext();
+  const isAdminLogin = location.pathname.startsWith('/admin/login');
+  const [mode, setMode] = useState('login');
+  const [form, setForm] = useState({
+    username: isAdminLogin ? 'admin' : 'user',
+    password: '123456',
+    nickname: '商城用户',
+  });
+  const [error, setError] = useState('');
+
+  const submit = async (event) => {
+    event.preventDefault();
+    setError('');
+    try {
+      if (isAdminLogin) {
+        await services.admin.login(form.username, form.password);
+        navigate('/admin/goods');
+        return;
+      }
+
+      if (mode === 'login') {
+        await services.user.login(form.username, form.password);
+      } else {
+        await services.user.register(form.username, form.password, form.nickname);
+      }
+      outletContext?.refreshUser?.();
+      navigate('/mine');
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  return (
+    <section className="form-page">
+      <form className="form-card" onSubmit={submit}>
+        <h1>{isAdminLogin ? '后台登录' : mode === 'login' ? '用户登录' : '用户注册'}</h1>
+        {isAdminLogin && <p>管理员可增删改，运营只能查看。默认账号 admin / 123456。</p>}
+        {!isAdminLogin && <p>普通用户登录后可使用购物车、下单和查看订单。</p>}
+
+        <label>
+          用户名
+          <input value={form.username} onChange={(e) => setForm({ ...form, username: e.target.value })} required />
+        </label>
+        <label>
+          密码
+          <input type="password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} required minLength="6" />
+        </label>
+        {!isAdminLogin && mode === 'register' && (
+          <label>
+            昵称
+            <input value={form.nickname} onChange={(e) => setForm({ ...form, nickname: e.target.value })} required />
+          </label>
+        )}
+
+        {error && <p className="error-text">{error}</p>}
+        <button className="button" type="submit">
+          {isAdminLogin ? '进入后台' : mode === 'login' ? '登录' : '注册并登录'}
+        </button>
+
+        {!isAdminLogin && (
+          <>
+            <button className="text-button" type="button" onClick={() => setMode(mode === 'login' ? 'register' : 'login')}>
+              {mode === 'login' ? '没有账号，去注册' : '已有账号，去登录'}
+            </button>
+            <Link className="small-login-link" to="/admin/login">后台管理员登录</Link>
+          </>
+        )}
+        {isAdminLogin && <Link className="small-login-link" to="/login">返回用户登录</Link>}
+      </form>
+    </section>
+  );
+};
+
+export default LoginPage;

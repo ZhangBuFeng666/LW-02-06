@@ -1,0 +1,230 @@
+{
+  "categories": [
+    {
+      "id": "phone",
+      "name": "手机数码"
+    },
+    {
+      "id": "life",
+      "name": "生活百货"
+    },
+    {
+      "id": "food",
+      "name": "休闲食品"
+    },
+    {
+      "id": "sport",
+      "name": "运动户外"
+    }
+  ],
+  "goods": [
+    {
+      "id": 1,
+      "name": "星河 Pro 手机",
+      "price": 2999,
+      "categoryId": "phone",
+      "stock": 28,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80",
+      "desc": "高刷屏幕、长续航和轻薄机身，适合日常学习与娱乐。"
+    },
+    {
+      "id": 2,
+      "name": "无线降噪耳机",
+      "price": 399,
+      "categoryId": "phone",
+      "stock": 66,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80",
+      "desc": "轻量佩戴，支持通勤降噪和低延迟游戏模式。"
+    },
+    {
+      "id": 3,
+      "name": "元气坚果礼盒",
+      "price": 89,
+      "categoryId": "food",
+      "stock": 120,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=900&q=80",
+      "desc": "多种坚果组合，适合作为学习和办公零食。"
+    },
+    {
+      "id": 4,
+      "name": "云朵护颈枕",
+      "price": 129,
+      "categoryId": "life",
+      "stock": 35,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=900&q=80",
+      "desc": "柔软支撑，适合午休和长途出行。"
+    },
+    {
+      "id": 5,
+      "name": "城市慢跑鞋",
+      "price": 459,
+      "categoryId": "sport",
+      "stock": 42,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
+      "desc": "缓震轻弹，适合校园跑步和日常通勤。"
+    },
+    {
+      "id": 6,
+      "name": "便携保温杯",
+      "price": 69,
+      "categoryId": "life",
+      "stock": 90,
+      "status": "off",
+      "img": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=80",
+      "desc": "一键开合，保冷保温，后台可控制上下架。"
+    },
+    {
+      "id": 7,
+      "name": "鞋子",
+      "price": 1222,
+      "categoryId": "phone",
+      "stock": 999,
+      "status": "off",
+      "img": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80",
+      "desc": "没有"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "user",
+      "password": "123456",
+      "nickname": "商城用户",
+      "phone": "13800000000"
+    }
+  ],
+  "admins": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123456",
+      "role": "admin",
+      "roleName": "管理员"
+    },
+    {
+      "id": 2,
+      "username": "operator",
+      "password": "123456",
+      "role": "operator",
+      "roleName": "运营"
+    }
+  ],
+  "cart": [],
+  "orders": [
+    {
+      "id": 2,
+      "userId": 1,
+      "orderNo": "1780921789196",
+      "items": [
+        {
+          "goodId": 1,
+          "count": 1,
+          "price": 2999,
+          "name": "星河 Pro 手机",
+          "img": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          "goodId": 2,
+          "count": 1,
+          "price": 399,
+          "name": "无线降噪耳机",
+          "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      "price": 3398,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "paid",
+      "createTime": "6/8/2026, 8:29:49 PM",
+      "payTime": "6/8/2026, 8:29:50 PM",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "6/8/2026, 8:29:49 PM",
+          "text": "订单已创建"
+        },
+        {
+          "time": "6/8/2026, 8:29:50 PM",
+          "text": "订单已支付，等待商家发货"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "orderNo": "1780919184348",
+      "items": [
+        {
+          "goodId": 1,
+          "count": 1,
+          "price": 2999,
+          "name": "星河 Pro 手机",
+          "img": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      "price": 2999,
+      "address": "北京市海淀区北京交通大学",
+      "status": "shipped",
+      "createTime": "6/8/2026, 7:46:24 PM",
+      "payTime": "6/8/2026, 7:46:26 PM",
+      "shipTime": "6/8/2026, 8:31:17 PM",
+      "logistics": "包裹已从仓库发出",
+      "logisticsTraces": [
+        {
+          "time": "6/8/2026, 7:46:24 PM",
+          "text": "订单已创建"
+        },
+        {
+          "time": "6/8/2026, 7:46:26 PM",
+          "text": "订单已支付，等待商家发货"
+        },
+        {
+          "time": "6/8/2026, 8:31:17 PM",
+          "text": "商家已发货，包裹已从仓库发出"
+        },
+        {
+          "time": "6/8/2026, 8:31:18 PM",
+          "text": "快件正在运输途中"
+        }
+      ],
+      "logisticsCompany": "校园优选快递",
+      "trackingNo": "YT202606080001"
+    }
+  ],
+  "addresses": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "商城用户",
+      "phone": "13800000000",
+      "province": "北京市",
+      "city": "海淀区",
+      "detail": "北京交通大学",
+      "isDefault": true
+    }
+  ],
+  "favorites": [],
+  "reviews": [
+    {
+      "id": 1,
+      "userId": 1,
+      "goodId": 1,
+      "nickname": "商城用户",
+      "rating": 5,
+      "content": "屏幕很清楚，续航也够用，日常学习和拍照都很方便。",
+      "createTime": "2026/6/8 20:00:00"
+    }
+  ]
+}
