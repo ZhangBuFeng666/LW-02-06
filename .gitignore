@@ -1,0 +1,28 @@
+# 忽略误传的作业zip
+*.zip
+20260001_组长姓名_第四次作业.zip
+
+# 前端项目通用忽略
+node_modules/
+dist/
+build/
+.env
+.env.local
+.env.*.local
+
+# IDE/编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
