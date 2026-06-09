@@ -25,4 +25,16 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# OpenCode / Skills
+.opencode/
+frontend-skill/
+
+# Personal docs
+spec/
+
+# Vite timestamp files
+vite.config.*.timestamp-*
+
+# Self
+.gitignore
 

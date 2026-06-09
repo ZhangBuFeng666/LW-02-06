@@ -74,7 +74,7 @@
       "price": 69,
       "categoryId": "life",
       "stock": 90,
-      "status": "off",
+      "status": "on",
       "img": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=80",
       "desc": "一键开合，保冷保温，后台可控制上下架。"
     },
@@ -85,8 +85,138 @@
       "categoryId": "phone",
       "stock": 999,
       "status": "off",
-      "img": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80",
+      "img": "https://plus.unsplash.com/premium_photo-1705554330163-2e0ccc1808e2?w=700&auto=format&fit=crop&q=60",
       "desc": "没有"
+    },
+    {
+      "id": 8,
+      "name": "轻薄手机壳",
+      "price": 39,
+      "categoryId": "phone",
+      "stock": 150,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1535157412991-2ef801c1748b?q=80&w=1160&auto=format&fit=crop",
+      "desc": "磨砂手感，轻薄防摔，多种颜色可选。"
+    },
+    {
+      "id": 9,
+      "name": "10000mAh 快充充电宝",
+      "price": 129,
+      "categoryId": "phone",
+      "stock": 80,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=600&q=75",
+      "desc": "大容量、双口快充，出门再也不用担心电量。"
+    },
+    {
+      "id": 10,
+      "name": "USB-C 快充数据线",
+      "price": 29,
+      "categoryId": "phone",
+      "stock": 200,
+      "status": "on",
+      "img": "https://plus.unsplash.com/premium_photo-1759820276359-42e5785ffc8d?q=80&w=2064&auto=format&fit=crop",
+      "desc": "1.5 米编织线身，支持 60W 快充，耐用不缠绕。"
+    },
+    {
+      "id": 11,
+      "name": "桌面 LED 护眼台灯",
+      "price": 159,
+      "categoryId": "life",
+      "stock": 45,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1534105615256-13940a56ff44?auto=format&fit=crop&w=600&q=75",
+      "desc": "三档亮度可调，无频闪柔和光，适合宿舍学习。"
+    },
+    {
+      "id": 12,
+      "name": "简约收纳盒套装",
+      "price": 49,
+      "categoryId": "life",
+      "stock": 100,
+      "status": "on",
+      "img": "https://plus.unsplash.com/premium_photo-1732028240239-f212200636d7?q=80&w=1548&auto=format&fit=crop",
+      "desc": "三件套组合，桌面、抽屉、衣柜分类收纳好帮手。"
+    },
+    {
+      "id": 13,
+      "name": "晴雨两用折叠伞",
+      "price": 69,
+      "categoryId": "life",
+      "stock": 75,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1541697183324-e15d407c91cf?q=80&w=774&auto=format&fit=crop",
+      "desc": "轻巧便携，防晒防雨，一键自动开合。"
+    },
+    {
+      "id": 14,
+      "name": "纯棉毛巾三件套",
+      "price": 59,
+      "categoryId": "life",
+      "stock": 88,
+      "status": "on",
+      "img": "https://plus.unsplash.com/premium_photo-1675799686604-94f7644a7e45?w=700&auto=format&fit=crop&q=60",
+      "desc": "新疆长绒棉，柔软吸水，洗脸擦手两用。"
+    },
+    {
+      "id": 15,
+      "name": "黑巧克力礼盒",
+      "price": 79,
+      "categoryId": "food",
+      "stock": 120,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1654245384480-368638d6df9d?q=80&w=1740&auto=format&fit=crop",
+      "desc": "可可含量 72%，微苦回甘，下午茶好搭档。"
+    },
+    {
+      "id": 16,
+      "name": "无糖薄荷糖",
+      "price": 15,
+      "categoryId": "food",
+      "stock": 180,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1709651808265-977ed7ef78c6?q=80&w=1738&auto=format&fit=crop",
+      "desc": "清新口气，随身铁盒装，清爽一整天。"
+    },
+    {
+      "id": 17,
+      "name": "高蛋白牛肉干",
+      "price": 49,
+      "categoryId": "food",
+      "stock": 90,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1629707218634-fe5860247d12?q=80&w=1548&auto=format&fit=crop",
+      "desc": "精选牛后腿肉，独立小包装，加班补能必备。"
+    },
+    {
+      "id": 18,
+      "name": "运动速干毛巾",
+      "price": 35,
+      "categoryId": "sport",
+      "stock": 110,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1601579548337-4ceb9ecd65c2?q=80&w=774&auto=format&fit=crop",
+      "desc": "超轻超薄，速干吸汗，跑步健身好搭档。"
+    },
+    {
+      "id": 19,
+      "name": "防滑瑜伽垫",
+      "price": 89,
+      "categoryId": "sport",
+      "stock": 55,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?auto=format&fit=crop&w=600&q=75",
+      "desc": "6mm 加厚，防滑纹理，宿舍也能轻松锻炼。"
+    },
+    {
+      "id": 20,
+      "name": "弹力跳绳",
+      "price": 25,
+      "categoryId": "sport",
+      "stock": 130,
+      "status": "on",
+      "img": "https://plus.unsplash.com/premium_photo-1664529498751-9bcd541edb9f?w=700&auto=format&fit=crop&q=60",
+      "desc": "可调长度，泡棉手柄，有氧燃脂利器。"
     }
   ],
   "users": [
@@ -114,8 +244,54 @@
       "roleName": "运营"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": 1,
+      "userId": 1,
+      "goodId": 3,
+      "count": 1,
+      "selected": true
+    }
+  ],
   "orders": [
+    {
+      "id": 3,
+      "userId": 1,
+      "orderNo": "1781028155058",
+      "items": [
+        {
+          "goodId": 3,
+          "count": 1,
+          "price": 89,
+          "name": "元气坚果礼盒",
+          "img": "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      "price": 89,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "paid",
+      "createTime": "2026/6/10 02:02:35",
+      "payTime": "2026/6/10 02:02:37",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/10 02:02:35",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/10 02:02:37",
+          "text": "订单已支付，等待商家发货"
+        }
+      ]
+    },
     {
       "id": 2,
       "userId": 1,
@@ -217,6 +393,15 @@
   ],
   "favorites": [],
   "reviews": [
+    {
+      "id": 2,
+      "userId": 1,
+      "goodId": 15,
+      "nickname": "商城用户",
+      "rating": 5,
+      "content": "123",
+      "createTime": "2026/6/10 01:18:14"
+    },
     {
       "id": 1,
       "userId": 1,

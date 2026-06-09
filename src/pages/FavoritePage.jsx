@@ -28,9 +28,9 @@ const FavoritePage = () => {
           <div className="product-card" key={item.id}>
             <Link to={`/detail/${item.good.id}`}>
               <img src={item.good.img} alt={item.good.name} />
-              <div className="product-body">
+              <div className="product-card-overlay">
                 <strong>{item.good.name}</strong>
-                <b>￥{item.good.price}</b>
+                <span>￥{item.good.price}</span>
               </div>
             </Link>
             <button className="text-button danger favorite-remove" onClick={async () => { await services.favorite.removeFavorite(item.id); load(); }}>取消收藏</button>

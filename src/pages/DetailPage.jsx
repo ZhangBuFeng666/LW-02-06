@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ServiceContext } from '../contexts/ServiceContext';
 
 const DetailPage = () => {
@@ -14,6 +14,7 @@ const DetailPage = () => {
   const [rating, setRating] = useState(5);
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
+  const [zoomed, setZoomed] = useState(false);
   const user = services.user.getCurrentUser();
 
   const loadSideData = async () => {
@@ -65,13 +66,20 @@ const DetailPage = () => {
     navigate(`/createOrder/${good.id}`);
   };
 
-  if (error) return <section className="empty-state">{error}</section>;
+  if (error) return (
+    <section className="empty-state">
+      <p>商品不存在或已下架</p>
+      <Link to="/home" className="primary-link" style={{ marginTop: 12 }}>返回首页</Link>
+    </section>
+  );
   if (!good) return <section className="empty-state">商品加载中...</section>;
 
   return (
     <>
       <section className="detail-layout">
-        <img className="detail-image" src={good.img} alt={good.name} />
+        <img className="detail-image" src={good.img} alt={good.name}
+          onClick={() => setZoomed(true)} style={{ cursor: 'zoom-in' }}
+        />
         <div className="detail-info">
           <span className="tag">{services.good.getCategoryName(categories, good.categoryId)}</span>
           <h1>{good.name}</h1>
@@ -101,15 +109,26 @@ const DetailPage = () => {
           <button className="button" type="submit">发布评价</button>
         </form>
         <div className="review-list">
-          {reviews.map((review) => (
-            <div className="review-item" key={review.id}>
-              <strong>{review.nickname} · {review.rating} 星</strong>
-              <p>{review.content}</p>
-              <span>{review.createTime}</span>
-            </div>
-          ))}
+          {reviews.length === 0 ? (
+            <p style={{ color: 'var(--on-surface-variant)', padding: '12px 0' }}>
+              暂无评价，成为第一个评价的人
+            </p>
+          ) : (
+            reviews.map((review) => (
+              <div className="review-item" key={review.id}>
+                <strong>{review.nickname} · {review.rating} 星</strong>
+                <p>{review.content}</p>
+                <span>{review.createTime}</span>
+              </div>
+            ))
+          )}
         </div>
       </section>
+      {zoomed && (
+        <div className="image-zoom-overlay" onClick={() => setZoomed(false)}>
+          <img className="image-zoom-preview" src={good.img} alt={good.name} />
+        </div>
+      )}
     </>
   );
 };
