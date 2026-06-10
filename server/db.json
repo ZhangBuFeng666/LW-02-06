@@ -244,16 +244,46 @@
       "roleName": "运营"
     }
   ],
-  "cart": [
-    {
-      "id": 1,
-      "userId": 1,
-      "goodId": 3,
-      "count": 1,
-      "selected": true
-    }
-  ],
+  "cart": [],
   "orders": [
+    {
+      "id": 4,
+      "userId": 1,
+      "orderNo": "1781097715390",
+      "items": [
+        {
+          "goodId": 3,
+          "count": 1,
+          "price": 89,
+          "name": "元气坚果礼盒",
+          "img": "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      "price": 89,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "paid",
+      "createTime": "2026/6/10 21:21:55",
+      "payTime": "2026/6/10 21:21:56",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/10 21:21:55",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/10 21:21:56",
+          "text": "订单已支付，等待商家发货"
+        }
+      ]
+    },
     {
       "id": 3,
       "userId": 1,
@@ -391,8 +421,33 @@
       "isDefault": true
     }
   ],
-  "favorites": [],
+  "favorites": [
+    {
+      "id": 1,
+      "userId": 1,
+      "goodId": 3,
+      "createTime": "2026/6/10 21:24:26"
+    }
+  ],
   "reviews": [
+    {
+      "id": 4,
+      "userId": 1,
+      "goodId": 2,
+      "nickname": "商城用户",
+      "rating": 4,
+      "content": "一般般",
+      "createTime": "2026/6/10 21:21:39"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "goodId": 2,
+      "nickname": "商城用户",
+      "rating": 5,
+      "content": "一般般",
+      "createTime": "2026/6/10 21:21:32"
+    },
     {
       "id": 2,
       "userId": 1,
