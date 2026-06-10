@@ -1,470 +1,890 @@
 {
-  "categories": [
-    {
-      "id": "phone",
-      "name": "手机数码"
-    },
-    {
-      "id": "life",
-      "name": "生活百货"
-    },
-    {
-      "id": "food",
-      "name": "休闲食品"
-    },
-    {
-      "id": "sport",
-      "name": "运动户外"
-    }
-  ],
-  "goods": [
-    {
-      "id": 1,
-      "name": "星河 Pro 手机",
-      "price": 2999,
-      "categoryId": "phone",
-      "stock": 28,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80",
-      "desc": "高刷屏幕、长续航和轻薄机身，适合日常学习与娱乐。"
-    },
-    {
-      "id": 2,
-      "name": "无线降噪耳机",
-      "price": 399,
-      "categoryId": "phone",
-      "stock": 66,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80",
-      "desc": "轻量佩戴，支持通勤降噪和低延迟游戏模式。"
-    },
-    {
-      "id": 3,
-      "name": "元气坚果礼盒",
-      "price": 89,
-      "categoryId": "food",
-      "stock": 120,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=900&q=80",
-      "desc": "多种坚果组合，适合作为学习和办公零食。"
-    },
-    {
-      "id": 4,
-      "name": "云朵护颈枕",
-      "price": 129,
-      "categoryId": "life",
-      "stock": 35,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=900&q=80",
-      "desc": "柔软支撑，适合午休和长途出行。"
-    },
-    {
-      "id": 5,
-      "name": "城市慢跑鞋",
-      "price": 459,
-      "categoryId": "sport",
-      "stock": 42,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
-      "desc": "缓震轻弹，适合校园跑步和日常通勤。"
-    },
-    {
-      "id": 6,
-      "name": "便携保温杯",
-      "price": 69,
-      "categoryId": "life",
-      "stock": 90,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=80",
-      "desc": "一键开合，保冷保温，后台可控制上下架。"
-    },
-    {
-      "id": 7,
-      "name": "鞋子",
-      "price": 1222,
-      "categoryId": "phone",
-      "stock": 999,
-      "status": "off",
-      "img": "https://plus.unsplash.com/premium_photo-1705554330163-2e0ccc1808e2?w=700&auto=format&fit=crop&q=60",
-      "desc": "没有"
-    },
-    {
-      "id": 8,
-      "name": "轻薄手机壳",
-      "price": 39,
-      "categoryId": "phone",
-      "stock": 150,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1535157412991-2ef801c1748b?q=80&w=1160&auto=format&fit=crop",
-      "desc": "磨砂手感，轻薄防摔，多种颜色可选。"
-    },
-    {
-      "id": 9,
-      "name": "10000mAh 快充充电宝",
-      "price": 129,
-      "categoryId": "phone",
-      "stock": 80,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=600&q=75",
-      "desc": "大容量、双口快充，出门再也不用担心电量。"
-    },
-    {
-      "id": 10,
-      "name": "USB-C 快充数据线",
-      "price": 29,
-      "categoryId": "phone",
-      "stock": 200,
-      "status": "on",
-      "img": "https://plus.unsplash.com/premium_photo-1759820276359-42e5785ffc8d?q=80&w=2064&auto=format&fit=crop",
-      "desc": "1.5 米编织线身，支持 60W 快充，耐用不缠绕。"
-    },
-    {
-      "id": 11,
-      "name": "桌面 LED 护眼台灯",
-      "price": 159,
-      "categoryId": "life",
-      "stock": 45,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1534105615256-13940a56ff44?auto=format&fit=crop&w=600&q=75",
-      "desc": "三档亮度可调，无频闪柔和光，适合宿舍学习。"
-    },
-    {
-      "id": 12,
-      "name": "简约收纳盒套装",
-      "price": 49,
-      "categoryId": "life",
-      "stock": 100,
-      "status": "on",
-      "img": "https://plus.unsplash.com/premium_photo-1732028240239-f212200636d7?q=80&w=1548&auto=format&fit=crop",
-      "desc": "三件套组合，桌面、抽屉、衣柜分类收纳好帮手。"
-    },
-    {
-      "id": 13,
-      "name": "晴雨两用折叠伞",
-      "price": 69,
-      "categoryId": "life",
-      "stock": 75,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1541697183324-e15d407c91cf?q=80&w=774&auto=format&fit=crop",
-      "desc": "轻巧便携，防晒防雨，一键自动开合。"
-    },
-    {
-      "id": 14,
-      "name": "纯棉毛巾三件套",
-      "price": 59,
-      "categoryId": "life",
-      "stock": 88,
-      "status": "on",
-      "img": "https://plus.unsplash.com/premium_photo-1675799686604-94f7644a7e45?w=700&auto=format&fit=crop&q=60",
-      "desc": "新疆长绒棉，柔软吸水，洗脸擦手两用。"
-    },
-    {
-      "id": 15,
-      "name": "黑巧克力礼盒",
-      "price": 79,
-      "categoryId": "food",
-      "stock": 120,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1654245384480-368638d6df9d?q=80&w=1740&auto=format&fit=crop",
-      "desc": "可可含量 72%，微苦回甘，下午茶好搭档。"
-    },
-    {
-      "id": 16,
-      "name": "无糖薄荷糖",
-      "price": 15,
-      "categoryId": "food",
-      "stock": 180,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1709651808265-977ed7ef78c6?q=80&w=1738&auto=format&fit=crop",
-      "desc": "清新口气，随身铁盒装，清爽一整天。"
-    },
-    {
-      "id": 17,
-      "name": "高蛋白牛肉干",
-      "price": 49,
-      "categoryId": "food",
-      "stock": 90,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1629707218634-fe5860247d12?q=80&w=1548&auto=format&fit=crop",
-      "desc": "精选牛后腿肉，独立小包装，加班补能必备。"
-    },
-    {
-      "id": 18,
-      "name": "运动速干毛巾",
-      "price": 35,
-      "categoryId": "sport",
-      "stock": 110,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1601579548337-4ceb9ecd65c2?q=80&w=774&auto=format&fit=crop",
-      "desc": "超轻超薄，速干吸汗，跑步健身好搭档。"
-    },
-    {
-      "id": 19,
-      "name": "防滑瑜伽垫",
-      "price": 89,
-      "categoryId": "sport",
-      "stock": 55,
-      "status": "on",
-      "img": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?auto=format&fit=crop&w=600&q=75",
-      "desc": "6mm 加厚，防滑纹理，宿舍也能轻松锻炼。"
-    },
-    {
-      "id": 20,
-      "name": "弹力跳绳",
-      "price": 25,
-      "categoryId": "sport",
-      "stock": 130,
-      "status": "on",
-      "img": "https://plus.unsplash.com/premium_photo-1664529498751-9bcd541edb9f?w=700&auto=format&fit=crop&q=60",
-      "desc": "可调长度，泡棉手柄，有氧燃脂利器。"
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "username": "user",
-      "password": "123456",
-      "nickname": "商城用户",
-      "phone": "13800000000"
-    }
-  ],
-  "admins": [
-    {
-      "id": 1,
-      "username": "admin",
-      "password": "123456",
-      "role": "admin",
-      "roleName": "管理员"
-    },
-    {
-      "id": 2,
-      "username": "operator",
-      "password": "123456",
-      "role": "operator",
-      "roleName": "运营"
-    }
-  ],
-  "cart": [],
-  "orders": [
-    {
-      "id": 4,
-      "userId": 1,
-      "orderNo": "1781097715390",
-      "items": [
-        {
-          "goodId": 3,
-          "count": 1,
-          "price": 89,
-          "name": "元气坚果礼盒",
-          "img": "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=900&q=80"
-        }
-      ],
-      "price": 89,
-      "addressId": 1,
-      "address": "北京市海淀区北京交通大学",
-      "receiver": {
-        "name": "商城用户",
-        "phone": "13800000000"
-      },
-      "status": "paid",
-      "createTime": "2026/6/10 21:21:55",
-      "payTime": "2026/6/10 21:21:56",
-      "shipTime": "",
-      "logistics": "商家正在准备发货",
-      "logisticsCompany": "",
-      "trackingNo": "",
-      "logisticsTraces": [
-        {
-          "time": "2026/6/10 21:21:55",
-          "text": "订单已创建"
-        },
-        {
-          "time": "2026/6/10 21:21:56",
-          "text": "订单已支付，等待商家发货"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "orderNo": "1781028155058",
-      "items": [
-        {
-          "goodId": 3,
-          "count": 1,
-          "price": 89,
-          "name": "元气坚果礼盒",
-          "img": "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=900&q=80"
-        }
-      ],
-      "price": 89,
-      "addressId": 1,
-      "address": "北京市海淀区北京交通大学",
-      "receiver": {
-        "name": "商城用户",
-        "phone": "13800000000"
-      },
-      "status": "paid",
-      "createTime": "2026/6/10 02:02:35",
-      "payTime": "2026/6/10 02:02:37",
-      "shipTime": "",
-      "logistics": "商家正在准备发货",
-      "logisticsCompany": "",
-      "trackingNo": "",
-      "logisticsTraces": [
-        {
-          "time": "2026/6/10 02:02:35",
-          "text": "订单已创建"
-        },
-        {
-          "time": "2026/6/10 02:02:37",
-          "text": "订单已支付，等待商家发货"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "orderNo": "1780921789196",
-      "items": [
-        {
-          "goodId": 1,
-          "count": 1,
-          "price": 2999,
-          "name": "星河 Pro 手机",
-          "img": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
-        },
-        {
-          "goodId": 2,
-          "count": 1,
-          "price": 399,
-          "name": "无线降噪耳机",
-          "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80"
-        }
-      ],
-      "price": 3398,
-      "addressId": 1,
-      "address": "北京市海淀区北京交通大学",
-      "receiver": {
-        "name": "商城用户",
-        "phone": "13800000000"
-      },
-      "status": "paid",
-      "createTime": "6/8/2026, 8:29:49 PM",
-      "payTime": "6/8/2026, 8:29:50 PM",
-      "shipTime": "",
-      "logistics": "商家正在准备发货",
-      "logisticsCompany": "",
-      "trackingNo": "",
-      "logisticsTraces": [
-        {
-          "time": "6/8/2026, 8:29:49 PM",
-          "text": "订单已创建"
-        },
-        {
-          "time": "6/8/2026, 8:29:50 PM",
-          "text": "订单已支付，等待商家发货"
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "userId": 1,
-      "orderNo": "1780919184348",
-      "items": [
-        {
-          "goodId": 1,
-          "count": 1,
-          "price": 2999,
-          "name": "星河 Pro 手机",
-          "img": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
-        }
-      ],
-      "price": 2999,
-      "address": "北京市海淀区北京交通大学",
-      "status": "shipped",
-      "createTime": "6/8/2026, 7:46:24 PM",
-      "payTime": "6/8/2026, 7:46:26 PM",
-      "shipTime": "6/8/2026, 8:31:17 PM",
-      "logistics": "包裹已从仓库发出",
-      "logisticsTraces": [
-        {
-          "time": "6/8/2026, 7:46:24 PM",
-          "text": "订单已创建"
-        },
-        {
-          "time": "6/8/2026, 7:46:26 PM",
-          "text": "订单已支付，等待商家发货"
-        },
-        {
-          "time": "6/8/2026, 8:31:17 PM",
-          "text": "商家已发货，包裹已从仓库发出"
-        },
-        {
-          "time": "6/8/2026, 8:31:18 PM",
-          "text": "快件正在运输途中"
-        }
-      ],
-      "logisticsCompany": "校园优选快递",
-      "trackingNo": "YT202606080001"
-    }
-  ],
-  "addresses": [
-    {
-      "id": 1,
-      "userId": 1,
-      "name": "商城用户",
-      "phone": "13800000000",
-      "province": "北京市",
-      "city": "海淀区",
-      "detail": "北京交通大学",
-      "isDefault": true
-    }
-  ],
-  "favorites": [
-    {
-      "id": 1,
-      "userId": 1,
-      "goodId": 3,
-      "createTime": "2026/6/10 21:24:26"
-    }
-  ],
-  "reviews": [
-    {
-      "id": 4,
-      "userId": 1,
-      "goodId": 2,
-      "nickname": "商城用户",
-      "rating": 4,
-      "content": "一般般",
-      "createTime": "2026/6/10 21:21:39"
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "goodId": 2,
-      "nickname": "商城用户",
-      "rating": 5,
-      "content": "一般般",
-      "createTime": "2026/6/10 21:21:32"
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "goodId": 15,
-      "nickname": "商城用户",
-      "rating": 5,
-      "content": "123",
-      "createTime": "2026/6/10 01:18:14"
-    },
-    {
-      "id": 1,
-      "userId": 1,
-      "goodId": 1,
-      "nickname": "商城用户",
-      "rating": 5,
-      "content": "屏幕很清楚，续航也够用，日常学习和拍照都很方便。",
-      "createTime": "2026/6/8 20:00:00"
-    }
-  ]
+    "categories":  [
+                       {
+                           "id":  "phone",
+                           "name":  "手机数码"
+                       },
+                       {
+                           "id":  "life",
+                           "name":  "生活百货"
+                       },
+                       {
+                           "id":  "food",
+                           "name":  "休闲食品"
+                       },
+                       {
+                           "id":  "sport",
+                           "name":  "运动户外"
+                       }
+                   ],
+    "goods":  [
+                  {
+                      "stock":  698,
+                      "id":  1,
+                      "name":  "Apple AirPods Pro 3 主动降噪耳机",
+                      "categoryId":  "phone",
+                      "price":  1899,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i1/2216489641286/O1CN01wd0Bt41LN2RsBjk0B_!!2216489641286.jpg_460x460q90.jpg",
+                      "desc":  "Apple/苹果 AirPods Pro 3 无线蓝牙耳机 入耳式 主动降噪 2025款"
+                  },
+                  {
+                      "stock":  263,
+                      "id":  2,
+                      "name":  "美团单车 畅骑卡",
+                      "categoryId":  "sport",
+                      "price":  8.5,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2208169446941/O1CN01GUcG732192DKMdIgz_!!4611686018427383325-0-item_pic.jpg_460x460q90.jpg",
+                      "desc":  "美团单车 7天/30天/90天畅骑卡 手机号下单 美团骑行卡共享单车"
+                  },
+                  {
+                      "stock":  624,
+                      "id":  3,
+                      "name":  "静音便携小风扇",
+                      "categoryId":  "phone",
+                      "price":  20.01,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/2211822490664/O1CN019WMARz1GmA8LsCLiP_!!2211822490664.jpg_460x460q90.jpg",
+                      "desc":  "静音便携 学生宿舍 床上挂小风扇 迷你风扇"
+                  },
+                  {
+                      "stock":  179,
+                      "id":  4,
+                      "name":  "【芭芭农场】飞毛腿 20w 手机充电套装",
+                      "categoryId":  "phone",
+                      "price":  69.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i1/2215824413675/O1CN01stGFam1d1CgGiD2aI_!!4611686018427384811-2-item_pic.png_460x460q90.jpg",
+                      "desc":  "【芭芭农场】飞毛腿 20w 手机充电套装"
+                  },
+                  {
+                      "stock":  66,
+                      "id":  5,
+                      "name":  "【芭芭农场】飞毛腿 快充充电宝",
+                      "categoryId":  "phone",
+                      "price":  89.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/2215824413675/O1CN01qCPeGj1d1CgGyp4Yq_!!4611686018427384811-2-item_pic.png_460x460q90.jpg",
+                      "desc":  "【芭芭农场】飞毛腿 快充充电宝 1个（款式随机）"
+                  },
+                  {
+                      "stock":  326,
+                      "id":  6,
+                      "name":  "三角蚊香架 防火防烫",
+                      "categoryId":  "life",
+                      "price":  3.69,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2218417660275/O1CN01Rd9HmH1Du03JFJDBV~crop,0,173,790,790~_!!2218417660275.jpg_460x460q90.jpg",
+                      "desc":  "三角蚊香架 防火防烫 蚊香盘 熏香托 蚊香炉 盘香支架 接灰盘 隔热"
+                  },
+                  {
+                      "stock":  488,
+                      "id":  7,
+                      "name":  "南孚 5号 7号 电池",
+                      "categoryId":  "phone",
+                      "price":  12.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2222249112761/O1CN0128ap2z1WGagHHTUxK_!!2222249112761.jpg_460x460q90.jpg",
+                      "desc":  "适用于正品南孚 5号7号电池 玩具鼠标 电视空调遥控电池"
+                  },
+                  {
+                      "stock":  908,
+                      "id":  8,
+                      "name":  "多功能插座插排",
+                      "categoryId":  "phone",
+                      "price":  49.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/2219721338365/O1CN01xtplMV2BfE9F8Fqwj_!!4611686018427383293-0-item_pic.jpg_460x460q90.jpg",
+                      "desc":  "多功能插座插排 家用多孔排插 接线板 插线板 一转多转换器排插"
+                  },
+                  {
+                      "stock":  661,
+                      "id":  9,
+                      "name":  "新款透明无线蓝牙耳机",
+                      "categoryId":  "phone",
+                      "price":  15.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2219338214922/O1CN01mXCBIH1mEKYcRzID0_!!2219338214922.jpg_460x460q90.jpg",
+                      "desc":  "新款透明无线蓝牙耳机 入耳式降噪 高音质 高颜值 数显 电竞主动降噪"
+                  },
+                  {
+                      "stock":  626,
+                      "id":  10,
+                      "name":  "高压除尘气罐 电脑键盘清洁",
+                      "categoryId":  "life",
+                      "price":  89.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/2222388016556/O1CN01qJtwfE1yIhkbtvpvq_!!2222388016556.png_460x460q90.jpg",
+                      "desc":  "高压除尘剂 免拆洗除尘气罐 强力喷气体 电脑键盘机箱电器"
+                  },
+                  {
+                      "stock":  688,
+                      "id":  11,
+                      "name":  "指纹充电打火机 十二生肖",
+                      "categoryId":  "life",
+                      "price":  10.35,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2219352564236/O1CN01GtzV8w1hA8rqwbiDO_!!2219352564236.jpg_460x460q90.jpg",
+                      "desc":  "十二生肖指纹充电打火机 超薄防风 无声创意 高档刻字 个性男士送男友"
+                  },
+                  {
+                      "stock":  515,
+                      "id":  12,
+                      "name":  "杯盖刷 键盘缝隙清洁刷",
+                      "categoryId":  "life",
+                      "price":  19.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2219528847394/O1CN01uf9v4Y24UVe1axGiE_!!2219528847394.jpg_460x460q90.jpg",
+                      "desc":  "杯盖刷 键盘缝隙刷子 卷曲杯盖刷 气垫梳子清洁刷 瓶盖凹槽缝隙多用刷"
+                  },
+                  {
+                      "stock":  246,
+                      "id":  13,
+                      "name":  "高速3.0 大容量手机U盘",
+                      "categoryId":  "phone",
+                      "price":  58.8,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/4187349764/O1CN01NRAylt2LzyJGJc9c1_!!4187349764.jpg_460x460q90.jpg",
+                      "desc":  "正品高速3.0 大容量512g手机u盘 typec双接口 128gb电脑两用 256G刻字"
+                  },
+                  {
+                      "stock":  946,
+                      "id":  14,
+                      "name":  "七彩无线蓝牙小音箱",
+                      "categoryId":  "phone",
+                      "price":  12.91,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2219352564236/O1CN01hjofVg1hA8rUiNBwZ_!!2219352564236.jpg_460x460q90.jpg",
+                      "desc":  "七彩无线蓝牙小音箱 家用桌面低音炮 小钢炮音箱 户外手提便携式音响"
+                  },
+                  {
+                      "stock":  339,
+                      "id":  15,
+                      "name":  "可调节手机挂绳 斜挎便携",
+                      "categoryId":  "phone",
+                      "price":  45.4,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/2219589482033/O1CN01vzrlji1QtAL6MlWTO_!!2219589482033.jpg_460x460q90.jpg",
+                      "desc":  "多功能可调节手机挂绳 斜挎可背 便携尼龙长绳 挂脖个性编织挂绳 防丢"
+                  },
+                  {
+                      "stock":  576,
+                      "id":  16,
+                      "name":  "蚊香桶 蚊香收纳盒",
+                      "categoryId":  "life",
+                      "price":  6.36,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/2220005877660/O1CN01tHvWvE26SL0QkNFu3_!!2220005877660.jpg_460x460q90.jpg",
+                      "desc":  "手提带盖蚊香桶 蚊香盘 家用蚊香托盘架 接灰盘 防烫炉 蚊香收纳盒"
+                  },
+                  {
+                      "stock":  511,
+                      "id":  17,
+                      "name":  "婴儿湿巾 巨无霸湿巾",
+                      "categoryId":  "life",
+                      "price":  4.1,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/2219807360298/O1CN01WZJz211E4X8thmzhq_!!2219807360298.png_460x460q90.jpg",
+                      "desc":  "豆妈C湿巾 婴儿孕妇家庭装 宝宝湿纸巾 巨无霸湿巾"
+                  },
+                  {
+                      "stock":  655,
+                      "id":  18,
+                      "name":  "小黄鸭婴儿湿巾 加厚带盖",
+                      "categoryId":  "life",
+                      "price":  2.69,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2219128273412/O1CN01vSdNsI1b4kUA32FnA_!!2219128273412.jpg_460x460q90.jpg",
+                      "desc":  "小黄鸭湿巾 婴幼儿手口 婴儿专用 宝宝加厚实惠 带盖湿纸巾 户外毛巾"
+                  },
+                  {
+                      "stock":  226,
+                      "id":  19,
+                      "name":  "心相印湿厕纸 大耳狗",
+                      "categoryId":  "life",
+                      "price":  25.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i1/2215488969603/O1CN015w91512KoEX2kExsC_!!2215488969603.jpg_460x460q90.jpg",
+                      "desc":  "心相印湿厕纸 大耳狗纯水 家用擦屁股清洁 带盖大包80抽湿巾 可冲厕所"
+                  },
+                  {
+                      "stock":  731,
+                      "id":  20,
+                      "name":  "心相印抽纸 经典100抽",
+                      "categoryId":  "life",
+                      "price":  99,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2209241439961/O1CN01bFFUBc2NSCJcSQFDA_!!2209241439961.jpg_460x460q90.jpg",
+                      "desc":  "心相印抽纸 经典100抽大包纸 家用餐巾纸 一次性抽取式面巾抽纸"
+                  },
+                  {
+                      "stock":  494,
+                      "id":  21,
+                      "name":  "原木抽纸 加厚4层",
+                      "categoryId":  "life",
+                      "price":  3.02,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/2218415609119/O1CN01TSoBDn2HEYrLdq6xs_!!2218415609119.jpg_460x460q90.jpg",
+                      "desc":  "整箱原木擦手纸 面巾纸 卫生纸 宿舍餐巾纸 纸巾加厚加大 4层抽纸"
+                  },
+                  {
+                      "stock":  153,
+                      "id":  22,
+                      "name":  "【芭芭农场】陶瓷斗笠碗 2个装",
+                      "categoryId":  "life",
+                      "price":  19.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2221322852816/O1CN01Ru0BwO1WfmSdx8QlD_!!2221322852816.png_460x460q90.jpg",
+                      "desc":  "【芭芭农场】PINGU陶瓷斗笠碗 2个装 款式随机"
+                  },
+                  {
+                      "stock":  411,
+                      "id":  23,
+                      "name":  "三合一内衣收纳包",
+                      "categoryId":  "life",
+                      "price":  69.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2217811417076/O1CN015LedcG228rhOnLCDw_!!2217811417076.jpg_460x460q90.jpg",
+                      "desc":  "三合一内衣收纳包 旅行便携 内裤袜子收纳袋 旅游装 贴身衣物专用神器"
+                  },
+                  {
+                      "stock":  882,
+                      "id":  24,
+                      "name":  "杀蟑螂贴 灭除小强",
+                      "categoryId":  "life",
+                      "price":  5,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i1/2213130328980/O1CN01adCYJr2GCtnzeESVI~crop,0,36,750,750~_!!2213130328980.jpg_460x460q90.jpg",
+                      "desc":  "杀蟑螂贴 家用环保 方便快捷 厨房正品 非无毒屋胶饵剂 强力灭除小强"
+                  },
+                  {
+                      "stock":  291,
+                      "id":  25,
+                      "name":  "【加厚加量】大包原木抽纸 加厚加量",
+                      "categoryId":  "life",
+                      "price":  3,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2218668951370/O1CN01Kag6fi1LzVhr7LPzw_!!2218668951370.jpg_460x460q90.jpg",
+                      "desc":  "【加厚加量】大包原木抽纸 家用卫生纸 可湿水擦手纸 餐巾厨房纸巾"
+                  },
+                  {
+                      "stock":  368,
+                      "id":  26,
+                      "name":  "【芭芭农场】蜡笔小新联名 两碗一盘",
+                      "categoryId":  "life",
+                      "price":  15.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2221438267079/O1CN016HzZxa22AEt1SLUUq_!!2221438267079.jpg_460x460q90.jpg",
+                      "desc":  "【芭芭农场】蜡笔小新联名款 两碗一盘 款式随机发"
+                  },
+                  {
+                      "stock":  395,
+                      "id":  27,
+                      "name":  "可折叠旅行拖鞋",
+                      "categoryId":  "life",
+                      "price":  7.67,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/2791865294/O1CN01aNGqzl1oyhu2r6erw_!!2791865294.jpg_460x460q90.jpg",
+                      "desc":  "可折叠旅行拖鞋 女便携式 软底旅游 防滑沙滩 男出差酒店 可洗澡拖鞋"
+                  },
+                  {
+                      "stock":  462,
+                      "id":  28,
+                      "name":  "多功能削皮刀 带收纳仓",
+                      "categoryId":  "life",
+                      "price":  4.5,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2217661379179/O1CN01MFLnEt2Hg2ZoVbDjo_!!2217661379179.jpg_460x460q90.jpg",
+                      "desc":  "多功能削皮刀 可视储存 厨房家用 苹果芦笋梨 自带收纳仓 削皮器刮皮刀"
+                  },
+                  {
+                      "stock":  301,
+                      "id":  29,
+                      "name":  "护齿软毛牙刷",
+                      "categoryId":  "life",
+                      "price":  5.72,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i1/2216371264144/O1CN0197FHc41gU0RBx1bIM_!!2216371264144.png_460x460q90.jpg",
+                      "desc":  "G2牙刷 牙龈按摩 护齿软毛牙刷 深层清洁"
+                  },
+                  {
+                      "stock":  417,
+                      "id":  30,
+                      "name":  "小推车 多层收纳架",
+                      "categoryId":  "life",
+                      "price":  21.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2218678007908/O1CN01Ujk5Kg28HvEKfRkFY_!!2218678007908.jpg_460x460q90.jpg",
+                      "desc":  "小推车落地 卫生间多层厨房 移动零食蔬菜 卧室床头收纳储物架3"
+                  },
+                  {
+                      "stock":  404,
+                      "id":  31,
+                      "name":  "【芭芭农场】九三智当嘉 亚麻籽油",
+                      "categoryId":  "food",
+                      "price":  39.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/3564297561/O1CN015dp0Le25iznL88esL_!!4611686018427387225-2-item_pic.png_460x460q90.jpg",
+                      "desc":  "【芭芭农场】九三智当嘉 亚麻籽油 400ml*2 初萃冷榨"
+                  },
+                  {
+                      "stock":  300,
+                      "id":  32,
+                      "name":  "油性记号笔 大头笔",
+                      "categoryId":  "life",
+                      "price":  3.35,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2219351326648/O1CN018uhxYK1yyqBG0QxXa_!!2219351326648.jpg_460x460q90.jpg",
+                      "desc":  "油性记号笔 黑色大头笔 防水不掉色 速干粗笔 大容量记号标记笔涂鸦"
+                  },
+                  {
+                      "stock":  503,
+                      "id":  33,
+                      "name":  "可口可乐无糖 500ml*5瓶",
+                      "categoryId":  "food",
+                      "price":  12.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2214776714019/O1CN017WZfKo1fYkvHFpSp2_!!4611686018427384611-0-item_pic.jpg_460x460q90.jpg",
+                      "desc":  "可口可乐无糖可乐 500ml*5瓶装 0糖 碳酸饮料汽水包邮CL"
+                  },
+                  {
+                      "stock":  720,
+                      "id":  34,
+                      "name":  "【芭芭农场】脉动 青柠味 维生素饮料",
+                      "categoryId":  "food",
+                      "price":  29.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/1056032495/O1CN01f3bpqy1UIlKG4yQRW_!!1056032495.jpg_460x460q90.jpg",
+                      "desc":  "【芭芭农场】脉动 600ml*4瓶 青柠味 维生素饮料"
+                  },
+                  {
+                      "stock":  633,
+                      "id":  35,
+                      "name":  "雀巢鹰唛炼乳 小包装",
+                      "categoryId":  "food",
+                      "price":  50.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2215276399496/O1CN019L1KLD2K1EBeC60j9_!!4611686018427382664-0-item_pic.jpg_460x460q90.jpg",
+                      "desc":  "雀巢鹰唛炼乳 小包装 烘焙家用 儿童炼奶 原味低脂 面包涂抹酱 官方旗舰"
+                  },
+                  {
+                      "stock":  129,
+                      "id":  36,
+                      "name":  "【百亿甄选】 蒙牛纯牛奶 250ml*18包",
+                      "categoryId":  "food",
+                      "price":  59.4,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i1/1790973264/O1CN01m4kUsa1Zyxu8r91CX_!!4611686018427385168-0-item_pic.jpg_460x460q90.jpg",
+                      "desc":  "【百亿甄选】蒙牛纯牛奶 250ml*18包 醇浓营养 早餐搭配 包装随机"
+                  },
+                  {
+                      "stock":  497,
+                      "id":  37,
+                      "name":  "运动袜 透气吸汗",
+                      "categoryId":  "sport",
+                      "price":  2.01,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2217519150726/O1CN01yQJBeT1HEYfv7KDfl_!!2217519150726.jpg_460x460q90.jpg",
+                      "desc":  "袜子男中筒 透气吸汗 防臭 男生短筒 可乐按摩底 篮球运动 春夏秋男士袜"
+                  },
+                  {
+                      "stock":  494,
+                      "id":  38,
+                      "name":  "【芭芭农场】松鲜鲜 松茸油醋汁",
+                      "categoryId":  "food",
+                      "price":  99,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2212426193013/O1CN016YsHC41Y80Pd9pdgi_!!4611686018427385973-0-item_pic.jpg_460x460q90.jpg",
+                      "desc":  "【芭芭农场】松鲜鲜 松茸油醋汁 0脂肪 日式风味 蔬菜沙拉汁蘸料"
+                  },
+                  {
+                      "stock":  650,
+                      "id":  39,
+                      "name":  "AGF 日本进口黑咖啡粉",
+                      "categoryId":  "food",
+                      "price":  59,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/6000000002108/O1CN01Ac7b641RRVxCpsNnG_!!6000000002108-0-tmgimage.jpg_460x460q90.jpg",
+                      "desc":  "AGF日本进口咖啡 美式黑咖啡 无蔗糖 速溶冻干咖啡粉 80g/瓶"
+                  },
+                  {
+                      "stock":  32,
+                      "id":  40,
+                      "name":  "娃哈哈纯净水 5.5L*4桶",
+                      "categoryId":  "food",
+                      "price":  39.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/1865856284/O1CN01uviC0b1wI81FwKayM_!!1865856284.png_460x460q90.jpg",
+                      "desc":  "娃哈哈纯净水 5.5L*4桶装 泡茶冲奶 饮用 非矿泉水"
+                  },
+                  {
+                      "stock":  347,
+                      "id":  41,
+                      "name":  "Nars 光透感定妆粉饼",
+                      "categoryId":  "life",
+                      "price":  349,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/6000000002434/O1CN01KLzzQl1TqockXHlBk_!!6000000002434-0-at.jpg_460x460q90.jpg",
+                      "desc":  "Nars/娜斯 光透感定妆大白饼 控油持妆 蜜粉饼 提亮 10g散粉定妆粉"
+                  },
+                  {
+                      "stock":  139,
+                      "id":  42,
+                      "name":  "可口可乐/雪碧/芬达 330ml",
+                      "categoryId":  "food",
+                      "price":  70.35,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2215479643885/O1CN01KZBt2E1eZNnT0fNZW_!!2215479643885.jpg_460x460q90.jpg",
+                      "desc":  "可口可乐 330ml*12/24罐 经典原味 胖罐装 雪碧 芬达 碳酸饮料汽水"
+                  },
+                  {
+                      "stock":  95,
+                      "id":  43,
+                      "name":  "【芭芭农场兑换】蒙牛纯牛奶 200ml*24盒",
+                      "categoryId":  "food",
+                      "price":  79.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2215824413675/O1CN01yL5DLB1d1CdMrMPXY_!!4611686018427384811-2-item_pic.png_460x460q90.jpg",
+                      "desc":  "【芭芭农场兑换】蒙牛纯牛奶 200ml*24盒 优质乳蛋白 生牛乳"
+                  },
+                  {
+                      "stock":  679,
+                      "id":  44,
+                      "name":  "三顿半 速溶黑咖啡粉 60颗",
+                      "categoryId":  "food",
+                      "price":  299,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/45458966/O1CN01M2UXRo2G6UGZwaxGH_!!45458966.jpg_460x460q90.jpg",
+                      "desc":  "三顿半 | 快饮速溶咖啡 拿铁美式 超即溶冷萃 无蔗糖 冻干黑咖啡粉 60颗"
+                  },
+                  {
+                      "stock":  75,
+                      "id":  45,
+                      "name":  "擦身体乳手套 涂防晒神器",
+                      "categoryId":  "life",
+                      "price":  3.6,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2217053816333/O1CN01t2UcER1weZNdmF8hM_!!2217053816333.jpg_460x460q90.jpg",
+                      "desc":  "擦身体乳手套 抹防晒 素颜霜 美黑油 涂抹神器 植绒防水手套 懒人专用"
+                  },
+                  {
+                      "stock":  535,
+                      "id":  46,
+                      "name":  "直液式速干走珠笔 中性笔",
+                      "categoryId":  "life",
+                      "price":  3.02,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i1/2218083458515/O1CN01SBcWf52Clvd3GPzgE_!!2218083458515.jpg_460x460q90.jpg",
+                      "desc":  "直液式速干走珠笔 中性笔 黑色碳素笔 蓝色水性笔 大容量 签写字笔"
+                  },
+                  {
+                      "stock":  120,
+                      "id":  47,
+                      "name":  "户外挖土小铲子 园艺工具",
+                      "categoryId":  "life",
+                      "price":  4.2,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2221482099810/O1CN01yOnEBS2ML2XCiSNOE_!!2221482099810.jpg_460x460q90.jpg",
+                      "desc":  "种花菜小铲子 挖野菜 锰钢户外挖土神器 工具园艺 家用种菜专用铲 赶海"
+                  },
+                  {
+                      "stock":  532,
+                      "id":  48,
+                      "name":  "儿童防晒喷雾 50倍",
+                      "categoryId":  "life",
+                      "price":  59.7,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2218815953903/O1CN01uuGdYJ1ehcz20CRbD_!!2218815953903.jpg_460x460q90.jpg",
+                      "desc":  "儿童防晒喷雾 50倍 防紫外线 青少年 男女婴童 隔离防晒乳 大人全身通用"
+                  },
+                  {
+                      "stock":  288,
+                      "id":  49,
+                      "name":  "断码运动鞋 减震跑步鞋",
+                      "categoryId":  "sport",
+                      "price":  5,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2220781820427/O1CN01RFAA8A1mJpJHG40N2_!!4611686018427386166-0-item_pic.jpg_460x460q90.jpg",
+                      "desc":  "买一送一 品牌断码运动鞋 男鞋秋季 皮面防水 休闲鞋子 男士减震跑步鞋"
+                  },
+                  {
+                      "stock":  778,
+                      "id":  50,
+                      "name":  "【瑶瑶妈心愿馆】直液式速干走珠笔 0.5mm",
+                      "categoryId":  "life",
+                      "price":  2.01,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2215729268119/O1CN01zUYEmI29qYnlKalxP_!!2215729268119.png_460x460q90.jpg",
+                      "desc":  "【瑶瑶妈心愿馆】直液式速干走珠笔 0.5mm 黑色中性笔 学生考试"
+                  },
+                  {
+                      "stock":  200,
+                      "id":  51,
+                      "name":  "按动中性笔 ST笔头",
+                      "categoryId":  "life",
+                      "price":  4.02,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2212023900172/O1CN01pGZn8r1D8p9xQnsqp_!!2212023900172.jpg_460x460q90.jpg",
+                      "desc":  "按动中性笔 云握手ST笔头 作业神器 速干顺滑 学生学霸刷题 专用考试笔"
+                  },
+                  {
+                      "stock":  597,
+                      "id":  52,
+                      "name":  "防晒衣 情侣款 UPF50+",
+                      "categoryId":  "sport",
+                      "price":  223.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2210227919476/O1CN01S4ateG2Js4FuXySiK_!!2210227919476.jpg_460x460q90.jpg",
+                      "desc":  "山系情侣防晒衣 女防晒服 男轻量化户外 皮肤衣 防紫外线 UPF50+外套"
+                  },
+                  {
+                      "stock":  678,
+                      "id":  53,
+                      "name":  "直液式走珠笔 红色 0.5mm",
+                      "categoryId":  "life",
+                      "price":  4.02,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i1/2221415032676/O1CN01kRKHfI1Vdf12VYYkA_!!2221415032676.jpg_460x460q90.jpg",
+                      "desc":  "直液式走珠笔 红色中性笔 0.5mm圆珠笔 大容量 刷题笔 速干学生考试用"
+                  },
+                  {
+                      "stock":  987,
+                      "id":  54,
+                      "name":  "蕉下 防晒口罩 冰丝面罩",
+                      "categoryId":  "sport",
+                      "price":  79,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2216418432090/O1CN01bYxLtQ1RJGumXTiYs_!!2216418432090.jpg_460x460q90.jpg",
+                      "desc":  "蕉下 面膜防晒口罩 女防紫外线 高颜值 遮阳医美 轻薄透气 骑行冰丝面罩"
+                  },
+                  {
+                      "stock":  111,
+                      "id":  55,
+                      "name":  "速干裤 男女同款",
+                      "categoryId":  "sport",
+                      "price":  107.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/3861165552/O1CN01ExG4GV1qss6OpxNFF_!!4611686018427385328-0-item_pic.jpg_460x460q90.jpg",
+                      "desc":  "速干裤 男女同款 休闲裤 短裤 长裤4"
+                  },
+                  {
+                      "stock":  574,
+                      "id":  56,
+                      "name":  "补鞋胶水 强力粘鞋胶",
+                      "categoryId":  "life",
+                      "price":  3.02,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/2218808637887/O1CN01xBtvMN288ItrVrAQn_!!2218808637887.jpg_460x460q90.jpg",
+                      "desc":  "多功能补鞋胶水 强力胶 软性防水胶 强力粘鞋 运动鞋皮鞋 粘鞋专用胶"
+                  },
+                  {
+                      "stock":  853,
+                      "id":  57,
+                      "name":  "食品塑料袋 一次性打包袋",
+                      "categoryId":  "life",
+                      "price":  5,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i4/2219125356078/O1CN01mVmndR1ulmQi6WIlW_!!2219125356078.jpg_460x460q90.jpg",
+                      "desc":  "白色食品塑料袋 一次性透明包装袋 外卖打包袋 方便袋 背心袋 手提袋子"
+                  },
+                  {
+                      "stock":  743,
+                      "id":  58,
+                      "name":  "【吉杰推荐】新农哥 大颗粒小白杏",
+                      "categoryId":  "food",
+                      "price":  69.9,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/105152347/O1CN01qRMhC01TCygmF3EDv_!!4611686018427387739-2-item_pic.png_460x460q90.jpg",
+                      "desc":  "【吉杰推荐】新农哥 大颗粒小白杏 180g*3罐"
+                  },
+                  {
+                      "stock":  888,
+                      "id":  59,
+                      "name":  "卓大王 手帐贴纸",
+                      "categoryId":  "life",
+                      "price":  3.4,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i3/832787406/O1CN01nrcRbs24a0PK8hw9F_!!832787406.jpg_460x460q90.jpg",
+                      "desc":  "卓大王【阿卓口袋贴纸】养生参观日 挥拍不了不了 搞不懂 好重啊 手帐"
+                  },
+                  {
+                      "stock":  698,
+                      "id":  60,
+                      "name":  "三角洲行动 AWM子弹",
+                      "categoryId":  "phone",
+                      "price":  1.3,
+                      "status":  "on",
+                      "img":  "https://img.alicdn.com/bao/uploaded/i2/2212646573641/O1CN01l2MNVJ1cld9xCAXz0_!!2212646573641.jpg_460x460q90.jpg",
+                      "desc":  "三角洲行动 AWM子弹 m61 各种红弹 巴雷特子弹 50可扫 组队机密撞车包赔"
+                  }
+              ],
+    "users":  [
+                  {
+                      "id":  1,
+                      "username":  "user",
+                      "password":  "123456",
+                      "nickname":  "商城用户",
+                      "phone":  "13800000000"
+                  }
+              ],
+    "admins":  [
+                   {
+                       "id":  1,
+                       "username":  "admin",
+                       "password":  "123456",
+                       "role":  "admin",
+                       "roleName":  "管理员"
+                   },
+                   {
+                       "id":  2,
+                       "username":  "operator",
+                       "password":  "123456",
+                       "role":  "operator",
+                       "roleName":  "运营"
+                   }
+               ],
+    "cart":  [
+
+             ],
+    "orders":  [
+                   {
+                       "id":  4,
+                       "userId":  1,
+                       "orderNo":  "1781097715390",
+                       "items":  [
+                                     {
+                                         "goodId":  3,
+                                         "count":  1,
+                                         "price":  89,
+                                         "name":  "元气坚果礼盒",
+                                         "img":  "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format\u0026fit=crop\u0026w=900\u0026q=80"
+                                     }
+                                 ],
+                       "price":  89,
+                       "addressId":  1,
+                       "address":  "北京市海淀区北京交通大学",
+                       "receiver":  {
+                                        "name":  "商城用户",
+                                        "phone":  "13800000000"
+                                    },
+                       "status":  "paid",
+                       "createTime":  "2026/6/10 21:21:55",
+                       "payTime":  "2026/6/10 21:21:56",
+                       "shipTime":  "",
+                       "logistics":  "商家正在准备发货",
+                       "logisticsCompany":  "",
+                       "trackingNo":  "",
+                       "logisticsTraces":  [
+                                               {
+                                                   "time":  "2026/6/10 21:21:55",
+                                                   "text":  "订单已创建"
+                                               },
+                                               {
+                                                   "time":  "2026/6/10 21:21:56",
+                                                   "text":  "订单已支付，等待商家发货"
+                                               }
+                                           ]
+                   },
+                   {
+                       "id":  3,
+                       "userId":  1,
+                       "orderNo":  "1781028155058",
+                       "items":  [
+                                     {
+                                         "goodId":  3,
+                                         "count":  1,
+                                         "price":  89,
+                                         "name":  "元气坚果礼盒",
+                                         "img":  "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format\u0026fit=crop\u0026w=900\u0026q=80"
+                                     }
+                                 ],
+                       "price":  89,
+                       "addressId":  1,
+                       "address":  "北京市海淀区北京交通大学",
+                       "receiver":  {
+                                        "name":  "商城用户",
+                                        "phone":  "13800000000"
+                                    },
+                       "status":  "paid",
+                       "createTime":  "2026/6/10 02:02:35",
+                       "payTime":  "2026/6/10 02:02:37",
+                       "shipTime":  "",
+                       "logistics":  "商家正在准备发货",
+                       "logisticsCompany":  "",
+                       "trackingNo":  "",
+                       "logisticsTraces":  [
+                                               {
+                                                   "time":  "2026/6/10 02:02:35",
+                                                   "text":  "订单已创建"
+                                               },
+                                               {
+                                                   "time":  "2026/6/10 02:02:37",
+                                                   "text":  "订单已支付，等待商家发货"
+                                               }
+                                           ]
+                   },
+                   {
+                       "id":  2,
+                       "userId":  1,
+                       "orderNo":  "1780921789196",
+                       "items":  [
+                                     {
+                                         "goodId":  1,
+                                         "count":  1,
+                                         "price":  2999,
+                                         "name":  "星河 Pro 手机",
+                                         "img":  "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format\u0026fit=crop\u0026w=900\u0026q=80"
+                                     },
+                                     {
+                                         "goodId":  2,
+                                         "count":  1,
+                                         "price":  399,
+                                         "name":  "无线降噪耳机",
+                                         "img":  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format\u0026fit=crop\u0026w=900\u0026q=80"
+                                     }
+                                 ],
+                       "price":  3398,
+                       "addressId":  1,
+                       "address":  "北京市海淀区北京交通大学",
+                       "receiver":  {
+                                        "name":  "商城用户",
+                                        "phone":  "13800000000"
+                                    },
+                       "status":  "paid",
+                       "createTime":  "6/8/2026, 8:29:49 PM",
+                       "payTime":  "6/8/2026, 8:29:50 PM",
+                       "shipTime":  "",
+                       "logistics":  "商家正在准备发货",
+                       "logisticsCompany":  "",
+                       "trackingNo":  "",
+                       "logisticsTraces":  [
+                                               {
+                                                   "time":  "6/8/2026, 8:29:49 PM",
+                                                   "text":  "订单已创建"
+                                               },
+                                               {
+                                                   "time":  "6/8/2026, 8:29:50 PM",
+                                                   "text":  "订单已支付，等待商家发货"
+                                               }
+                                           ]
+                   },
+                   {
+                       "id":  1,
+                       "userId":  1,
+                       "orderNo":  "1780919184348",
+                       "items":  [
+                                     {
+                                         "goodId":  1,
+                                         "count":  1,
+                                         "price":  2999,
+                                         "name":  "星河 Pro 手机",
+                                         "img":  "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format\u0026fit=crop\u0026w=900\u0026q=80"
+                                     }
+                                 ],
+                       "price":  2999,
+                       "address":  "北京市海淀区北京交通大学",
+                       "status":  "shipped",
+                       "createTime":  "6/8/2026, 7:46:24 PM",
+                       "payTime":  "6/8/2026, 7:46:26 PM",
+                       "shipTime":  "6/8/2026, 8:31:17 PM",
+                       "logistics":  "包裹已从仓库发出",
+                       "logisticsTraces":  [
+                                               {
+                                                   "time":  "6/8/2026, 7:46:24 PM",
+                                                   "text":  "订单已创建"
+                                               },
+                                               {
+                                                   "time":  "6/8/2026, 7:46:26 PM",
+                                                   "text":  "订单已支付，等待商家发货"
+                                               },
+                                               {
+                                                   "time":  "6/8/2026, 8:31:17 PM",
+                                                   "text":  "商家已发货，包裹已从仓库发出"
+                                               },
+                                               {
+                                                   "time":  "6/8/2026, 8:31:18 PM",
+                                                   "text":  "快件正在运输途中"
+                                               }
+                                           ],
+                       "logisticsCompany":  "校园优选快递",
+                       "trackingNo":  "YT202606080001"
+                   }
+               ],
+    "addresses":  [
+                      {
+                          "id":  1,
+                          "userId":  1,
+                          "name":  "商城用户",
+                          "phone":  "13800000000",
+                          "province":  "北京市",
+                          "city":  "海淀区",
+                          "detail":  "北京交通大学",
+                          "isDefault":  true
+                      }
+                  ],
+    "favorites":  [
+                      {
+                          "id":  1,
+                          "userId":  1,
+                          "goodId":  3,
+                          "createTime":  "2026/6/10 21:24:26"
+                      }
+                  ],
+    "reviews":  [
+                    {
+                        "id":  6,
+                        "userId":  1,
+                        "goodId":  4,
+                        "nickname":  "商城用户",
+                        "rating":  4,
+                        "content":  "4",
+                        "createTime":  "2026/6/11 00:41:43"
+                    },
+                    {
+                        "id":  5,
+                        "userId":  1,
+                        "goodId":  4,
+                        "nickname":  "商城用户",
+                        "rating":  1,
+                        "content":  "1",
+                        "createTime":  "2026/6/11 00:41:38"
+                    },
+                    {
+                        "id":  4,
+                        "userId":  1,
+                        "goodId":  2,
+                        "nickname":  "商城用户",
+                        "rating":  4,
+                        "content":  "一般般",
+                        "createTime":  "2026/6/10 21:21:39"
+                    },
+                    {
+                        "id":  3,
+                        "userId":  1,
+                        "goodId":  2,
+                        "nickname":  "商城用户",
+                        "rating":  5,
+                        "content":  "一般般",
+                        "createTime":  "2026/6/10 21:21:32"
+                    },
+                    {
+                        "id":  2,
+                        "userId":  1,
+                        "goodId":  15,
+                        "nickname":  "商城用户",
+                        "rating":  5,
+                        "content":  "123",
+                        "createTime":  "2026/6/10 01:18:14"
+                    },
+                    {
+                        "id":  1,
+                        "userId":  1,
+                        "goodId":  1,
+                        "nickname":  "商城用户",
+                        "rating":  5,
+                        "content":  "屏幕很清楚，续航也够用，日常学习和拍照都很方便。",
+                        "createTime":  "2026/6/8 20:00:00"
+                    }
+                ]
 }
