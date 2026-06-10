@@ -18,8 +18,25 @@ const CartPage = () => {
 
   if (!user) return <section className="empty-state">请先登录后查看购物车 <Link to="/login">去登录</Link></section>;
 
+  if (cart.length === 0) return (
+    <section className="empty-state animate-fade-rise">
+      <div style={{ textAlign: 'center' }}>
+        <p style={{ fontSize: 48, margin: '0 0 12px' }}>🛒</p>
+        <p style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>购物车是空的</p>
+        <p style={{ color: 'var(--on-surface-variant)', marginBottom: 16 }}>去发现心仪的商品吧</p>
+        <Link to="/home" className="primary-link">去逛逛</Link>
+      </div>
+    </section>
+  );
+
   const selected = cart.filter((item) => item.selected);
   const total = selected.reduce((sum, item) => sum + item.good.price * item.count, 0);
+
+  const removeItem = async (item) => {
+    if (!window.confirm(`确定删除「${item.good.name}」吗？`)) return;
+    await services.cart.removeItem(item.id);
+    loadCart();
+  };
 
   const checkout = () => {
     if (selected.length === 0) {
@@ -30,27 +47,26 @@ const CartPage = () => {
   };
 
   return (
-    <section className="section">
+    <section className="section animate-fade-rise">
       <div className="section-title">
         <h1>购物车</h1>
-        <span>修改数量，选择本次结算的商品</span>
+        <span>共 {cart.length} 件商品</span>
       </div>
-      <div className="cart-list">
+      <div className="cart-list animate-stagger">
         {cart.map((item) => (
           <div className="cart-item" key={item.id}>
             <input type="checkbox" checked={item.selected} onChange={async () => { await services.cart.updateItem(item.id, { selected: !item.selected }); loadCart(); }} />
-            <img src={item.good.img} alt={item.good.name} />
+            <img src={item.good.img} alt={item.good.name} className="img-hover-zoom" style={{ borderRadius: 6 }} />
             <div>
               <Link to={`/detail/${item.good.id}`}>{item.good.name}</Link>
-              <p>￥{item.good.price}</p>
+              <p className="price" style={{ fontSize: 16, marginTop: 4 }}>￥{item.good.price}</p>
             </div>
-            <input className="count-input" type="number" min="1" value={item.count} onChange={async (e) => { await services.cart.updateItem(item.id, { count: e.target.value }); loadCart(); }} />
-            <button className="text-button danger" onClick={async () => { await services.cart.removeItem(item.id); loadCart(); }}>删除</button>
+            <button className="text-button danger" onClick={() => removeItem(item)}>删除</button>
           </div>
         ))}
       </div>
       <div className="checkout-bar">
-        <strong>已选 {selected.length} 件，合计 ￥{total}</strong>
+        <strong>已选 {selected.length} 件，合计 <span className="price">￥{total}</span></strong>
         <button className="button" onClick={checkout}>去结算</button>
       </div>
     </section>

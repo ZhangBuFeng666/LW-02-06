@@ -76,11 +76,11 @@ const DetailPage = () => {
 
   return (
     <>
-      <section className="detail-layout">
-        <img className="detail-image" src={good.img} alt={good.name}
+      <section className="detail-layout animate-fade-rise">
+        <img className="detail-image img-hover-zoom" src={good.img} alt={good.name}
           onClick={() => setZoomed(true)} style={{ cursor: 'zoom-in' }}
         />
-        <div className="detail-info">
+        <div className="detail-info animate-stagger">
           <span className="tag">{services.good.getCategoryName(categories, good.categoryId)}</span>
           <h1>{good.name}</h1>
           <p>{good.desc}</p>
@@ -94,7 +94,7 @@ const DetailPage = () => {
           {message && <p className="success-text">{message}</p>}
         </div>
       </section>
-      <section className="section review-section">
+      <section className="section review-section animate-fade-rise" style={{ animationDelay: '200ms' }}>
         <div className="section-title">
           <h2>商品评价</h2>
           <span>{reviews.length} 条评价</span>
@@ -116,7 +116,7 @@ const DetailPage = () => {
           <input placeholder="写下你的使用感受" value={reviewText} onChange={(e) => setReviewText(e.target.value)} required />
           <button className="button" type="submit">发布评价</button>
         </form>
-        <div className="review-list">
+        <div className="review-list animate-stagger">
           {reviews.length === 0 ? (
             <p style={{ color: 'var(--on-surface-variant)', padding: '12px 0' }}>
               暂无评价，成为第一个评价的人
@@ -124,9 +124,12 @@ const DetailPage = () => {
           ) : (
             reviews.map((review) => (
               <div className="review-item" key={review.id}>
-                <strong>{review.nickname} · {review.rating} 星</strong>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <strong>{review.nickname}</strong>
+                  <span className="status-badge paid">{review.rating} 星</span>
+                </div>
                 <p>{review.content}</p>
-                <span>{review.createTime}</span>
+                <span style={{ fontSize: '13px', color: 'var(--on-surface-variant)' }}>{review.createTime}</span>
               </div>
             ))
           )}
