@@ -509,9 +509,13 @@ body {
   gap: 12px;
 }
 
+.order-items .cart-item {
+  grid-template-columns: 84px 1fr auto;
+}
+
 .cart-item {
   display: grid;
-  grid-template-columns: auto 84px 1fr auto auto;
+  grid-template-columns: auto 84px 1fr auto;
   align-items: center;
   gap: 14px;
   padding: 12px;
@@ -721,7 +725,16 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .cart-item,
+  .cart-item {
+    grid-template-columns: auto 60px 1fr auto;
+    gap: 8px;
+  }
+
+  .cart-item img {
+    width: 60px;
+    height: 50px;
+  }
+
   .admin-row,
   .order-row {
     grid-template-columns: 1fr;
@@ -825,6 +838,20 @@ body {
     grid-template-columns: 1fr;
     display: grid;
   }
+
+  .pay-qr-inner {
+    width: 150px;
+    height: 150px;
+  }
+
+  .pay-success-card {
+    padding: 32px 28px;
+    margin: 0 16px;
+  }
+
+  .order-row-items {
+    flex-wrap: wrap;
+  }
 }
 
 .image-zoom-overlay {
@@ -849,6 +876,585 @@ body {
 @keyframes fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+/* ========== 动效系统 ========== */
+
+.animate-fade-rise {
+  animation: fade-rise 500ms ease both;
+}
+
+@keyframes fade-rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-stagger > * {
+  animation: fade-rise 400ms ease both;
+}
+.animate-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.animate-stagger > *:nth-child(2) { animation-delay: 60ms; }
+.animate-stagger > *:nth-child(3) { animation-delay: 120ms; }
+.animate-stagger > *:nth-child(4) { animation-delay: 180ms; }
+.animate-stagger > *:nth-child(5) { animation-delay: 240ms; }
+.animate-stagger > *:nth-child(6) { animation-delay: 300ms; }
+.animate-stagger > *:nth-child(n+7) { animation-delay: 360ms; }
+
+.img-hover-zoom {
+  transition: transform 300ms ease;
+}
+.img-hover-zoom:hover {
+  transform: scale(1.03);
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+/* ========== 订单状态徽章 ========== */
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.status-badge.unpaid { background: #fef3c7; color: #92400e; }
+.status-badge.paid { background: #d1fae5; color: #065f46; }
+.status-badge.shipped { background: #dbeafe; color: #1e40af; }
+.status-badge.received { background: #e0e7ff; color: #3730a3; }
+.status-badge.closed { background: #f3f4f6; color: #6b7280; }
+
+/* ========== 支付页面增强 ========== */
+
+.pay-qr-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--tertiary));
+  margin: 18px auto;
+}
+
+.pay-qr-inner {
+  display: grid;
+  place-items: center;
+  width: 180px;
+  height: 180px;
+  background: #fffaf1;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 26px;
+  color: var(--primary);
+  letter-spacing: 4px;
+}
+
+.pay-countdown {
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Palatino Linotype", Palatino, serif;
+  transition: color 300ms ease;
+}
+.pay-countdown.urgent {
+  color: var(--danger);
+  animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.pay-success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: rgba(37, 49, 47, 0.85);
+  animation: fade-in 300ms ease;
+}
+
+.pay-success-card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 48px 64px;
+  text-align: center;
+  animation: fade-rise 400ms ease 100ms both;
+}
+
+.pay-success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #d1fae5;
+  color: #065f46;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  margin: 0 auto 16px;
+}
+
+/* ========== 物流时间轴增强 ========== */
+
+.timeline-enhanced {
+  position: relative;
+  padding-left: 28px;
+}
+
+.timeline-enhanced::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--outline);
+}
+
+.timeline-node {
+  position: relative;
+  padding: 12px 0;
+}
+
+.timeline-node::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--outline);
+  border: 2px solid var(--surface);
+}
+
+.timeline-node:first-child::before {
+  background: var(--primary);
+  box-shadow: 0 0 0 3px rgba(45, 111, 105, 0.2);
+}
+
+.timeline-node-time {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  margin-bottom: 4px;
+}
+
+.timeline-node-text {
+  color: var(--on-surface);
+  margin: 0;
+}
+
+/* ========== 地址卡片选择器 ========== */
+
+.address-cards {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.address-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid var(--outline);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.address-card:hover {
+  border-color: rgba(45, 111, 105, 0.4);
+}
+
+.address-card.selected {
+  border-color: var(--primary);
+  background: #edf5f1;
+}
+
+.address-card-radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--outline);
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: grid;
+  place-items: center;
+  transition: border-color 200ms ease;
+}
+
+.address-card.selected .address-card-radio {
+  border-color: var(--primary);
+}
+
+.address-card.selected .address-card-radio::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.address-card-info {
+  flex: 1;
+}
+
+.address-card-info strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.address-card-info p {
+  margin: 0;
+  color: var(--on-surface-variant);
+  font-size: 14px;
+}
+
+.address-card-default {
+  font-size: 12px;
+  color: var(--tertiary);
+  font-weight: 600;
+}
+
+/* ========== 数量控制器 ========== */
+
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--outline);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.qty-control button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--on-surface);
+  display: grid;
+  place-items: center;
+  transition: background 150ms ease;
+}
+
+.qty-control button:hover {
+  background: var(--surface-container);
+}
+
+.qty-control button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.qty-control span {
+  width: 40px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  border-left: 1px solid var(--outline);
+  border-right: 1px solid var(--outline);
+  line-height: 32px;
+}
+
+/* ========== 订单列表增强 ========== */
+
+.order-row-enhanced {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid var(--outline);
+  border-radius: 8px;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.order-row-enhanced:hover {
+  transform: translateY(-2px);
+  border-color: rgba(45, 111, 105, 0.36);
+  box-shadow: 0 12px 32px rgba(37, 49, 47, 0.08);
+}
+
+/* 订单状态筛选标签 */
+.order-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.order-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.order-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--outline);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+  transition: border-color 200ms ease, background 200ms ease, color 200ms ease;
+}
+
+.order-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.order-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fffaf1;
+}
+
+.order-tab-count {
+  font-size: 12px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  padding: 0 5px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.order-tab.active .order-tab-count {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.order-row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-row-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-row-items {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.order-row-items img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ========== 我的页面 ========== */
+
+.mine-page {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.mine-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 24px;
+  background: linear-gradient(135deg, var(--primary), #1e5550);
+  border-radius: 12px;
+  color: #fffaf1;
+  margin-bottom: 18px;
+}
+
+.mine-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.mine-user-info h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fffaf1;
+}
+
+.mine-user-info p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 14px;
+  color: #fffaf1;
+}
+
+.mine-header .text-button {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+.mine-header .text-button:hover {
+  color: #fffaf1;
+}
+
+.mine-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--outline);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.mine-stat-item {
+  display: grid;
+  place-items: center;
+  padding: 18px 8px;
+  cursor: pointer;
+  transition: background 200ms ease;
+}
+
+.mine-stat-item:hover {
+  background: var(--surface-container);
+}
+
+.mine-stat-item strong {
+  font-size: 22px;
+  font-family: "Palatino Linotype", Palatino, serif;
+  color: var(--primary);
+}
+
+.mine-stat-item span {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  margin-top: 4px;
+}
+
+.mine-order-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--outline);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.mine-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 18px 8px;
+  position: relative;
+  transition: background 200ms ease;
+}
+
+.mine-tab:hover {
+  background: var(--surface-container);
+}
+
+.mine-tab-icon {
+  font-size: 24px;
+}
+
+.mine-tab-label {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+}
+
+.mine-tab-badge {
+  position: absolute;
+  top: 10px;
+  right: calc(50% - 22px);
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--danger);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  padding: 0 5px;
+}
+
+.mine-quick-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.mine-quick-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--outline);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.mine-quick-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(45, 111, 105, 0.36);
+  box-shadow: 0 12px 32px rgba(37, 49, 47, 0.08);
+}
+
+.mine-quick-icon {
+  font-size: 22px;
+}
+
+@media (max-width: 860px) {
+  .mine-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .mine-order-tabs {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .mine-quick-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .mine-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mine-order-tabs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mine-quick-links {
+    grid-template-columns: 1fr;
+  }
 }
 
 .side-list button {

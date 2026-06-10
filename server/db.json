@@ -247,6 +247,158 @@
   "cart": [],
   "orders": [
     {
+      "id": 8,
+      "userId": 1,
+      "orderNo": "1781114820096",
+      "items": [
+        {
+          "goodId": 6,
+          "count": 2,
+          "price": 69,
+          "name": "便携保温杯",
+          "img": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      "price": 138,
+      "addressId": 2,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "111",
+        "phone": "13232323445"
+      },
+      "status": "paid",
+      "createTime": "2026/6/11 02:07:00",
+      "payTime": "2026/6/11 02:07:01",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/11 02:07:00",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/11 02:07:01",
+          "text": "订单已支付，等待商家发货"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "orderNo": "1781114567020",
+      "items": [
+        {
+          "goodId": 2,
+          "count": 2,
+          "price": 399,
+          "name": "无线降噪耳机",
+          "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      "price": 798,
+      "addressId": 2,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "111",
+        "phone": "13232323445"
+      },
+      "status": "paid",
+      "createTime": "2026/6/11 02:02:47",
+      "payTime": "2026/6/11 02:02:49",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/11 02:02:47",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/11 02:02:49",
+          "text": "订单已支付，等待商家发货"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "orderNo": "1781114016696",
+      "items": [
+        {
+          "goodId": 1,
+          "count": 1,
+          "price": 2999,
+          "name": "星河 Pro 手机",
+          "img": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      "price": 2999,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "paid",
+      "createTime": "2026/6/11 01:53:36",
+      "payTime": "2026/6/11 01:53:48",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/11 01:53:36",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/11 01:53:48",
+          "text": "订单已支付，等待商家发货"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "orderNo": "1781113390506",
+      "items": [
+        {
+          "goodId": 2,
+          "count": 1,
+          "price": 399,
+          "name": "无线降噪耳机",
+          "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      "price": 399,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "paid",
+      "createTime": "2026/6/11 01:43:10",
+      "payTime": "2026/6/11 01:43:15",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/11 01:43:10",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/11 01:43:15",
+          "text": "订单已支付，等待商家发货"
+        }
+      ]
+    },
+    {
       "id": 4,
       "userId": 1,
       "orderNo": "1781097715390",
@@ -419,17 +571,36 @@
       "city": "海淀区",
       "detail": "北京交通大学",
       "isDefault": true
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "111",
+      "phone": "13232323445",
+      "province": "北京市",
+      "city": "海淀区",
+      "detail": "北京交通大学",
+      "isDefault": false
     }
   ],
   "favorites": [
     {
       "id": 1,
       "userId": 1,
-      "goodId": 3,
-      "createTime": "2026/6/10 21:24:26"
+      "goodId": 5,
+      "createTime": "2026/6/11 02:00:50"
     }
   ],
   "reviews": [
+    {
+      "id": 5,
+      "userId": 1,
+      "goodId": 3,
+      "nickname": "商城用户",
+      "rating": 4,
+      "content": "1",
+      "createTime": "2026/6/11 01:44:30"
+    },
     {
       "id": 4,
       "userId": 1,
