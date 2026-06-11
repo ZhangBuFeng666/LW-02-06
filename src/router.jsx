@@ -3,7 +3,9 @@ import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import AddressPage from './pages/AddressPage';
 import AdminGoodsPage from './pages/AdminGoodsPage';
+import AdminLoginPage from './pages/AdminLoginPage';
 import AdminOrdersPage from './pages/AdminOrdersPage';
+import AdminRoute from './pages/AdminRoute';
 import CartPage from './pages/CartPage';
 import CategoryPage from './pages/CategoryPage';
 import CreateOrderPage from './pages/CreateOrderPage';
@@ -34,9 +36,9 @@ const router = createBrowserRouter([
       { path: 'pay/:orderId', Component: PayPage },
       { path: 'orderList', Component: OrderListPage },
       { path: 'orderDetail/:orderId', Component: OrderDetailPage },
-      { path: 'admin/login', Component: LoginPage },
-      { path: 'admin/goods', Component: AdminGoodsPage },
-      { path: 'admin/orders', Component: AdminOrdersPage },
+      { path: 'admin/login', Component: AdminLoginPage },
+      { path: 'admin/goods', element: <AdminRoute><AdminGoodsPage /></AdminRoute> },
+      { path: 'admin/orders', element: <AdminRoute><AdminOrdersPage /></AdminRoute> },
     ],
   },
 ]);

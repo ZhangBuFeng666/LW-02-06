@@ -152,7 +152,10 @@ body {
 .wide-label input,
 .form-card input,
 .admin-form input,
-.admin-form select {
+.admin-form select,
+.admin-filters input,
+.admin-filters select,
+.ship-form input {
   width: 100%;
   min-height: 44px;
   border: 1px solid var(--outline);
@@ -617,6 +620,53 @@ body {
   margin-bottom: 18px;
 }
 
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.admin-stats div {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  background: rgba(255,255,255,0.76);
+  border: 1px solid var(--outline);
+  border-radius: 8px;
+}
+
+.admin-stats span {
+  color: var(--on-surface-variant);
+  font-size: 14px;
+}
+
+.admin-stats strong {
+  font-size: 26px;
+  color: var(--primary);
+}
+
+.admin-filters {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr auto;
+  gap: 12px;
+  margin-bottom: 18px;
+  align-items: center;
+}
+
+.admin-form-title {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 4px;
+}
+
+.admin-form-wide {
+  grid-column: span 2;
+}
+
 .admin-table {
   display: grid;
   gap: 8px;
@@ -643,6 +693,25 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.ship-form {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto auto;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--outline);
+}
+
+.admin-empty {
+  min-height: 160px;
+  margin-top: 12px;
+}
+
+.admin-auth-state {
+  gap: 10px;
+  text-align: center;
 }
 
 .small-login-link {
@@ -713,8 +782,15 @@ body {
   .detail-layout,
   .info-grid,
   .stat-grid,
-  .admin-form {
+  .admin-form,
+  .admin-stats,
+  .admin-filters,
+  .ship-form {
     grid-template-columns: 1fr;
+  }
+
+  .admin-form-wide {
+    grid-column: auto;
   }
 
   .product-grid,

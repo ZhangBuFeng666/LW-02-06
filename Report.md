@@ -13,7 +13,7 @@
 | 组长姓名（组长） | 20260001 | 项目架构、Mock 后端、接口设计、ServiceContext、路由、主链路联调、最终自检打包 | 22% |
 | 组员A | 20260002 | 首页、分类页、商品详情页，完成搜索、轮播推荐、热门商品和商品浏览体验 | 20% |
 | 组员B | 20260003 | 用户登录/注册、购物车、创建订单、支付、订单列表、订单详情、我的页面 | 23% |
-| 组员C | 20260004 | 后台登录、角色权限、商品管理增删改查、上下架和后台体验优化 | 20% |
+| 组员C | 20260004 | 后台登录、角色权限、商品管理增删改查、上下架、订单查看发货和前后台联动演示 | 20% |
 | 组员D | 20260005 | 功能测试、Bug 记录、Report、PPT、答辩脚本和演示流程控制 | 15% |
 
 ---
@@ -47,7 +47,10 @@ src/
 | OrderDetailPage | 展示订单状态、商品信息和物流信息 |
 | MinePage | 展示用户信息、订单、地址、收藏和后台入口 |
 | AdminLoginPage | 后台用户登录 |
-| AdminGoodsPage | 后台商品增删改查、上下架和权限控制 |\n| AdminOrdersPage | 后台订单查看与发货 |\n| AddressPage | 收货地址新增、编辑、删除、默认地址设置 |\n| FavoritePage | 用户收藏商品列表 |
+| AdminGoodsPage | 后台商品统计、搜索筛选、增删改查、上下架和权限控制 |
+| AdminOrdersPage | 后台订单统计、搜索筛选、订单查看与发货 |
+| AddressPage | 收货地址新增、编辑、删除、默认地址设置 |
+| FavoritePage | 用户收藏商品列表 |
 
 ## 3. 前台功能实现说明
 
@@ -67,9 +70,10 @@ src/
 
 | 功能模块 | 实现方式 |
 |----------|----------|
-| 后台登录 | adminService 调用 /api/admin/login，提供 admin 和 operator 两个账号 |
-| 权限管理 | admin 角色可管理商品，operator 角色只能查看商品列表 |
-| 商品管理 | 完成商品新增、编辑、删除、上架、下架，数据写入 server/db.json 并与前台接口联动 |\n| 订单管理 | 后台可查看订单列表，并对待发货订单执行发货操作 |
+| 后台登录 | /admin/login 使用独立 AdminLoginPage，adminService 调用 /api/admin/login，默认账号 admin / 123456、operator / 123456 |
+| 权限管理 | 后台路由有登录守卫；admin 可管理商品和订单发货，operator 只能查看商品和订单 |
+| 商品管理 | 支持统计卡片、商品搜索、分类筛选、上下架筛选、商品新增、编辑、删除、上下架，数据写入 server/db.json 并与前台接口联动 |
+| 订单管理 | 支持统计卡片、订单号搜索、状态筛选；对待发货订单填写快递公司和物流单号后发货，订单详情同步展示物流信息 |
 
 ## 5. 路由设计
 
@@ -91,6 +95,7 @@ const router = createBrowserRouter([
       { path: 'orderDetail/:orderId', Component: OrderDetailPage },
       { path: 'admin/login', Component: AdminLoginPage },
       { path: 'admin/goods', Component: AdminGoodsPage },
+      { path: 'admin/orders', Component: AdminOrdersPage },
     ],
   },
 ]);
@@ -120,7 +125,7 @@ const router = createBrowserRouter([
 |------|----------|
 | 作业要求前后台联动但不强制真实数据库 | 使用 Node.js 搭建 Mock API，数据保存到 server/db.json |
 | 多个页面共享商品、购物车、订单数据 | 使用 services 目录统一封装接口，页面不直接操作数据源 |
-| 后台角色权限需要体现 | 设置 admin 和 operator 两个后台账号，admin 可增删改，operator 只读 |
+| 后台角色权限需要体现 | 设置 admin 和 operator 两个后台账号，admin 可管理商品和发货，operator 只读；后台页顶部展示当前账号、角色和权限 |
 | 接力开发容易改乱接口 | 编写开发说明，约定 API 路径、字段、service 函数名和各成员负责文件 |
 
 
