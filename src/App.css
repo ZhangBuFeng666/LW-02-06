@@ -620,6 +620,18 @@ body {
   margin-bottom: 18px;
 }
 
+.admin-field {
+  display: grid;
+  gap: 6px;
+  color: var(--on-surface);
+  font-weight: 600;
+}
+
+.admin-field span {
+  color: var(--on-surface-variant);
+  font-size: 13px;
+}
+
 .admin-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -714,6 +726,96 @@ body {
   text-align: center;
 }
 
+.login-actions {
+  display: grid;
+  place-items: center;
+}
+
+.admin-detail-page {
+  display: grid;
+  gap: 18px;
+}
+
+.admin-detail-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.admin-detail-summary div,
+.admin-detail-panel {
+  background: rgba(255,255,255,0.76);
+  border: 1px solid var(--outline);
+  border-radius: 8px;
+}
+
+.admin-detail-summary div {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+}
+
+.admin-detail-summary span,
+.admin-logistics-card p {
+  color: var(--on-surface-variant);
+}
+
+.admin-detail-summary strong {
+  font-size: 20px;
+}
+
+.admin-detail-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 18px;
+}
+
+.admin-detail-panel {
+  padding: 16px;
+}
+
+.admin-info-grid {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.admin-detail-ship-form {
+  grid-template-columns: 1fr 1fr auto;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.admin-logistics-card {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-logistics-card p {
+  margin: 0;
+}
+
+.admin-order-items-head,
+.admin-order-items-row {
+  grid-template-columns: 1.8fr 0.7fr 0.7fr 0.7fr;
+}
+
+.admin-order-good {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.admin-order-good img {
+  width: 54px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex: 0 0 auto;
+}
+
 .small-login-link {
   justify-self: center;
   color: var(--on-surface-variant);
@@ -783,8 +885,11 @@ body {
   .stat-grid,
   .admin-form,
   .admin-stats,
+  .admin-detail-summary,
+  .admin-detail-grid,
   .admin-filters,
-  .ship-form {
+  .ship-form,
+  .admin-detail-ship-form {
     grid-template-columns: 1fr;
   }
 
@@ -808,7 +913,9 @@ body {
   }
 
   .admin-row,
-  .order-row {
+  .order-row,
+  .admin-order-items-head,
+  .admin-order-items-row {
     grid-template-columns: 1fr;
   }
 

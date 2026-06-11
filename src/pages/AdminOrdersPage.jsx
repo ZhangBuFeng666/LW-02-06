@@ -148,7 +148,7 @@ const AdminOrdersPage = () => {
             <span>{order.statusText}</span>
             <span>{order.receiver?.name || '用户'} {order.receiver?.phone || ''} {order.address}</span>
             <span className="row-actions">
-              <Link className="text-button" to={`/orderDetail/${order.id}`}>详情</Link>
+              <Link className="text-button" to={`/admin/orders/${order.id}`}>详情</Link>
               <button
                 className="text-button"
                 disabled={!canShip || order.status !== 'paid'}

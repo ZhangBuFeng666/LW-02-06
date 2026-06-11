@@ -186,18 +186,39 @@ const AdminGoodsPage = () => {
           <strong>{editingId ? '编辑商品' : '新增商品'}</strong>
           {editingId && <button className="text-button" type="button" onClick={resetForm}>取消编辑</button>}
         </div>
-        <input placeholder="商品名称" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required disabled={!canManage} />
-        <input placeholder="价格" type="number" min="0.01" step="0.01" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} required disabled={!canManage} />
-        <select value={form.categoryId} onChange={(e) => setForm({ ...form, categoryId: e.target.value })} disabled={!canManage}>
-          {categories.map((category) => <option value={category.id} key={category.id}>{category.name}</option>)}
-        </select>
-        <input placeholder="库存" type="number" min="0" step="1" value={form.stock} onChange={(e) => setForm({ ...form, stock: e.target.value })} required disabled={!canManage} />
-        <select value={form.status} onChange={(e) => setForm({ ...form, status: e.target.value })} disabled={!canManage}>
-          <option value="on">上架</option>
-          <option value="off">下架</option>
-        </select>
-        <input placeholder="图片地址" value={form.img} onChange={(e) => setForm({ ...form, img: e.target.value })} disabled={!canManage} />
-        <input className="admin-form-wide" placeholder="商品描述" value={form.desc} onChange={(e) => setForm({ ...form, desc: e.target.value })} disabled={!canManage} />
+        <label className="admin-field">
+          <span>商品名称</span>
+          <input placeholder="例如：静音便携小风扇" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required disabled={!canManage} />
+        </label>
+        <label className="admin-field">
+          <span>商品价格（元）</span>
+          <input placeholder="例如：99.00" type="number" min="0.01" step="0.01" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} required disabled={!canManage} />
+        </label>
+        <label className="admin-field">
+          <span>所属分类</span>
+          <select value={form.categoryId} onChange={(e) => setForm({ ...form, categoryId: e.target.value })} disabled={!canManage}>
+            {categories.map((category) => <option value={category.id} key={category.id}>{category.name}</option>)}
+          </select>
+        </label>
+        <label className="admin-field">
+          <span>库存数量</span>
+          <input placeholder="例如：100" type="number" min="0" step="1" value={form.stock} onChange={(e) => setForm({ ...form, stock: e.target.value })} required disabled={!canManage} />
+        </label>
+        <label className="admin-field">
+          <span>上下架状态</span>
+          <select value={form.status} onChange={(e) => setForm({ ...form, status: e.target.value })} disabled={!canManage}>
+            <option value="on">上架</option>
+            <option value="off">下架</option>
+          </select>
+        </label>
+        <label className="admin-field">
+          <span>商品图片地址</span>
+          <input placeholder="https://..." value={form.img} onChange={(e) => setForm({ ...form, img: e.target.value })} disabled={!canManage} />
+        </label>
+        <label className="admin-field admin-form-wide">
+          <span>商品描述</span>
+          <input placeholder="填写商品卖点、规格或说明" value={form.desc} onChange={(e) => setForm({ ...form, desc: e.target.value })} disabled={!canManage} />
+        </label>
         <button className="button" type="submit" disabled={!canManage}>{editingId ? '保存修改' : '新增商品'}</button>
       </form>
 

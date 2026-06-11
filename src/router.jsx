@@ -4,6 +4,7 @@ import App from './App';
 import AddressPage from './pages/AddressPage';
 import AdminGoodsPage from './pages/AdminGoodsPage';
 import AdminLoginPage from './pages/AdminLoginPage';
+import AdminOrderDetailPage from './pages/AdminOrderDetailPage';
 import AdminOrdersPage from './pages/AdminOrdersPage';
 import AdminRoute from './pages/AdminRoute';
 import CartPage from './pages/CartPage';
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
       { path: 'admin/login', Component: AdminLoginPage },
       { path: 'admin/goods', element: <AdminRoute><AdminGoodsPage /></AdminRoute> },
       { path: 'admin/orders', element: <AdminRoute><AdminOrdersPage /></AdminRoute> },
+      { path: 'admin/orders/:orderId', element: <AdminRoute><AdminOrderDetailPage /></AdminRoute> },
     ],
   },
 ]);

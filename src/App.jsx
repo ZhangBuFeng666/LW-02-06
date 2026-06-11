@@ -23,7 +23,6 @@ function App() {
           <NavLink to="/category">分类</NavLink>
           <NavLink to="/cart">购物车</NavLink>
           <NavLink to="/mine">我的</NavLink>
-          <NavLink to="/admin/login">后台</NavLink>
         </nav>
         <div className="user-area">
           {user ? (

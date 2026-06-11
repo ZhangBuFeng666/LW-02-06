@@ -95,12 +95,11 @@ const LoginPage = () => {
         </button>
 
         {!isAdminLogin && (
-          <>
+          <div className="login-actions">
             <button className="text-button" type="button" onClick={() => { setMode(mode === 'login' ? 'register' : 'login'); setError(''); }}>
               {mode === 'login' ? '没有账号？去注册' : '已有账号？去登录'}
             </button>
-            <Link className="small-login-link" to="/admin/login">后台管理员登录</Link>
-          </>
+          </div>
         )}
         {isAdminLogin && <Link className="small-login-link" to="/login">返回用户登录</Link>}
       </form>
