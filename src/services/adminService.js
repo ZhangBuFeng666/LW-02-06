@@ -16,8 +16,21 @@ class AdminService {
     localStorage.removeItem('currentAdmin');
   }
 
-  canManageGoods() {
+  isAdmin() {
     return this.getCurrentAdmin()?.role === 'admin';
+  }
+
+  canManageGoods() {
+    return this.isAdmin();
+  }
+
+  canShipOrders() {
+    return this.isAdmin();
+  }
+
+  getPermissionText(admin = this.getCurrentAdmin()) {
+    if (!admin) return '未登录';
+    return admin.role === 'admin' ? '商品管理、订单发货' : '商品查看、订单查看';
   }
 }
 

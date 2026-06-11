@@ -45,7 +45,7 @@ const FavoritePage = () => {
           <div className="product-card" key={item.id}>
             <Link to={`/detail/${item.good.id}`}>
               <img src={item.good.img} alt={item.good.name} />
-              <div className="product-card-overlay">
+              <div className="product-card-body">
                 <strong>{item.good.name}</strong>
                 <span>￥{item.good.price}</span>
               </div>

@@ -30,6 +30,11 @@ const HomePage = () => {
   const [slide, setSlide] = useState(0);
   const timerRef = useRef(null);
 
+  const doSearch = (kw) => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    services.good.getGoodList({ keyword: kw }).then((list) => setGoods(list.slice(0, 8)));
+  };
+
   useEffect(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
@@ -51,8 +56,11 @@ const HomePage = () => {
           <h1>{HERO_SLIDES[slide].title}</h1>
           <p className="hero-subtitle">{HERO_SLIDES[slide].subtitle}</p>
           <div className="search-row">
-            <input value={keyword} onChange={(event) => setKeyword(event.target.value)} placeholder="搜索商品名称" />
-            <Link className="button" to="/category">查看分类</Link>
+            <input value={keyword}
+              onChange={(event) => setKeyword(event.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter') doSearch(keyword); }}
+              placeholder="搜索商品名称" />
+            <button className="button" onClick={() => doSearch(keyword)}>搜索</button>
           </div>
         </div>
         <p className="hero-tag">{HERO_SLIDES[slide].tag}</p>
@@ -108,7 +116,7 @@ const HomePage = () => {
           {goods.map((good) => (
             <Link className="product-card" key={good.id} to={`/detail/${good.id}`}>
               <img src={good.img} alt={good.name} />
-              <div className="product-card-overlay">
+              <div className="product-card-body">
                 <strong>{good.name}</strong>
                 <span>￥{good.price}</span>
               </div>

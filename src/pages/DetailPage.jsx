@@ -100,11 +100,19 @@ const DetailPage = () => {
           <span>{reviews.length} 条评价</span>
         </div>
         <form className="review-form" onSubmit={submitReview}>
-          <select value={rating} onChange={(e) => setRating(Number(e.target.value))}>
-            <option value="5">5 星</option>
-            <option value="4">4 星</option>
-            <option value="3">3 星</option>
-          </select>
+          <div className="star-picker">
+            {[1, 2, 3, 4, 5].map((n) => (
+              <button
+                key={n}
+                type="button"
+                className={`star-btn${n <= rating ? ' active' : ''}`}
+                onClick={() => setRating(n)}
+                aria-label={`${n} 星`}
+              >
+                {n <= rating ? '★' : '☆'}
+              </button>
+            ))}
+          </div>
           <input placeholder="写下你的使用感受" value={reviewText} onChange={(e) => setReviewText(e.target.value)} required />
           <button className="button" type="submit">发布评价</button>
         </form>
