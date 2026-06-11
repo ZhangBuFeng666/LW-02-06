@@ -1,34 +1,59 @@
-import { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ServiceContext } from '../contexts/ServiceContext';
 
 const CATEGORY_ICONS = { phone: '📱', life: '🧴', food: '🍿', sport: '⚽' };
 
 const CategoryPage = () => {
   const services = useContext(ServiceContext);
+  const [searchParams] = useSearchParams();
   const [categories, setCategories] = useState([]);
   const [active, setActive] = useState('');
   const [goods, setGoods] = useState([]);
   const [sortOrder, setSortOrder] = useState('');
   const [priceMin, setPriceMin] = useState('');
   const [priceMax, setPriceMax] = useState('');
+  const [keyword, setKeyword] = useState(() => searchParams.get('search') || '');
+  const timerRef = useRef(null);
 
   useEffect(() => {
-    services.good.getCategories().then((list) => {
-      setCategories(list);
-      setActive(list[0]?.id || '');
-    });
+    services.good.getCategories().then(setCategories);
   }, [services.good]);
 
   useEffect(() => {
-    if (!active) return;
-    services.good.getGoodList({ categoryId: active }).then(setGoods);
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => {
+      const params = active ? { categoryId: active } : {};
+      services.good.getGoodList(params).then(setGoods);
+    }, 300);
+    return () => clearTimeout(timerRef.current);
   }, [services.good, active]);
+
+  const doSearch = (kw) => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    const params = active ? { categoryId: active } : {};
+    if (kw) params.keyword = kw;
+    services.good.getGoodList(params).then(setGoods);
+  };
+
+  const filtered = [...goods]
+    .filter((g) => {
+      const matchKeyword = !keyword || g.name.toLowerCase().includes(keyword.toLowerCase());
+      const min = priceMin ? Number(priceMin) : 0;
+      const max = priceMax ? Number(priceMax) : Infinity;
+      return matchKeyword && g.price >= min && g.price <= max;
+    })
+    .sort((a, b) => (sortOrder === 'asc' ? a.price - b.price : sortOrder === 'desc' ? b.price - a.price : 0));
+
+  const categoryName = active ? services.good.getCategoryName(categories, active) : '全部商品';
 
   return (
     <section className="section split-layout">
       <aside className="side-list">
         <h2>商品分类</h2>
+        <button className={active === '' ? 'active' : ''} onClick={() => setActive('')}>
+          全部商品
+        </button>
         {categories.map((category) => (
           <button className={active === category.id ? 'active' : ''} key={category.id} onClick={() => setActive(category.id)}>
             {CATEGORY_ICONS[category.id] || ''} {category.name}
@@ -36,8 +61,15 @@ const CategoryPage = () => {
         ))}
       </aside>
       <div className="content-panel">
+        <div className="search-row" style={{ marginBottom: 16 }}>
+          <input value={keyword}
+            onChange={(e) => setKeyword(e.target.value)}
+            onKeyDown={(e) => { if (e.key === 'Enter') doSearch(keyword); }}
+            placeholder="搜索商品名称" />
+          <button className="button" onClick={() => doSearch(keyword)}>搜索</button>
+        </div>
         <div className="section-title">
-          <h2>{services.good.getCategoryName(categories, active)}</h2>
+          <h2>{categoryName}</h2>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
             <span>共 {goods.length} 件商品</span>
             <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
@@ -57,18 +89,11 @@ const CategoryPage = () => {
             </button>
           </div>
         </div>
-        {goods.length === 0 ? (
-          <div className="empty-state">该分类暂无商品</div>
+        {filtered.length === 0 ? (
+          <div className="empty-state">{keyword ? '未找到匹配商品' : '该分类暂无商品'}</div>
         ) : (
           <div className="product-grid compact">
-            {[...goods]
-              .filter((g) => {
-                const min = priceMin ? Number(priceMin) : 0;
-                const max = priceMax ? Number(priceMax) : Infinity;
-                return g.price >= min && g.price <= max;
-              })
-              .sort((a, b) => (sortOrder === 'asc' ? a.price - b.price : sortOrder === 'desc' ? b.price - a.price : 0))
-              .map((good) => (
+            {filtered.map((good) => (
                 <Link className="product-card" key={good.id} to={`/detail/${good.id}`}>
                   <img src={good.img} alt={good.name} />
                   <div className="product-card-body">

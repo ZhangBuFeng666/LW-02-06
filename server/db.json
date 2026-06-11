@@ -689,6 +689,44 @@
   ],
   "orders": [
     {
+      "id": 5,
+      "userId": 1,
+      "orderNo": "1781120873314",
+      "items": [
+        {
+          "goodId": 2,
+          "count": 1,
+          "price": 8.5,
+          "name": "美团单车 畅骑卡",
+          "img": "https://img.alicdn.com/bao/uploaded/i2/2208169446941/O1CN01GUcG732192DKMdIgz_!!4611686018427383325-0-item_pic.jpg_460x460q90.jpg"
+        }
+      ],
+      "price": 8.5,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "paid",
+      "createTime": "2026/6/11 03:47:53",
+      "payTime": "2026/6/11 03:47:55",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/11 03:47:53",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/11 03:47:55",
+          "text": "订单已支付，等待商家发货"
+        }
+      ]
+    },
+    {
       "id": 4,
       "userId": 1,
       "orderNo": "1781097715390",

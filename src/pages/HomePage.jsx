@@ -1,5 +1,5 @@
-import { useContext, useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { ServiceContext } from '../contexts/ServiceContext';
 
 const HERO_SLIDES = [
@@ -25,28 +25,28 @@ const HERO_SLIDES = [
 
 const HomePage = () => {
   const services = useContext(ServiceContext);
+  const navigate = useNavigate();
   const [keyword, setKeyword] = useState('');
   const [goods, setGoods] = useState([]);
   const [slide, setSlide] = useState(0);
-  const timerRef = useRef(null);
-
-  const doSearch = (kw) => {
-    if (timerRef.current) clearTimeout(timerRef.current);
-    services.good.getGoodList({ keyword: kw }).then((list) => setGoods(list.slice(0, 8)));
-  };
 
   useEffect(() => {
-    if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(() => {
-      services.good.getGoodList({ keyword }).then((list) => setGoods(list.slice(0, 8)));
-    }, 300);
-    return () => clearTimeout(timerRef.current);
-  }, [services.good, keyword]);
+    services.good.getGoodList().then((list) => setGoods(list.slice(0, 8)));
+  }, [services.good]);
 
   useEffect(() => {
     const t = setInterval(() => setSlide((s) => (s + 1) % HERO_SLIDES.length), 4000);
     return () => clearInterval(t);
   }, []);
+
+  const goSearch = () => {
+    const kw = keyword.trim();
+    if (kw) {
+      navigate(`/category?search=${encodeURIComponent(kw)}`);
+    } else {
+      navigate('/category');
+    }
+  };
 
   return (
     <>
@@ -57,10 +57,10 @@ const HomePage = () => {
           <p className="hero-subtitle">{HERO_SLIDES[slide].subtitle}</p>
           <div className="search-row">
             <input value={keyword}
-              onChange={(event) => setKeyword(event.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter') doSearch(keyword); }}
+              onChange={(e) => setKeyword(e.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter') goSearch(); }}
               placeholder="搜索商品名称" />
-            <button className="button" onClick={() => doSearch(keyword)}>搜索</button>
+            <button className="button" onClick={goSearch}>搜索</button>
           </div>
         </div>
         <p className="hero-tag">{HERO_SLIDES[slide].tag}</p>
@@ -95,7 +95,7 @@ const HomePage = () => {
           <span>值得先看一眼的人气选择</span>
         </div>
         <div className="banner-strip">
-          {goods.slice(0, 3).map((good) => (
+          {goods.slice(0, 4).map((good) => (
             <Link className="banner-card" key={good.id} to={`/detail/${good.id}`}>
               <img src={good.img} alt={good.name} />
               <div>
