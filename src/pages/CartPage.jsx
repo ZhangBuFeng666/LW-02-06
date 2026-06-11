@@ -32,6 +32,13 @@ const CartPage = () => {
   const selected = cart.filter((item) => item.selected);
   const total = selected.reduce((sum, item) => sum + item.good.price * item.count, 0);
 
+  const updateCount = async (item, delta) => {
+    const newCount = item.count + delta;
+    if (newCount < 1) return;
+    await services.cart.updateItem(item.id, { count: newCount });
+    loadCart();
+  };
+
   const removeItem = async (item) => {
     if (!window.confirm(`确定删除「${item.good.name}」吗？`)) return;
     await services.cart.removeItem(item.id);
@@ -60,6 +67,11 @@ const CartPage = () => {
             <div>
               <Link to={`/detail/${item.good.id}`}>{item.good.name}</Link>
               <p className="price" style={{ fontSize: 16, marginTop: 4 }}>￥{item.good.price}</p>
+            </div>
+            <div className="qty-control">
+              <button onClick={() => updateCount(item, -1)} disabled={item.count <= 1}>−</button>
+              <span>{item.count}</span>
+              <button onClick={() => updateCount(item, 1)}>+</button>
             </div>
             <button className="text-button danger" onClick={() => removeItem(item)}>删除</button>
           </div>

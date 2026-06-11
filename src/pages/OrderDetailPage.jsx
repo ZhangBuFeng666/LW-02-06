@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ServiceContext } from '../contexts/ServiceContext';
 
 const statusClass = { unpaid: 'unpaid', paid: 'paid', shipped: 'shipped', received: 'received', closed: 'closed' };
@@ -7,6 +7,7 @@ const statusClass = { unpaid: 'unpaid', paid: 'paid', shipped: 'shipped', receiv
 const OrderDetailPage = () => {
   const { orderId } = useParams();
   const services = useContext(ServiceContext);
+  const navigate = useNavigate();
   const [order, setOrder] = useState(null);
   const [logistics, setLogistics] = useState(null);
 
@@ -24,6 +25,12 @@ const OrderDetailPage = () => {
   const receive = async () => {
     if (!window.confirm('确认已收到商品？')) return;
     await services.order.receiveOrder(order.id);
+    loadOrder();
+  };
+
+  const cancelOrder = async () => {
+    if (!window.confirm('确定取消该订单吗？取消后不可恢复')) return;
+    await services.order.closeOrder(order.id);
     loadOrder();
   };
 
@@ -77,7 +84,15 @@ const OrderDetailPage = () => {
 
       <div className="checkout-bar">
         <strong style={{ fontSize: 18 }}>订单金额 <span className="price">￥{order.price}</span></strong>
-        {order.status === 'shipped' && <button className="button" onClick={receive}>确认收货</button>}
+        <div style={{ display: 'flex', gap: 10 }}>
+          {order.status === 'unpaid' && (
+            <>
+              <button className="button ghost" onClick={cancelOrder}>取消订单</button>
+              <button className="button" onClick={() => navigate(`/pay/${order.id}`)}>去支付</button>
+            </>
+          )}
+          {order.status === 'shipped' && <button className="button" onClick={receive}>确认收货</button>}
+        </div>
       </div>
     </section>
   );

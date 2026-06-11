@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { ServiceContext } from '../contexts/ServiceContext';
 
 const statusClass = { unpaid: 'unpaid', paid: 'paid', shipped: 'shipped', received: 'received', closed: 'closed' };
@@ -14,6 +14,7 @@ const statusTabs = [
 
 const OrderListPage = () => {
   const services = useContext(ServiceContext);
+  const navigate = useNavigate();
   const user = services.user.getCurrentUser();
   const [orders, setOrders] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -37,6 +38,20 @@ const OrderListPage = () => {
       </div>
     </section>
   );
+
+  const cancelOrder = async (e, order) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!window.confirm('确定取消该订单吗？取消后不可恢复')) return;
+    await services.order.closeOrder(order.id);
+    services.order.getOrdersByUser(user.id).then(setOrders);
+  };
+
+  const goPay = (e, orderId) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigate(`/pay/${orderId}`);
+  };
 
   return (
     <section className="section animate-fade-rise">
@@ -72,7 +87,15 @@ const OrderListPage = () => {
             <Link className="order-row-enhanced" key={order.id} to={`/orderDetail/${order.id}`}>
               <div className="order-row-top">
                 <span style={{ color: 'var(--on-surface-variant)', fontSize: 14 }}>订单号：{order.orderNo}</span>
-                <span className={`status-badge ${statusClass[order.status] || ''}`}>{order.statusText}</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <span className={`status-badge ${statusClass[order.status] || ''}`}>{order.statusText}</span>
+                  {order.status === 'unpaid' && (
+                    <>
+                      <button className="text-button danger" style={{ fontSize: 13 }} onClick={(e) => cancelOrder(e, order)}>取消</button>
+                      <button className="text-button" style={{ fontSize: 13 }} onClick={(e) => goPay(e, order.id)}>去支付</button>
+                    </>
+                  )}
+                </div>
               </div>
               <div className="order-row-bottom">
                 <div className="order-row-items">

@@ -515,7 +515,7 @@ body {
 
 .cart-item {
   display: grid;
-  grid-template-columns: auto 84px 1fr auto;
+  grid-template-columns: auto 84px 1fr auto auto;
   align-items: center;
   gap: 14px;
   padding: 12px;
@@ -726,7 +726,7 @@ body {
   }
 
   .cart-item {
-    grid-template-columns: auto 60px 1fr auto;
+    grid-template-columns: auto 60px 1fr auto auto;
     gap: 8px;
   }
 
@@ -1031,7 +1031,7 @@ body {
   border: 2px solid var(--surface);
 }
 
-.timeline-node:first-child::before {
+.timeline-node:last-child::before {
   background: var(--primary);
   box-shadow: 0 0 0 3px rgba(45, 111, 105, 0.2);
 }

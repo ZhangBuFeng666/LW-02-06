@@ -247,6 +247,244 @@
   "cart": [],
   "orders": [
     {
+      "id": 14,
+      "userId": 1,
+      "orderNo": "1781175467481",
+      "items": [
+        {
+          "goodId": 2,
+          "count": 3,
+          "price": 399,
+          "name": "无线降噪耳机",
+          "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          "goodId": 10,
+          "count": 2,
+          "price": 29,
+          "name": "USB-C 快充数据线",
+          "img": "https://plus.unsplash.com/premium_photo-1759820276359-42e5785ffc8d?q=80&w=2064&auto=format&fit=crop"
+        },
+        {
+          "goodId": 9,
+          "count": 3,
+          "price": 129,
+          "name": "10000mAh 快充充电宝",
+          "img": "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=600&q=75"
+        }
+      ],
+      "price": 1642,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "paid",
+      "createTime": "2026/6/11 18:57:47",
+      "payTime": "2026/6/11 18:57:56",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/11 18:57:47",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/11 18:57:56",
+          "text": "订单已支付，等待商家发货"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "userId": 1,
+      "orderNo": "1781174587100",
+      "items": [
+        {
+          "goodId": 15,
+          "count": 1,
+          "price": 79,
+          "name": "黑巧克力礼盒",
+          "img": "https://images.unsplash.com/photo-1654245384480-368638d6df9d?q=80&w=1740&auto=format&fit=crop"
+        }
+      ],
+      "price": 79,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "unpaid",
+      "createTime": "2026/6/11 18:43:07",
+      "payTime": "",
+      "shipTime": "",
+      "logistics": "待支付，暂无物流信息",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/11 18:43:07",
+          "text": "订单已创建"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "userId": 1,
+      "orderNo": "1781174415739",
+      "items": [
+        {
+          "goodId": 8,
+          "count": 3,
+          "price": 39,
+          "name": "轻薄手机壳",
+          "img": "https://images.unsplash.com/photo-1535157412991-2ef801c1748b?q=80&w=1160&auto=format&fit=crop"
+        }
+      ],
+      "price": 117,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "paid",
+      "createTime": "2026/6/11 18:40:15",
+      "payTime": "2026/6/11 18:41:51",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/11 18:40:15",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/11 18:41:51",
+          "text": "订单已支付，等待商家发货"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "orderNo": "1781174344508",
+      "items": [
+        {
+          "goodId": 5,
+          "count": 1,
+          "price": 459,
+          "name": "城市慢跑鞋",
+          "img": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      "price": 459,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "closed",
+      "createTime": "2026/6/11 18:39:04",
+      "payTime": "",
+      "shipTime": "",
+      "logistics": "订单已关闭",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/11 18:39:04",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/11 18:39:19",
+          "text": "订单已关闭"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "orderNo": "1781174325220",
+      "items": [
+        {
+          "goodId": 1,
+          "count": 1,
+          "price": 2999,
+          "name": "星河 Pro 手机",
+          "img": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      "price": 2999,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "closed",
+      "createTime": "2026/6/11 18:38:45",
+      "payTime": "",
+      "shipTime": "",
+      "logistics": "订单已关闭",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/11 18:38:45",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/11 18:38:49",
+          "text": "订单已关闭"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "orderNo": "1781174137897",
+      "items": [
+        {
+          "goodId": 2,
+          "count": 3,
+          "price": 399,
+          "name": "无线降噪耳机",
+          "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      "price": 1197,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "closed",
+      "createTime": "2026/6/11 18:35:37",
+      "payTime": "",
+      "shipTime": "",
+      "logistics": "订单已关闭",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/11 18:35:37",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/11 18:36:59",
+          "text": "订单已关闭"
+        }
+      ]
+    },
+    {
       "id": 8,
       "userId": 1,
       "orderNo": "1781114820096",
@@ -534,11 +772,11 @@
       ],
       "price": 2999,
       "address": "北京市海淀区北京交通大学",
-      "status": "shipped",
+      "status": "received",
       "createTime": "6/8/2026, 7:46:24 PM",
       "payTime": "6/8/2026, 7:46:26 PM",
       "shipTime": "6/8/2026, 8:31:17 PM",
-      "logistics": "包裹已从仓库发出",
+      "logistics": "用户已确认收货",
       "logisticsTraces": [
         {
           "time": "6/8/2026, 7:46:24 PM",
@@ -555,6 +793,10 @@
         {
           "time": "6/8/2026, 8:31:18 PM",
           "text": "快件正在运输途中"
+        },
+        {
+          "time": "2026/6/11 18:58:17",
+          "text": "用户已确认收货"
         }
       ],
       "logisticsCompany": "校园优选快递",
