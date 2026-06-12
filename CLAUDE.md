@@ -1,5 +1,0 @@
-# Project Guidelines
-
-## Skills
-
-- [frontend-skill](.claude/skills/frontend-skill/SKILL.md): Use when the task asks for a visually strong landing page, website, app, prototype, demo, or game UI. This skill enforces restrained composition, image-led hierarchy, cohesive content structure, and tasteful motion while avoiding generic cards, weak branding, and UI clutter.
