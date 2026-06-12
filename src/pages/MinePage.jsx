@@ -1,19 +1,20 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ServiceContext } from '../contexts/ServiceContext';
+import { BoxIcon, CartIcon, CheckIcon, HeartIcon, ListIcon, PinIcon, TruckIcon, UserIcon, WalletIcon } from '../components/icons';
 
 const orderTabs = [
-  { key: 'all', label: '全部订单', icon: '📋' },
-  { key: 'unpaid', label: '待付款', icon: '💳' },
-  { key: 'paid', label: '待发货', icon: '📦' },
-  { key: 'shipped', label: '待收货', icon: '🚚' },
-  { key: 'received', label: '已完成', icon: '✅' },
+  { key: 'all', label: '全部订单', Icon: ListIcon },
+  { key: 'unpaid', label: '待付款', Icon: WalletIcon },
+  { key: 'paid', label: '待发货', Icon: BoxIcon },
+  { key: 'shipped', label: '待收货', Icon: TruckIcon },
+  { key: 'received', label: '已完成', Icon: CheckIcon },
 ];
 
 const quickLinks = [
-  { to: '/cart', icon: '🛒', label: '购物车' },
-  { to: '/favorites', icon: '❤️', label: '我的收藏' },
-  { to: '/addresses', icon: '📍', label: '收货地址' },
+  { to: '/cart', Icon: CartIcon, label: '购物车' },
+  { to: '/favorites', Icon: HeartIcon, label: '我的收藏' },
+  { to: '/addresses', Icon: PinIcon, label: '收货地址' },
 ];
 
 const MinePage = () => {
@@ -21,19 +22,19 @@ const MinePage = () => {
   const navigate = useNavigate();
   const user = services.user.getCurrentUser();
   const [orders, setOrders] = useState([]);
-  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     if (user) {
       services.order.getOrdersByUser(user.id).then(setOrders);
-      services.favorite.getFavorites(user.id).then(setFavorites);
     }
   }, []);
 
   if (!user) return (
     <section className="empty-state animate-fade-rise">
       <div style={{ textAlign: 'center' }}>
-        <p style={{ fontSize: 48, margin: '0 0 12px' }}>👤</p>
+        <p style={{ display: 'flex', justifyContent: 'center', margin: '0 0 12px', color: 'var(--on-surface-variant)' }}>
+          <UserIcon width={48} height={48} strokeWidth={1.4} />
+        </p>
         <p style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>请先登录</p>
         <p style={{ color: 'var(--on-surface-variant)', marginBottom: 16 }}>登录后查看订单、收藏和地址</p>
         <Link to="/login" className="primary-link">去登录</Link>
@@ -85,7 +86,7 @@ const MinePage = () => {
       <div className="mine-order-tabs">
         {orderTabs.map((tab) => (
           <Link className="mine-tab" to={tab.key === 'all' ? '/orderList' : `/orderList?status=${tab.key}`} key={tab.key}>
-            <span className="mine-tab-icon">{tab.icon}</span>
+            <span className="mine-tab-icon"><tab.Icon /></span>
             <span className="mine-tab-label">{tab.label}</span>
             {tab.key !== 'all' && countByStatus(tab.key) > 0 && (
               <span className="mine-tab-badge">{countByStatus(tab.key)}</span>
@@ -98,7 +99,7 @@ const MinePage = () => {
       <div className="mine-quick-links">
         {quickLinks.map((link) => (
           <Link className="mine-quick-item" to={link.to} key={link.to}>
-            <span className="mine-quick-icon">{link.icon}</span>
+            <span className="mine-quick-icon"><link.Icon /></span>
             <span>{link.label}</span>
           </Link>
         ))}

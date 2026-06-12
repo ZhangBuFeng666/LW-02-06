@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ServiceContext } from '../contexts/ServiceContext';
+import { CartIcon } from '../components/icons';
 
 const CartPage = () => {
   const services = useContext(ServiceContext);
@@ -21,7 +22,9 @@ const CartPage = () => {
   if (cart.length === 0) return (
     <section className="empty-state animate-fade-rise">
       <div style={{ textAlign: 'center' }}>
-        <p style={{ fontSize: 48, margin: '0 0 12px' }}>🛒</p>
+        <p style={{ display: 'flex', justifyContent: 'center', margin: '0 0 12px', color: 'var(--on-surface-variant)' }}>
+          <CartIcon width={48} height={48} strokeWidth={1.4} />
+        </p>
         <p style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>购物车是空的</p>
         <p style={{ color: 'var(--on-surface-variant)', marginBottom: 16 }}>去发现心仪的商品吧</p>
         <Link to="/home" className="primary-link">去逛逛</Link>

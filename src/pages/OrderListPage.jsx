@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { ServiceContext } from '../contexts/ServiceContext';
+import { BoxIcon } from '../components/icons';
 
 const statusClass = { unpaid: 'unpaid', paid: 'paid', shipped: 'shipped', received: 'received', closed: 'closed' };
 
@@ -31,7 +32,9 @@ const OrderListPage = () => {
   if (orders.length === 0) return (
     <section className="empty-state animate-fade-rise">
       <div style={{ textAlign: 'center' }}>
-        <p style={{ fontSize: 48, margin: '0 0 12px' }}>📦</p>
+        <p style={{ display: 'flex', justifyContent: 'center', margin: '0 0 12px', color: 'var(--on-surface-variant)' }}>
+          <BoxIcon width={48} height={48} strokeWidth={1.4} />
+        </p>
         <p style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>暂无订单</p>
         <p style={{ color: 'var(--on-surface-variant)', marginBottom: 16 }}>快去选购心仪的商品吧</p>
         <Link to="/home" className="primary-link">去逛逛</Link>

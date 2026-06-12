@@ -689,6 +689,82 @@
   ],
   "orders": [
     {
+      "id": 7,
+      "userId": 1,
+      "orderNo": "1781250837243",
+      "items": [
+        {
+          "goodId": 31,
+          "count": 1,
+          "price": 39.9,
+          "name": "九三智当嘉 亚麻籽油",
+          "img": "https://img.alicdn.com/bao/uploaded/i2/3564297561/O1CN015dp0Le25iznL88esL_!!4611686018427387225-2-item_pic.png_460x460q90.jpg"
+        }
+      ],
+      "price": 39.9,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "paid",
+      "createTime": "2026/6/12 15:53:57",
+      "payTime": "2026/6/12 15:54:01",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/12 15:53:57",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/12 15:54:01",
+          "text": "订单已支付，等待商家发货"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "orderNo": "1781232817841",
+      "items": [
+        {
+          "goodId": 1,
+          "count": 1,
+          "price": 1899,
+          "name": "Apple AirPods Pro 3 主动降噪耳机",
+          "img": "https://img.alicdn.com/bao/uploaded/i1/2216489641286/O1CN01wd0Bt41LN2RsBjk0B_!!2216489641286.jpg_460x460q90.jpg"
+        }
+      ],
+      "price": 1899,
+      "addressId": 1,
+      "address": "北京市海淀区北京交通大学",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "paid",
+      "createTime": "2026/6/12 10:53:37",
+      "payTime": "2026/6/12 10:53:40",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
+      "logisticsTraces": [
+        {
+          "time": "2026/6/12 10:53:37",
+          "text": "订单已创建"
+        },
+        {
+          "time": "2026/6/12 10:53:40",
+          "text": "订单已支付，等待商家发货"
+        }
+      ]
+    },
+    {
       "id": 5,
       "userId": 1,
       "orderNo": "1781120873314",
@@ -892,19 +968,19 @@
   "categories": [
     {
       "id": "phone",
-      "name": "手机数码"
+      "name": "数码"
     },
     {
       "id": "life",
-      "name": "生活百货"
+      "name": "居家"
     },
     {
       "id": "food",
-      "name": "休闲食品"
+      "name": "零食"
     },
     {
       "id": "sport",
-      "name": "运动户外"
+      "name": "运动"
     }
   ],
   "admins": [
