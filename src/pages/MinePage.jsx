@@ -32,8 +32,8 @@ const MinePage = () => {
   if (!user) return (
     <section className="empty-state animate-fade-rise">
       <div style={{ textAlign: 'center' }}>
-        <p style={{ display: 'flex', justifyContent: 'center', margin: '0 0 12px', color: 'var(--on-surface-variant)' }}>
-          <UserIcon width={48} height={48} strokeWidth={1.4} />
+        <p style={{ display: 'flex', justifyContent: 'center', margin: '0 0 24px', color: 'var(--on-surface-variant)' }}>
+          <UserIcon width={80} height={80} strokeWidth={1.4} />
         </p>
         <p style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>请先登录</p>
         <p style={{ color: 'var(--on-surface-variant)', marginBottom: 16 }}>登录后查看订单、收藏和地址</p>
@@ -59,27 +59,7 @@ const MinePage = () => {
           <h1>{user.nickname}</h1>
           <p>用户名：{user.username}</p>
         </div>
-        <button className="text-button danger" onClick={logout} style={{ marginLeft: 'auto' }}>退出登录</button>
-      </div>
-
-      {/* 订单统计 */}
-      <div className="mine-stats">
-        <div className="mine-stat-item" onClick={() => navigate('/orderList')}>
-          <strong>{orders.length}</strong>
-          <span>全部订单</span>
-        </div>
-        <div className="mine-stat-item" onClick={() => navigate('/orderList?status=unpaid')}>
-          <strong>{countByStatus('unpaid')}</strong>
-          <span>待付款</span>
-        </div>
-        <div className="mine-stat-item" onClick={() => navigate('/orderList?status=paid')}>
-          <strong>{countByStatus('paid')}</strong>
-          <span>待发货</span>
-        </div>
-        <div className="mine-stat-item" onClick={() => navigate('/orderList?status=shipped')}>
-          <strong>{countByStatus('shipped')}</strong>
-          <span>待收货</span>
-        </div>
+        <button className="mine-logout-btn" onClick={logout}>退出登录</button>
       </div>
 
       {/* 订单状态快捷入口 */}
@@ -95,12 +75,17 @@ const MinePage = () => {
         ))}
       </div>
 
-      {/* 快捷功能 */}
-      <div className="mine-quick-links">
+      {/* 快捷功能列表 */}
+      <div className="mine-menu-list">
         {quickLinks.map((link) => (
-          <Link className="mine-quick-item" to={link.to} key={link.to}>
-            <span className="mine-quick-icon"><link.Icon /></span>
-            <span>{link.label}</span>
+          <Link className="mine-menu-item" to={link.to} key={link.to}>
+            <span className="mine-menu-icon"><link.Icon /></span>
+            <span className="mine-menu-label">{link.label}</span>
+            <span className="mine-menu-arrow">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </span>
           </Link>
         ))}
       </div>

@@ -21,8 +21,8 @@ const FavoritePage = () => {
   if (favorites.length === 0) return (
     <section className="empty-state animate-fade-rise">
       <div style={{ textAlign: 'center' }}>
-        <p style={{ display: 'flex', justifyContent: 'center', margin: '0 0 12px', color: 'var(--on-surface-variant)' }}>
-          <HeartIcon width={48} height={48} strokeWidth={1.4} />
+        <p style={{ display: 'flex', justifyContent: 'center', margin: '0 0 24px', color: 'var(--on-surface-variant)' }}>
+          <HeartIcon width={80} height={80} strokeWidth={1.4} />
         </p>
         <p style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>收藏夹是空的</p>
         <p style={{ color: 'var(--on-surface-variant)', marginBottom: 16 }}>去发现心仪的商品，点击收藏</p>

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ServiceContext } from '../contexts/ServiceContext';
 import { CartIcon } from '../components/icons';
+import { optimizeImageUrl } from '../utils/imageUtil';
 
 const CartPage = () => {
   const services = useContext(ServiceContext);
@@ -22,8 +23,8 @@ const CartPage = () => {
   if (cart.length === 0) return (
     <section className="empty-state animate-fade-rise">
       <div style={{ textAlign: 'center' }}>
-        <p style={{ display: 'flex', justifyContent: 'center', margin: '0 0 12px', color: 'var(--on-surface-variant)' }}>
-          <CartIcon width={48} height={48} strokeWidth={1.4} />
+        <p style={{ display: 'flex', justifyContent: 'center', margin: '0 0 24px', color: 'var(--on-surface-variant)' }}>
+          <CartIcon width={80} height={80} strokeWidth={1.4} />
         </p>
         <p style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>购物车是空的</p>
         <p style={{ color: 'var(--on-surface-variant)', marginBottom: 16 }}>去发现心仪的商品吧</p>
@@ -66,7 +67,7 @@ const CartPage = () => {
         {cart.map((item) => (
           <div className="cart-item" key={item.id}>
             <input type="checkbox" checked={item.selected} onChange={async () => { await services.cart.updateItem(item.id, { selected: !item.selected }); loadCart(); }} />
-            <img src={item.good.img} alt={item.good.name} className="img-hover-zoom" style={{ borderRadius: 6 }} />
+            <img src={optimizeImageUrl(item.good.img, 200)} alt={item.good.name} className="img-hover-zoom" style={{ borderRadius: 6 }} loading="lazy" />
             <div>
               <Link to={`/detail/${item.good.id}`}>{item.good.name}</Link>
               <p className="price" style={{ fontSize: 16, marginTop: 4 }}>￥{item.good.price}</p>

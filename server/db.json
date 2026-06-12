@@ -11,52 +11,24 @@
       "isDefault": true
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": 1,
+      "userId": 1,
+      "goodId": 31,
+      "count": 1,
+      "selected": true
+    }
+  ],
   "reviews": [
-    {
-      "id": 6,
-      "userId": 1,
-      "goodId": 4,
-      "nickname": "商城用户",
-      "rating": 4,
-      "content": "4",
-      "createTime": "2026/6/11 00:41:43"
-    },
-    {
-      "id": 5,
-      "userId": 1,
-      "goodId": 4,
-      "nickname": "商城用户",
-      "rating": 1,
-      "content": "1",
-      "createTime": "2026/6/11 00:41:38"
-    },
-    {
-      "id": 4,
-      "userId": 1,
-      "goodId": 2,
-      "nickname": "商城用户",
-      "rating": 4,
-      "content": "一般般",
-      "createTime": "2026/6/10 21:21:39"
-    },
     {
       "id": 3,
       "userId": 1,
-      "goodId": 2,
+      "goodId": 46,
       "nickname": "商城用户",
       "rating": 5,
-      "content": "一般般",
-      "createTime": "2026/6/10 21:21:32"
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "goodId": 15,
-      "nickname": "商城用户",
-      "rating": 5,
-      "content": "123",
-      "createTime": "2026/6/10 01:18:14"
+      "content": "111",
+      "createTime": "2026/6/12 21:58:55"
     },
     {
       "id": 1,
@@ -64,8 +36,17 @@
       "goodId": 1,
       "nickname": "商城用户",
       "rating": 5,
-      "content": "屏幕很清楚，续航也够用，日常学习和拍照都很方便。",
-      "createTime": "2026/6/8 20:00:00"
+      "content": "设计精美，音质表现极佳，智能降噪非常实用！",
+      "createTime": "2026/6/12 21:00:00"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "goodId": 16,
+      "nickname": "商城用户",
+      "rating": 5,
+      "content": "坐感非常舒适，回弹性特别好，宜家的品质一如既往！",
+      "createTime": "2026/6/12 21:05:00"
     }
   ],
   "users": [
@@ -75,894 +56,663 @@
       "id": 1,
       "phone": "13800000000",
       "password": "123456"
+    },
+    {
+      "id": 2,
+      "username": "weizi",
+      "password": "weizi123",
+      "nickname": "微子",
+      "phone": ""
     }
   ],
   "goods": [
     {
-      "stock": 857,
+      "stock": 100,
       "id": 1,
-      "name": "Apple AirPods Pro 3 主动降噪耳机",
+      "name": "Samsung Galaxy S24 Ultra",
       "categoryId": "phone",
-      "price": 1899,
+      "price": 9699,
       "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i1/2216489641286/O1CN01wd0Bt41LN2RsBjk0B_!!2216489641286.jpg_460x460q90.jpg",
-      "desc": "Apple/苹果 AirPods Pro 3 无线蓝牙耳机 入耳式 主动降噪 2025款"
+      "img": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80",
+      "desc": "三星旗舰智能手机，钛金属边框，内置 S Pen，超视觉夜拍系统"
     },
     {
-      "stock": 495,
+      "stock": 115,
       "id": 2,
-      "name": "美团单车 畅骑卡",
-      "categoryId": "sport",
-      "price": 8.5,
+      "name": "Samsung Galaxy Watch Ultra",
+      "categoryId": "phone",
+      "price": 4999,
       "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2208169446941/O1CN01GUcG732192DKMdIgz_!!4611686018427383325-0-item_pic.jpg_460x460q90.jpg",
-      "desc": "美团单车 7天/30天/90天畅骑卡 手机号下单 美团骑行卡共享单车"
+      "img": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=600&q=80",
+      "desc": "专为户外冒险设计的智能手表，双频 GPS，超长续航与坚固钛金属表壳"
     },
     {
-      "stock": 39,
+      "stock": 130,
       "id": 3,
-      "name": "静音便携小风扇",
+      "name": "Samsung Galaxy Buds 3 Pro",
       "categoryId": "phone",
-      "price": 20.01,
+      "price": 1499,
       "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/2211822490664/O1CN019WMARz1GmA8LsCLiP_!!2211822490664.jpg_460x460q90.jpg",
-      "desc": "静音便携 学生宿舍 床上挂小风扇 儿童bb车 宝宝推车 充电夹子 迷你风扇"
-    },
-    {
-      "stock": 791,
-      "id": 4,
-      "name": "飞毛腿 20w 手机充电套装",
-      "categoryId": "phone",
-      "price": 69.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i1/2215824413675/O1CN01stGFam1d1CgGiD2aI_!!4611686018427384811-2-item_pic.png_460x460q90.jpg",
-      "desc": "【芭芭农场】飞毛腿 20w 手机充电套装"
+      "img": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80",
+      "desc": "高保真无线降噪耳机，全新设计，智能自适应降噪"
     },
     {
       "stock": 145,
+      "id": 4,
+      "name": "Samsung 官方炫彩数字壁纸",
+      "categoryId": "phone",
+      "price": 329,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+      "desc": "三星官方定制艺术壁纸，炫彩渐变，完美适配 AMOLED 屏幕"
+    },
+    {
+      "stock": 160,
       "id": 5,
-      "name": "飞毛腿 快充充电宝",
+      "name": "Mac 极简桌面工作站显示器",
       "categoryId": "phone",
-      "price": 89.9,
+      "price": 3999,
       "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/2215824413675/O1CN01qCPeGj1d1CgGyp4Yq_!!4611686018427384811-2-item_pic.png_460x460q90.jpg",
-      "desc": "【芭芭农场】飞毛腿 快充充电宝 1个 款式随机"
+      "img": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=600&q=80",
+      "desc": "极简白哑光底座，大视界多窗口排版，专为桌面美学与创作设计"
     },
     {
-      "stock": 207,
+      "stock": 175,
       "id": 6,
-      "name": "三角蚊香架 防火防烫",
-      "categoryId": "life",
-      "price": 3.69,
+      "name": "Samsung 极速智能办公本 (炫银款)",
+      "categoryId": "phone",
+      "price": 11999,
       "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2218417660275/O1CN01Rd9HmH1Du03JFJDBV~crop,0,173,790,790~_!!2218417660275.jpg_460x460q90.jpg",
-      "desc": "三角蚊香架 防火防烫 蚊香盘 熏香托 蚊香炉 盘香支架 接灰盘 隔热"
+      "img": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80",
+      "desc": "超薄旗舰机身，高清防眩光屏，强劲多任务处理能力，商务办公首选"
     },
     {
-      "stock": 849,
+      "stock": 190,
       "id": 7,
-      "name": "南孚 5号 7号 电池",
+      "name": "Samsung Galaxy Tab S9 Ultra",
       "categoryId": "phone",
-      "price": 12.9,
+      "price": 8999,
       "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2222249112761/O1CN0128ap2z1WGagHHTUxK_!!2222249112761.jpg_460x460q90.jpg",
-      "desc": "适用于正品南孚 5号7号电池 玩具鼠标 电视空调遥控电池"
+      "img": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=600&q=80",
+      "desc": "14.6英寸超大屏防水平板电脑，配备第二代 S Pen，极致影音中心"
     },
     {
-      "stock": 964,
+      "stock": 205,
       "id": 8,
-      "name": "多功能插座插排",
+      "name": "Samsung 极简程序员多屏工位系统",
       "categoryId": "phone",
-      "price": 49.9,
+      "price": 399,
       "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/2219721338365/O1CN01xtplMV2BfE9F8Fqwj_!!4611686018427383293-0-item_pic.jpg_460x460q90.jpg",
-      "desc": "多功能插座插排 家用多孔排插 接线板 插线板 一转多转换器排插"
+      "img": "https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?auto=format&fit=crop&w=600&q=80",
+      "desc": "包含人体工学升降架及多屏联屏体验，专为高效开发与极客设计"
     },
     {
-      "stock": 968,
+      "stock": 220,
       "id": 9,
-      "name": "新款透明无线蓝牙耳机",
+      "name": "Samsung 智能机械键盘",
       "categoryId": "phone",
-      "price": 15.9,
+      "price": 699,
       "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2219338214922/O1CN01mXCBIH1mEKYcRzID0_!!2219338214922.jpg_460x460q90.jpg",
-      "desc": "新款透明无线蓝牙耳机 入耳式降噪 高音质 高颜值 数显 电竞主动降噪"
+      "img": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80",
+      "desc": "多设备蓝牙连接机械键盘，紧凑版面，专为高效办公与创作设计"
     },
     {
-      "stock": 226,
+      "stock": 235,
       "id": 10,
-      "name": "高压除尘气罐 电脑键盘清洁",
-      "categoryId": "life",
-      "price": 89.9,
+      "name": "Samsung Level Over 头戴式耳机",
+      "categoryId": "phone",
+      "price": 1999,
       "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/2222388016556/O1CN01qJtwfE1yIhkbtvpvq_!!2222388016556.png_460x460q90.jpg",
-      "desc": "高压除尘剂 免拆洗除尘气罐 强力喷气体 电脑键盘机箱电器"
+      "img": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=600&q=80",
+      "desc": "头戴式主动降噪蓝牙耳机，50mm 驱动单元，高解析度音频表现"
     },
     {
-      "stock": 226,
+      "stock": 250,
       "id": 11,
-      "name": "指纹充电打火机 十二生肖",
-      "categoryId": "life",
-      "price": 10.35,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2219352564236/O1CN01GtzV8w1hA8rqwbiDO_!!2219352564236.jpg_460x460q90.jpg",
-      "desc": "十二生肖指纹充电打火机超薄防风无声创意高档刻字个性男士送男友"
-    },
-    {
-      "stock": 507,
-      "id": 12,
-      "name": "杯盖刷 键盘缝隙清洁刷",
-      "categoryId": "life",
-      "price": 19.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2219528847394/O1CN01uf9v4Y24UVe1axGiE_!!2219528847394.jpg_460x460q90.jpg",
-      "desc": "杯盖刷键盘缝隙刷子卷曲杯盖刷气垫梳子清洁刷瓶盖凹槽缝隙多用刷"
-    },
-    {
-      "stock": 749,
-      "id": 13,
-      "name": "高速3.0 大容量手机U盘",
+      "name": "Samsung 极简商务签字笔",
       "categoryId": "phone",
-      "price": 58.8,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/4187349764/O1CN01NRAylt2LzyJGJc9c1_!!4187349764.jpg_460x460q90.jpg",
-      "desc": "正品高速3.0大容量512g手机u盘typec双接口128gb电脑两用256G刻字"
-    },
-    {
-      "stock": 658,
-      "id": 14,
-      "name": "七彩无线蓝牙小音箱",
-      "categoryId": "phone",
-      "price": 12.91,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2219352564236/O1CN01hjofVg1hA8rUiNBwZ_!!2219352564236.jpg_460x460q90.jpg",
-      "desc": "七彩无线蓝牙小音箱家用桌面低音炮小钢炮音箱户外手提便携式音响"
-    },
-    {
-      "stock": 442,
-      "id": 15,
-      "name": "可调节手机挂绳 斜挎便携",
-      "categoryId": "phone",
-      "price": 45.4,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/2219589482033/O1CN01vzrlji1QtAL6MlWTO_!!2219589482033.jpg_460x460q90.jpg",
-      "desc": "多功能可调节手机挂绳斜挎可背便携尼龙长绳挂脖个性编织挂绳防丢"
-    },
-    {
-      "stock": 547,
-      "id": 16,
-      "name": "蚊香桶 蚊香收纳盒",
-      "categoryId": "life",
-      "price": 6.36,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/2220005877660/O1CN01tHvWvE26SL0QkNFu3_!!2220005877660.jpg_460x460q90.jpg",
-      "desc": "手提带盖蚊香桶蚊香盘家用蚊香托盘架接灰盘防烫炉蚊香收纳盒"
-    },
-    {
-      "stock": 610,
-      "id": 17,
-      "name": "婴儿湿巾 巨无霸湿巾",
-      "categoryId": "life",
-      "price": 4.1,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/2219807360298/O1CN01WZJz211E4X8thmzhq_!!2219807360298.png_460x460q90.jpg",
-      "desc": "豆妈C湿巾婴儿孕妇家庭装宝宝湿纸巾巨无霸湿巾"
-    },
-    {
-      "stock": 388,
-      "id": 18,
-      "name": "小黄鸭婴儿湿巾 加厚带盖",
-      "categoryId": "life",
-      "price": 2.69,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2219128273412/O1CN01vSdNsI1b4kUA32FnA_!!2219128273412.jpg_460x460q90.jpg",
-      "desc": "小黄鸭湿巾婴幼儿手口婴儿专用宝宝加厚实惠带盖湿纸巾户外毛巾"
-    },
-    {
-      "stock": 945,
-      "id": 19,
-      "name": "心相印湿厕纸 大耳狗",
-      "categoryId": "life",
-      "price": 25.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i1/2215488969603/O1CN015w91512KoEX2kExsC_!!2215488969603.jpg_460x460q90.jpg",
-      "desc": "心相印湿厕纸大耳狗纯水家用擦屁股清洁带盖大包80抽湿巾可冲厕所"
-    },
-    {
-      "stock": 191,
-      "id": 20,
-      "name": "心相印抽纸 经典100抽",
-      "categoryId": "life",
-      "price": 99,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2209241439961/O1CN01bFFUBc2NSCJcSQFDA_!!2209241439961.jpg_460x460q90.jpg",
-      "desc": "心相印抽纸经典100抽大包纸家用餐巾纸一次性抽取式面巾抽纸"
-    },
-    {
-      "stock": 578,
-      "id": 21,
-      "name": "原木抽纸 加厚4层",
-      "categoryId": "life",
-      "price": 3.02,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/2218415609119/O1CN01TSoBDn2HEYrLdq6xs_!!2218415609119.jpg_460x460q90.jpg",
-      "desc": "整箱原木擦手纸面巾纸卫生纸宿舍餐巾纸纸巾加厚加大4层抽纸"
-    },
-    {
-      "stock": 184,
-      "id": 22,
-      "name": "陶瓷斗笠碗 2个装",
-      "categoryId": "life",
-      "price": 19.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2221322852816/O1CN01Ru0BwO1WfmSdx8QlD_!!2221322852816.png_460x460q90.jpg",
-      "desc": "【芭芭农场】芭芭农场PINGU陶瓷斗笠碗2个装-款式随机"
-    },
-    {
-      "stock": 540,
-      "id": 23,
-      "name": "三合一内衣收纳包",
-      "categoryId": "life",
-      "price": 69.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2217811417076/O1CN015LedcG228rhOnLCDw_!!2217811417076.jpg_460x460q90.jpg",
-      "desc": "三合一内衣收纳包旅行便携内裤袜子收纳袋旅游装贴身衣物专用神器"
-    },
-    {
-      "stock": 847,
-      "id": 24,
-      "name": "杀蟑螂贴 灭除小强",
-      "categoryId": "life",
-      "price": 5,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i1/2213130328980/O1CN01adCYJr2GCtnzeESVI~crop,0,36,750,750~_!!2213130328980.jpg_460x460q90.jpg",
-      "desc": "杀蟑螂贴家用环保方便快捷厨房正品非无毒屋胶饵剂强力灭除小强"
-    },
-    {
-      "stock": 116,
-      "id": 25,
-      "name": "大包原木抽纸 加厚加量",
-      "categoryId": "life",
-      "price": 3,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2218668951370/O1CN01Kag6fi1LzVhr7LPzw_!!2218668951370.jpg_460x460q90.jpg",
-      "desc": "【加厚加量】大包原木抽纸家用卫生纸可湿水擦手纸餐巾厨房纸巾"
-    },
-    {
-      "stock": 503,
-      "id": 26,
-      "name": "蜡笔小新联名 两碗一盘",
-      "categoryId": "life",
-      "price": 15.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2221438267079/O1CN016HzZxa22AEt1SLUUq_!!2221438267079.jpg_460x460q90.jpg",
-      "desc": "【芭芭农场】蜡笔小新联名款两碗一盘 款式随机发"
-    },
-    {
-      "stock": 787,
-      "id": 27,
-      "name": "可折叠旅行拖鞋",
-      "categoryId": "life",
-      "price": 7.67,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/2791865294/O1CN01aNGqzl1oyhu2r6erw_!!2791865294.jpg_460x460q90.jpg",
-      "desc": "可折叠旅行拖鞋女便携式软底旅游防滑沙滩男出差酒店可洗澡拖鞋"
-    },
-    {
-      "stock": 447,
-      "id": 28,
-      "name": "多功能削皮刀 带收纳仓",
-      "categoryId": "life",
-      "price": 4.5,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2217661379179/O1CN01MFLnEt2Hg2ZoVbDjo_!!2217661379179.jpg_460x460q90.jpg",
-      "desc": "多功能削皮刀可视储存厨房家用苹果芦笋梨自带收纳仓削皮器刮皮刀"
-    },
-    {
-      "stock": 273,
-      "id": 29,
-      "name": "护齿软毛牙刷",
-      "categoryId": "life",
-      "price": 5.72,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i1/2216371264144/O1CN0197FHc41gU0RBx1bIM_!!2216371264144.png_460x460q90.jpg",
-      "desc": "G2牙刷牙龈按摩护齿软毛牙刷深层清洁"
-    },
-    {
-      "stock": 242,
-      "id": 30,
-      "name": "小推车 多层收纳架",
-      "categoryId": "life",
-      "price": 21.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2218678007908/O1CN01Ujk5Kg28HvEKfRkFY_!!2218678007908.jpg_460x460q90.jpg",
-      "desc": "小推车落地卫生间多层厨房移动零食蔬菜卧室床头收纳储物架3"
-    },
-    {
-      "stock": 669,
-      "id": 31,
-      "name": "九三智当嘉 亚麻籽油",
-      "categoryId": "food",
-      "price": 39.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/3564297561/O1CN015dp0Le25iznL88esL_!!4611686018427387225-2-item_pic.png_460x460q90.jpg",
-      "desc": "【芭芭农场】九三智当嘉亚麻籽油400ml*2初萃冷榨"
-    },
-    {
-      "stock": 880,
-      "id": 32,
-      "name": "油性记号笔 大头笔",
-      "categoryId": "life",
-      "price": 3.35,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2219351326648/O1CN018uhxYK1yyqBG0QxXa_!!2219351326648.jpg_460x460q90.jpg",
-      "desc": "油性记号笔黑色大头笔防水不掉色速干粗笔大容量记号标记笔涂鸦"
-    },
-    {
-      "stock": 385,
-      "id": 33,
-      "name": "可口可乐无糖 500ml*5瓶",
-      "categoryId": "food",
-      "price": 12.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2214776714019/O1CN017WZfKo1fYkvHFpSp2_!!4611686018427384611-0-item_pic.jpg_460x460q90.jpg",
-      "desc": "可口可乐无糖可乐500ml*5瓶装0糖碳酸饮料汽水包邮CL"
-    },
-    {
-      "stock": 417,
-      "id": 34,
-      "name": "脉动 青柠味 维生素饮料",
-      "categoryId": "food",
-      "price": 29.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/1056032495/O1CN01f3bpqy1UIlKG4yQRW_!!1056032495.jpg_460x460q90.jpg",
-      "desc": "【芭芭农场】脉动600ml*4瓶青柠味维生素饮料"
-    },
-    {
-      "stock": 338,
-      "id": 35,
-      "name": "雀巢鹰唛炼乳 小包装",
-      "categoryId": "food",
-      "price": 50.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2215276399496/O1CN019L1KLD2K1EBeC60j9_!!4611686018427382664-0-item_pic.jpg_460x460q90.jpg",
-      "desc": "雀巢鹰唛炼乳小包装烘焙家用儿童炼奶原味低脂面包涂抹酱官方旗舰"
-    },
-    {
-      "stock": 852,
-      "id": 36,
-      "name": "蒙牛纯牛奶 250ml*18包",
-      "categoryId": "food",
-      "price": 59.4,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i1/1790973264/O1CN01m4kUsa1Zyxu8r91CX_!!4611686018427385168-0-item_pic.jpg_460x460q90.jpg",
-      "desc": "【百亿甄选】 蒙牛纯牛奶250ml*18包 醇浓营养 早餐搭配 包装随机"
-    },
-    {
-      "stock": 573,
-      "id": 37,
-      "name": "运动袜 透气吸汗",
-      "categoryId": "sport",
-      "price": 2.01,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2217519150726/O1CN01yQJBeT1HEYfv7KDfl_!!2217519150726.jpg_460x460q90.jpg",
-      "desc": "袜子男中筒透气吸汗防臭男生短筒可乐按摩底篮球运动春夏秋男士袜"
-    },
-    {
-      "stock": 134,
-      "id": 38,
-      "name": "松鲜鲜 松茸油醋汁",
-      "categoryId": "food",
-      "price": 99,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2212426193013/O1CN016YsHC41Y80Pd9pdgi_!!4611686018427385973-0-item_pic.jpg_460x460q90.jpg",
-      "desc": "【芭芭农场】松鲜鲜松茸油醋汁0脂肪日式风味蔬菜沙拉汁蘸料"
-    },
-    {
-      "stock": 589,
-      "id": 39,
-      "name": "AGF 日本进口黑咖啡粉",
-      "categoryId": "food",
-      "price": 59,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/6000000002108/O1CN01Ac7b641RRVxCpsNnG_!!6000000002108-0-tmgimage.jpg_460x460q90.jpg",
-      "desc": "agf日本进口咖啡美式黑咖啡无蔗糖速溶冻干咖啡粉80g/瓶"
-    },
-    {
-      "stock": 261,
-      "id": 40,
-      "name": "娃哈哈纯净水 5.5L*4桶",
-      "categoryId": "food",
-      "price": 39.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/1865856284/O1CN01uviC0b1wI81FwKayM_!!1865856284.png_460x460q90.jpg",
-      "desc": "娃哈哈纯净水5.5L*4桶装泡茶冲奶饮用非矿泉水"
-    },
-    {
-      "stock": 813,
-      "id": 41,
-      "name": "Nars 光透感定妆粉饼",
-      "categoryId": "life",
-      "price": 349,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/6000000002434/O1CN01KLzzQl1TqockXHlBk_!!6000000002434-0-at.jpg_460x460q90.jpg",
-      "desc": "Nars/娜斯光透感定妆大白饼控油持妆蜜粉饼提亮10g散粉定妆粉"
-    },
-    {
-      "stock": 152,
-      "id": 42,
-      "name": "可口可乐/雪碧/芬达 330ml",
-      "categoryId": "food",
-      "price": 70.35,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2215479643885/O1CN01KZBt2E1eZNnT0fNZW_!!2215479643885.jpg_460x460q90.jpg",
-      "desc": "可口可乐330ml*12/24罐经典原味胖罐装雪碧芬达碳酸饮料汽水"
-    },
-    {
-      "stock": 728,
-      "id": 43,
-      "name": "蒙牛纯牛奶 200ml*24盒",
-      "categoryId": "food",
-      "price": 79.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2215824413675/O1CN01yL5DLB1d1CdMrMPXY_!!4611686018427384811-2-item_pic.png_460x460q90.jpg",
-      "desc": "【芭芭农场兑换】蒙牛纯牛奶200ml*24盒优质乳蛋白生牛乳"
-    },
-    {
-      "stock": 93,
-      "id": 44,
-      "name": "三顿半 速溶黑咖啡粉 60颗",
-      "categoryId": "food",
       "price": 299,
       "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/45458966/O1CN01M2UXRo2G6UGZwaxGH_!!45458966.jpg_460x460q90.jpg",
-      "desc": "三顿半|快饮速溶咖啡拿铁美式超即溶冷萃无蔗糖冻干黑咖啡粉60颗"
+      "img": "https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=600&q=80",
+      "desc": "极简商务签字笔，书写流畅，金属笔夹，商务办公推荐"
     },
     {
-      "stock": 883,
-      "id": 45,
-      "name": "擦身体乳手套 涂防晒神器",
-      "categoryId": "life",
-      "price": 3.6,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2217053816333/O1CN01t2UcER1weZNdmF8hM_!!2217053816333.jpg_460x460q90.jpg",
-      "desc": "擦身体乳手套抹防晒素颜霜美黑油涂抹神器植绒防水手套懒人专用"
-    },
-    {
-      "stock": 832,
-      "id": 46,
-      "name": "直液式速干走珠笔 中性笔",
-      "categoryId": "life",
-      "price": 3.02,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i1/2218083458515/O1CN01SBcWf52Clvd3GPzgE_!!2218083458515.jpg_460x460q90.jpg",
-      "desc": "直液式速干走珠笔中性笔黑色碳素笔蓝色水性笔大容量签写字笔"
-    },
-    {
-      "stock": 31,
-      "id": 47,
-      "name": "户外挖土小铲子 园艺工具",
-      "categoryId": "life",
-      "price": 4.2,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2221482099810/O1CN01yOnEBS2ML2XCiSNOE_!!2221482099810.jpg_460x460q90.jpg",
-      "desc": "种花菜小铲子挖野菜锰钢户外挖土神器工具园艺家用种菜专用铲赶海"
-    },
-    {
-      "stock": 57,
-      "id": 48,
-      "name": "儿童防晒喷雾 50倍",
-      "categoryId": "life",
-      "price": 59.7,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2218815953903/O1CN01uuGdYJ1ehcz20CRbD_!!2218815953903.jpg_460x460q90.jpg",
-      "desc": "儿童防晒喷雾50倍防紫外线青少年男女婴童隔离防晒乳大人全身通用"
-    },
-    {
-      "stock": 481,
-      "id": 49,
-      "name": "断码运动鞋 减震跑步鞋",
-      "categoryId": "sport",
-      "price": 5,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2220781820427/O1CN01RFAA8A1mJpJHG40N2_!!4611686018427386166-0-item_pic.jpg_460x460q90.jpg",
-      "desc": "买一送一品牌断码运动鞋男鞋秋季皮面防水休闲鞋子男士减震跑步鞋"
-    },
-    {
-      "stock": 83,
-      "id": 50,
-      "name": "直液式速干走珠笔 0.5mm",
-      "categoryId": "life",
-      "price": 2.01,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2215729268119/O1CN01zUYEmI29qYnlKalxP_!!2215729268119.png_460x460q90.jpg",
-      "desc": "【瑶瑶妈心愿馆】直液式速干走珠笔0.5mm黑色中性笔学生考试"
-    },
-    {
-      "stock": 775,
-      "id": 51,
-      "name": "按动中性笔 ST笔头",
-      "categoryId": "life",
-      "price": 4.02,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2212023900172/O1CN01pGZn8r1D8p9xQnsqp_!!2212023900172.jpg_460x460q90.jpg",
-      "desc": "按动中性笔云握手ST笔头作业神器速干顺滑学生学霸刷题专用考试笔"
-    },
-    {
-      "stock": 401,
-      "id": 52,
-      "name": "防晒衣 情侣款 UPF50+",
-      "categoryId": "sport",
-      "price": 223.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2210227919476/O1CN01S4ateG2Js4FuXySiK_!!2210227919476.jpg_460x460q90.jpg",
-      "desc": "山系情侣防晒衣女防晒服男轻量化户外皮肤衣防紫外线UPF50+外套"
-    },
-    {
-      "stock": 208,
-      "id": 53,
-      "name": "直液式走珠笔 红色 0.5mm",
-      "categoryId": "life",
-      "price": 4.02,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i1/2221415032676/O1CN01kRKHfI1Vdf12VYYkA_!!2221415032676.jpg_460x460q90.jpg",
-      "desc": "直液式走珠笔红色中性笔0.5mm圆珠笔大容量刷题笔速干学生考试用"
-    },
-    {
-      "stock": 343,
-      "id": 54,
-      "name": "蕉下 防晒口罩 冰丝面罩",
-      "categoryId": "sport",
-      "price": 79,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2216418432090/O1CN01bYxLtQ1RJGumXTiYs_!!2216418432090.jpg_460x460q90.jpg",
-      "desc": "蕉下面膜防晒口罩女防紫外线高颜值遮阳医美轻薄透气骑行冰丝面罩"
-    },
-    {
-      "stock": 497,
-      "id": 55,
-      "name": "速干裤 男女同款",
-      "categoryId": "sport",
-      "price": 107.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/3861165552/O1CN01ExG4GV1qss6OpxNFF_!!4611686018427385328-0-item_pic.jpg_460x460q90.jpg",
-      "desc": "速干裤男女同款休闲裤短裤长裤4"
-    },
-    {
-      "stock": 702,
-      "id": 56,
-      "name": "补鞋胶水 强力粘鞋胶",
-      "categoryId": "life",
-      "price": 3.02,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/2218808637887/O1CN01xBtvMN288ItrVrAQn_!!2218808637887.jpg_460x460q90.jpg",
-      "desc": "多功能补鞋胶水强力胶软性防水胶强力粘鞋运动鞋皮鞋粘鞋专用胶"
-    },
-    {
-      "stock": 956,
-      "id": 57,
-      "name": "食品塑料袋 一次性打包袋",
-      "categoryId": "life",
-      "price": 5,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i4/2219125356078/O1CN01mVmndR1ulmQi6WIlW_!!2219125356078.jpg_460x460q90.jpg",
-      "desc": "白色食品塑料袋一次性透明包装袋外卖打包袋方便袋背心袋手提袋子"
-    },
-    {
-      "stock": 192,
-      "id": 58,
-      "name": "新农哥 大颗粒小白杏",
-      "categoryId": "food",
-      "price": 69.9,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/105152347/O1CN01qRMhC01TCygmF3EDv_!!4611686018427387739-2-item_pic.png_460x460q90.jpg",
-      "desc": "【吉杰推荐】新农哥大颗粒小白杏180g*3罐"
-    },
-    {
-      "stock": 704,
-      "id": 59,
-      "name": "卓大王 手帐贴纸",
-      "categoryId": "life",
-      "price": 3.4,
-      "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i3/832787406/O1CN01nrcRbs24a0PK8hw9F_!!832787406.jpg_460x460q90.jpg",
-      "desc": "卓大王【阿卓口袋贴纸】养生参观日挥拍不了不了搞不懂好重啊手帐"
-    },
-    {
-      "stock": 643,
-      "id": 60,
-      "name": "三角洲行动 AWM子弹",
+      "stock": 265,
+      "id": 12,
+      "name": "Samsung HIFI 桌面木质音箱",
       "categoryId": "phone",
-      "price": 1.3,
+      "price": 2499,
       "status": "on",
-      "img": "https://img.alicdn.com/bao/uploaded/i2/2212646573641/O1CN01l2MNVJ1cld9xCAXz0_!!2212646573641.jpg_460x460q90.jpg",
-      "desc": "三角洲行动AWM子弹m61各种红弹巴雷特子弹50可扫组队机密撞车包赔"
+      "img": "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80",
+      "desc": "经典木质箱体，HIFI 级高保真音质，支持多路输入，客厅书房良伴"
+    },
+    {
+      "stock": 280,
+      "id": 13,
+      "name": "Samsung 电子级屏幕专用清洁滴剂",
+      "categoryId": "phone",
+      "price": 229,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&w=600&q=80",
+      "desc": "高效去除屏幕指纹、油污及灰尘，不伤屏幕涂层，数码清洁必备"
+    },
+    {
+      "stock": 295,
+      "id": 14,
+      "name": "Samsung 极速电竞定制主机",
+      "categoryId": "phone",
+      "price": 1699,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
+      "desc": "为电竞而生的高性能主机，预装高性能固态硬盘与显卡，炫酷光效"
+    },
+    {
+      "stock": 310,
+      "id": 15,
+      "name": "Samsung Gear VR 虚拟现实眼镜",
+      "categoryId": "phone",
+      "price": 999,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=600&q=80",
+      "desc": "沉浸式虚拟现实头戴设备，宽阔视野，精准陀螺仪跟踪"
+    },
+    {
+      "stock": 80,
+      "id": 16,
+      "name": "IKEA JANINGE 亚宁格极简靠背椅",
+      "categoryId": "life",
+      "price": 699,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=600&q=80",
+      "desc": "一体成型黑色流线型靠背，白橡木斜角支脚，舒适贴合脊椎曲线的北欧极简单人椅。"
+    },
+    {
+      "stock": 105,
+      "id": 17,
+      "name": "IKEA GODMORGON 古德莫浴室收纳组合",
+      "categoryId": "life",
+      "price": 399,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=600&q=80",
+      "desc": "精巧的墙面多格收纳，原木质感，防潮防霉，为您打造井井有条的卫浴空间"
+    },
+    {
+      "stock": 130,
+      "id": 18,
+      "name": "IKEA LANDSKRONA 兰德克纳沙发椅",
+      "categoryId": "life",
+      "price": 499,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80",
+      "desc": "舒适宽大的单人扶手椅，经典客厅休闲系列，人体工学承托坐感"
+    },
+    {
+      "stock": 155,
+      "id": 19,
+      "name": "IKEA TERTIAL 特提亚工作台灯",
+      "categoryId": "life",
+      "price": 99,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80",
+      "desc": "经典可调节悬臂台灯，可调整灯头角度，专为书桌学习和工作设计"
+    },
+    {
+      "stock": 180,
+      "id": 20,
+      "name": "IKEA LACK 拉克边桌",
+      "categoryId": "life",
+      "price": 49,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1581428982868-e410dd047a90?auto=format&fit=crop&w=600&q=80",
+      "desc": "轻巧好搬运的小边几，组装极速简便，可搭配各种现代家居风格"
+    },
+    {
+      "stock": 205,
+      "id": 21,
+      "name": "IKEA STRANDMON 斯佳蒙单人沙发椅 (黄色款)",
+      "categoryId": "life",
+      "price": 249,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80",
+      "desc": "经典黄色单人老虎椅，高背支撑，包覆感极佳，为您打造阅读角的亮眼点缀"
+    },
+    {
+      "stock": 230,
+      "id": 22,
+      "name": "IKEA SPASS 室内休闲篮球网",
+      "categoryId": "life",
+      "price": 29,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1518063319789-7217e6706b04?auto=format&fit=crop&w=600&q=80",
+      "desc": "挂墙式免打孔设计，静音球网，适合客厅、办公室休闲投篮解压。"
+    },
+    {
+      "stock": 255,
+      "id": 23,
+      "name": "IKEA FEJKA 菲卡人造盆栽",
+      "categoryId": "life",
+      "price": 39,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&w=600&q=80",
+      "desc": "逼真免维护的人造绿色盆栽，四季常青，为无光的角落带来自然生气"
+    },
+    {
+      "stock": 280,
+      "id": 24,
+      "name": "IKEA 环保创意设计记事本",
+      "categoryId": "life",
+      "price": 999,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?auto=format&fit=crop&w=600&q=80",
+      "desc": "极简风线装笔记本，使用再生纸制造，激发日常灵感与创意工作"
+    },
+    {
+      "stock": 305,
+      "id": 25,
+      "name": "IKEA 北欧极简卫浴软装设计方案",
+      "categoryId": "life",
+      "price": 19.9,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
+      "desc": "为您量身定制的现代化卫浴解决方案，含玻璃隔断、收纳镜柜与卫浴五金配置"
+    },
+    {
+      "stock": 330,
+      "id": 26,
+      "name": "IKEA 极简陶瓷花瓶",
+      "categoryId": "life",
+      "price": 59,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=600&q=80",
+      "desc": "哑光釉面白色陶瓷花瓶，优美弧度，单独摆放也是极具美感的艺术品"
+    },
+    {
+      "stock": 355,
+      "id": 27,
+      "name": "IKEA LANDSKRONA 兰德克纳三人沙发 (绿色丝绒款)",
+      "categoryId": "life",
+      "price": 1299,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80",
+      "desc": "精巧的三人沙发，选用舒适绿丝绒面料，木质支脚，打造客厅低奢高级感"
+    },
+    {
+      "stock": 380,
+      "id": 28,
+      "name": "IKEA 经典法式拉扣软包单人椅",
+      "categoryId": "life",
+      "price": 99,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=600&q=80",
+      "desc": "古典拉扣绒布靠背，复古白漆木雕支脚，适合卧室梳妆台或书房点缀"
+    },
+    {
+      "stock": 405,
+      "id": 29,
+      "name": "IKEA 极简静音墙面挂钟",
+      "categoryId": "life",
+      "price": 39,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=600&q=80",
+      "desc": "无刻度极简石英挂钟，采用扫秒静音机芯，远离烦人的滴答声"
+    },
+    {
+      "stock": 430,
+      "id": 30,
+      "name": "IKEA 香薰蜡烛 浆果香型",
+      "categoryId": "life",
+      "price": 29.9,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80",
+      "desc": "玻璃杯装芬芳香薰蜡烛，红浆果微甜香气，点燃温暖的家居氛围"
+    },
+    {
+      "stock": 45,
+      "id": 31,
+      "name": "Bala Bangles 经典负重手环",
+      "categoryId": "sport",
+      "price": 399,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80",
+      "desc": "亲肤硅胶配重手环（1磅一对），时尚手腕脚踝双用，随时增加锻炼强度"
+    },
+    {
+      "stock": 80,
+      "id": 32,
+      "name": "Bala Bars 时尚瑜伽哑铃",
+      "categoryId": "sport",
+      "price": 429,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1586401100295-7a8096fd231a?auto=format&fit=crop&w=600&q=80",
+      "desc": "长条形极简风瑜伽配重哑铃，硅胶外包裹，手感绝佳，阻力训练佳品"
+    },
+    {
+      "stock": 115,
+      "id": 33,
+      "name": "Bala Ring 负重训练圈",
+      "categoryId": "sport",
+      "price": 699,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80",
+      "desc": "多功能阻力负重环，完美替代传统哑铃，带来更流畅舒适的力量训练"
+    },
+    {
+      "stock": 150,
+      "id": 34,
+      "name": "Bala Power 专业力量杠铃护腕",
+      "categoryId": "sport",
+      "price": 159,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=600&q=80",
+      "desc": "大重量杠铃训练保护配件，加厚缓震，高效稳定核心防滑脱"
+    },
+    {
+      "stock": 185,
+      "id": 35,
+      "name": "Bala Power 专业负重深蹲助力带",
+      "categoryId": "sport",
+      "price": 299,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=600&q=80",
+      "desc": "深蹲核心训练必备助力系统，提供稳固腰背部及肩部力量传导支撑"
+    },
+    {
+      "stock": 220,
+      "id": 36,
+      "name": "Bala Premium 莫兰迪色瑜伽拉伸垫",
+      "categoryId": "sport",
+      "price": 189,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?auto=format&fit=crop&w=600&q=80",
+      "desc": "高弹减震，天然橡胶防滑表面，保护关节与脊椎"
+    },
+    {
+      "stock": 255,
+      "id": 37,
+      "name": "Bala Premium 环保防滑瑜伽垫",
+      "categoryId": "sport",
+      "price": 799,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=600&q=80",
+      "desc": "天然橡胶底双面防滑瑜伽垫，极佳缓震保护，防水易清洁"
+    },
+    {
+      "stock": 290,
+      "id": 38,
+      "name": "Bala Power 极简乳胶阻力带",
+      "categoryId": "sport",
+      "price": 149,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80",
+      "desc": "高弹天然乳胶阻力带，提供中等负重阻力，适合上肢及臀腿阻力训练。"
+    },
+    {
+      "stock": 325,
+      "id": 39,
+      "name": "Bala Pro 力量训练防滑掌垫",
+      "categoryId": "sport",
+      "price": 269,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=600&q=80",
+      "desc": "加厚耐磨防滑掌垫，科学重力支撑，提供极佳的力量训练与硬拉防护。"
+    },
+    {
+      "stock": 60,
+      "id": 40,
+      "name": "Bala 磨砂防漏运动随行水壶",
+      "categoryId": "sport",
+      "price": 199,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80",
+      "desc": "不锈钢真空保温杯，单手开盖防喷溅，健身房运动补水必备"
+    },
+    {
+      "stock": 95,
+      "id": 41,
+      "name": "Bala Pro 弯举重力训练助力器",
+      "categoryId": "sport",
+      "price": 89,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=600&q=80",
+      "desc": "人体工学弯举助力设计，帮助孤立肱二头肌，提升力量训练效果"
+    },
+    {
+      "stock": 130,
+      "id": 42,
+      "name": "Bala Core 俯卧撑多功能训练架",
+      "categoryId": "sport",
+      "price": 129,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?auto=format&fit=crop&w=600&q=80",
+      "desc": "防滑手柄，强效支撑，提升俯卧撑及核心稳定动作表现"
+    },
+    {
+      "stock": 165,
+      "id": 43,
+      "name": "Bala 纯棉瑜伽拉伸辅助带",
+      "categoryId": "sport",
+      "price": 59,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
+      "desc": "金属扣瑜伽拉伸带，加宽纯棉材质，辅助各种高难体位拉伸与固定"
+    },
+    {
+      "stock": 200,
+      "id": 44,
+      "name": "Bala Core 核心平衡稳定性训练板",
+      "categoryId": "sport",
+      "price": 349,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1616803689943-5601631c7fec?auto=format&fit=crop&w=600&q=80",
+      "desc": "全方位锻炼腹部核心与深层肌肉，提升身体平衡力"
+    },
+    {
+      "stock": 235,
+      "id": 45,
+      "name": "Bala 运动干湿分离收纳包",
+      "categoryId": "sport",
+      "price": 189,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80",
+      "desc": "轻量防水运动健身包，独立鞋仓与干湿分离袋，出行收纳无忧"
+    },
+    {
+      "stock": 30,
+      "id": 46,
+      "name": "Blue Bottle 贝拉多诺万咖啡豆",
+      "categoryId": "food",
+      "price": 138,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=600&q=80",
+      "desc": "经典拼配咖啡豆（220g），带有香甜的水果干与浓郁的可可风味"
+    },
+    {
+      "stock": 75,
+      "id": 47,
+      "name": "Blue Bottle 经典美式黑咖啡 (单杯装)",
+      "categoryId": "food",
+      "price": 138,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80",
+      "desc": "选用经典三键拼配豆新鲜萃取，口感平衡，果香与坚果香交融"
+    },
+    {
+      "stock": 120,
+      "id": 48,
+      "name": "Blue Bottle 巨人脚步咖啡豆",
+      "categoryId": "food",
+      "price": 138,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80",
+      "desc": "深度烘焙咖啡豆，风味醇厚深沉，散发焦糖与黑巧克力的甜香"
+    },
+    {
+      "stock": 165,
+      "id": 49,
+      "name": "Blue Bottle 海斯谷浓缩咖啡豆",
+      "categoryId": "food",
+      "price": 148,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80",
+      "desc": "意式浓缩特调豆，油脂丰厚，带有黑糖与浓郁可可的经典余韵"
+    },
+    {
+      "stock": 60,
+      "id": 50,
+      "name": "Blue Bottle 招牌拿铁咖啡 (大杯装)",
+      "categoryId": "food",
+      "price": 168,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80",
+      "desc": "选用经典海斯谷浓缩，配合细腻发泡鲜牛奶，带给您极佳的拉花享受与醇厚口感。"
+    },
+    {
+      "stock": 105,
+      "id": 51,
+      "name": "Blue Bottle 经典蓝标陶瓷杯",
+      "categoryId": "food",
+      "price": 145,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80",
+      "desc": "标志性蓝瓶Logo陶瓷马克杯，简约温润质感，带来惬意的晨间咖啡体验"
+    },
+    {
+      "stock": 150,
+      "id": 52,
+      "name": "Blue Bottle 意式专业压粉手柄",
+      "categoryId": "food",
+      "price": 220,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=600&q=80",
+      "desc": "意式咖啡机专用无底双份过滤手柄，坚固耐用，助力完美浓缩萃取"
+    },
+    {
+      "stock": 45,
+      "id": 53,
+      "name": "Blue Bottle 简约无柄陶瓷杯",
+      "categoryId": "food",
+      "price": 260,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=600&q=80",
+      "desc": "温润质感无柄陶瓷马克杯，简约双层隔热设计，手感极佳"
+    },
+    {
+      "stock": 90,
+      "id": 54,
+      "name": "Blue Bottle 旗舰店吧台专享特调 (双人)",
+      "categoryId": "food",
+      "price": 68,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=600&q=80",
+      "desc": "为您提供蓝瓶旗舰店主理人特调的专属双人咖啡与烘焙体验，享受复古暖光吧台包场氛围"
+    },
+    {
+      "stock": 135,
+      "id": 55,
+      "name": "Blue Bottle 经典午后咖啡分享套餐",
+      "categoryId": "food",
+      "price": 180,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80",
+      "desc": "精选单品豆手冲咖啡与经典拿铁的完美组合，共享惬意的咖啡时光"
+    },
+    {
+      "stock": 30,
+      "id": 56,
+      "name": "Blue Bottle 极简环保水洗纸手提袋",
+      "categoryId": "food",
+      "price": 120,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80",
+      "desc": "使用高强度防雨水洗牛皮纸制成，经典极简折叠设计，文艺出街首选"
+    },
+    {
+      "stock": 75,
+      "id": 57,
+      "name": "Blue Bottle 招牌拿铁咖啡 (热)",
+      "categoryId": "food",
+      "price": 599,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=600&q=80",
+      "desc": "选用经典海斯谷浓缩，搭配细腻发泡鲜牛奶，带给你丝滑醇厚的温暖享受"
+    },
+    {
+      "stock": 120,
+      "id": 58,
+      "name": "Blue Bottle 经典拉花浓缩咖啡",
+      "categoryId": "food",
+      "price": 280,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=600&q=80",
+      "desc": "精选海斯谷浓缩，注入绵密奶泡，拉花精美，口感浓郁香甜。"
+    },
+    {
+      "stock": 165,
+      "id": 59,
+      "name": "Blue Bottle 经典手冲与拿铁分享组",
+      "categoryId": "food",
+      "price": 480,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=600&q=80",
+      "desc": "包含两份招牌拿铁拉花与一份经典冷萃黑咖啡，适合与好友分享交流"
+    },
+    {
+      "stock": 60,
+      "id": 60,
+      "name": "Blue Bottle 旗舰店吧台专享单人特调",
+      "categoryId": "food",
+      "price": 49,
+      "status": "on",
+      "img": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80",
+      "desc": "包含旗舰店特调意式浓缩一杯与当日限定甜点一份，专享吧台尊贵座位体验"
     }
   ],
   "favorites": [
     {
       "id": 1,
-      "userId": 1,
-      "goodId": 3,
-      "createTime": "2026/6/10 21:24:26"
+      "userId": 2,
+      "goodId": 1,
+      "createTime": "2026/6/12 22:11:37"
     }
   ],
   "orders": [
     {
-      "id": 7,
-      "userId": 1,
-      "orderNo": "1781250837243",
-      "items": [
-        {
-          "goodId": 31,
-          "count": 1,
-          "price": 39.9,
-          "name": "九三智当嘉 亚麻籽油",
-          "img": "https://img.alicdn.com/bao/uploaded/i2/3564297561/O1CN015dp0Le25iznL88esL_!!4611686018427387225-2-item_pic.png_460x460q90.jpg"
-        }
-      ],
-      "price": 39.9,
-      "addressId": 1,
-      "address": "北京市海淀区北京交通大学",
-      "receiver": {
-        "name": "商城用户",
-        "phone": "13800000000"
-      },
-      "status": "paid",
-      "createTime": "2026/6/12 15:53:57",
-      "payTime": "2026/6/12 15:54:01",
-      "shipTime": "",
-      "logistics": "商家正在准备发货",
-      "logisticsCompany": "",
-      "trackingNo": "",
-      "logisticsTraces": [
-        {
-          "time": "2026/6/12 15:53:57",
-          "text": "订单已创建"
-        },
-        {
-          "time": "2026/6/12 15:54:01",
-          "text": "订单已支付，等待商家发货"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "userId": 1,
-      "orderNo": "1781232817841",
-      "items": [
-        {
-          "goodId": 1,
-          "count": 1,
-          "price": 1899,
-          "name": "Apple AirPods Pro 3 主动降噪耳机",
-          "img": "https://img.alicdn.com/bao/uploaded/i1/2216489641286/O1CN01wd0Bt41LN2RsBjk0B_!!2216489641286.jpg_460x460q90.jpg"
-        }
-      ],
-      "price": 1899,
-      "addressId": 1,
-      "address": "北京市海淀区北京交通大学",
-      "receiver": {
-        "name": "商城用户",
-        "phone": "13800000000"
-      },
-      "status": "paid",
-      "createTime": "2026/6/12 10:53:37",
-      "payTime": "2026/6/12 10:53:40",
-      "shipTime": "",
-      "logistics": "商家正在准备发货",
-      "logisticsCompany": "",
-      "trackingNo": "",
-      "logisticsTraces": [
-        {
-          "time": "2026/6/12 10:53:37",
-          "text": "订单已创建"
-        },
-        {
-          "time": "2026/6/12 10:53:40",
-          "text": "订单已支付，等待商家发货"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "userId": 1,
-      "orderNo": "1781120873314",
-      "items": [
-        {
-          "goodId": 2,
-          "count": 1,
-          "price": 8.5,
-          "name": "美团单车 畅骑卡",
-          "img": "https://img.alicdn.com/bao/uploaded/i2/2208169446941/O1CN01GUcG732192DKMdIgz_!!4611686018427383325-0-item_pic.jpg_460x460q90.jpg"
-        }
-      ],
-      "price": 8.5,
-      "addressId": 1,
-      "address": "北京市海淀区北京交通大学",
-      "receiver": {
-        "name": "商城用户",
-        "phone": "13800000000"
-      },
-      "status": "paid",
-      "createTime": "2026/6/11 03:47:53",
-      "payTime": "2026/6/11 03:47:55",
-      "shipTime": "",
-      "logistics": "商家正在准备发货",
-      "logisticsCompany": "",
-      "trackingNo": "",
-      "logisticsTraces": [
-        {
-          "time": "2026/6/11 03:47:53",
-          "text": "订单已创建"
-        },
-        {
-          "time": "2026/6/11 03:47:55",
-          "text": "订单已支付，等待商家发货"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "userId": 1,
-      "orderNo": "1781097715390",
-      "items": [
-        {
-          "goodId": 3,
-          "count": 1,
-          "price": 89,
-          "name": "元气坚果礼盒",
-          "img": "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=900&q=80"
-        }
-      ],
-      "price": 89,
-      "addressId": 1,
-      "address": "北京市海淀区北京交通大学",
-      "receiver": {
-        "name": "商城用户",
-        "phone": "13800000000"
-      },
-      "status": "paid",
-      "createTime": "2026/6/10 21:21:55",
-      "payTime": "2026/6/10 21:21:56",
-      "shipTime": "",
-      "logistics": "商家正在准备发货",
-      "logisticsCompany": "",
-      "trackingNo": "",
-      "logisticsTraces": [
-        {
-          "time": "2026/6/10 21:21:55",
-          "text": "订单已创建"
-        },
-        {
-          "time": "2026/6/10 21:21:56",
-          "text": "订单已支付，等待商家发货"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "orderNo": "1781028155058",
-      "items": [
-        {
-          "goodId": 3,
-          "count": 1,
-          "price": 89,
-          "name": "元气坚果礼盒",
-          "img": "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=900&q=80"
-        }
-      ],
-      "price": 89,
-      "addressId": 1,
-      "address": "北京市海淀区北京交通大学",
-      "receiver": {
-        "name": "商城用户",
-        "phone": "13800000000"
-      },
-      "status": "paid",
-      "createTime": "2026/6/10 02:02:35",
-      "payTime": "2026/6/10 02:02:37",
-      "shipTime": "",
-      "logistics": "商家正在准备发货",
-      "logisticsCompany": "",
-      "trackingNo": "",
-      "logisticsTraces": [
-        {
-          "time": "2026/6/10 02:02:35",
-          "text": "订单已创建"
-        },
-        {
-          "time": "2026/6/10 02:02:37",
-          "text": "订单已支付，等待商家发货"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "orderNo": "1780921789196",
-      "items": [
-        {
-          "goodId": 1,
-          "count": 1,
-          "price": 2999,
-          "name": "星河 Pro 手机",
-          "img": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
-        },
-        {
-          "goodId": 2,
-          "count": 1,
-          "price": 399,
-          "name": "无线降噪耳机",
-          "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80"
-        }
-      ],
-      "price": 3398,
-      "addressId": 1,
-      "address": "北京市海淀区北京交通大学",
-      "receiver": {
-        "name": "商城用户",
-        "phone": "13800000000"
-      },
-      "status": "paid",
-      "createTime": "6/8/2026, 8:29:49 PM",
-      "payTime": "6/8/2026, 8:29:50 PM",
-      "shipTime": "",
-      "logistics": "商家正在准备发货",
-      "logisticsCompany": "",
-      "trackingNo": "",
-      "logisticsTraces": [
-        {
-          "time": "6/8/2026, 8:29:49 PM",
-          "text": "订单已创建"
-        },
-        {
-          "time": "6/8/2026, 8:29:50 PM",
-          "text": "订单已支付，等待商家发货"
-        }
-      ]
-    },
-    {
       "id": 1,
       "userId": 1,
-      "orderNo": "1780919184348",
+      "orderNo": "1781273195614",
       "items": [
         {
           "goodId": 1,
           "count": 1,
-          "price": 2999,
-          "name": "星河 Pro 手机",
-          "img": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
+          "price": 9699,
+          "name": "Samsung Galaxy S24 Ultra",
+          "img": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80"
         }
       ],
-      "price": 2999,
+      "price": 9699,
+      "addressId": 1,
       "address": "北京市海淀区北京交通大学",
-      "status": "shipped",
-      "createTime": "6/8/2026, 7:46:24 PM",
-      "payTime": "6/8/2026, 7:46:26 PM",
-      "shipTime": "6/8/2026, 8:31:17 PM",
-      "logistics": "包裹已从仓库发出",
+      "receiver": {
+        "name": "商城用户",
+        "phone": "13800000000"
+      },
+      "status": "paid",
+      "createTime": "2026/6/12 22:06:35",
+      "payTime": "2026/6/12 22:06:36",
+      "shipTime": "",
+      "logistics": "商家正在准备发货",
+      "logisticsCompany": "",
+      "trackingNo": "",
       "logisticsTraces": [
         {
-          "time": "6/8/2026, 7:46:24 PM",
+          "time": "2026/6/12 22:06:35",
           "text": "订单已创建"
         },
         {
-          "time": "6/8/2026, 7:46:26 PM",
+          "time": "2026/6/12 22:06:36",
           "text": "订单已支付，等待商家发货"
-        },
-        {
-          "time": "6/8/2026, 8:31:17 PM",
-          "text": "商家已发货，包裹已从仓库发出"
-        },
-        {
-          "time": "6/8/2026, 8:31:18 PM",
-          "text": "快件正在运输途中"
         }
-      ],
-      "logisticsCompany": "校园优选快递",
-      "trackingNo": "YT202606080001"
+      ]
     }
   ],
   "categories": [

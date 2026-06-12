@@ -1,25 +1,44 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState, memo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ServiceContext } from '../contexts/ServiceContext';
+import { optimizeImageUrl } from '../utils/imageUtil';
+
+const ProductSlideCard = memo(({ good }) => {
+  return (
+    <Link className="apple-slide-card" to={`/detail/${good.id}`}>
+      <img src={optimizeImageUrl(good.img, 400)} alt={good.name} loading="lazy" />
+      <div className="apple-slide-card-body">
+        <strong>{good.name}</strong>
+        <span>￥{good.price}</span>
+      </div>
+    </Link>
+  );
+});
 
 const HERO_SLIDES = [
   {
-    img: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1800&q=82',
-    title: '夏日焕新季',
-    subtitle: '数码·生活·零食·运动，好物低至 ¥15 起',
-    tag: '全场满 99 包邮',
+    img: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=1800&q=82',
+    title: 'Samsung 智能数码专区',
+    subtitle: '科技改变日常。Galaxy S24 Ultra 旗舰好物现已登场',
+    tag: '三星品牌特惠 · 极速配送',
   },
   {
-    img: 'https://images.unsplash.com/photo-1556742111-a301076d9d18?auto=format&fit=crop&w=1800&q=82',
-    title: '限时特惠',
-    subtitle: '精选爆款直降，限时抢购中',
-    tag: '每日 10:00 开抢',
+    img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1800&q=82',
+    title: 'IKEA 北欧居家美学',
+    subtitle: '斯堪的纳维亚设计的温馨体验，用极简点亮生活细节',
+    tag: '宜家专区 · 满百包邮',
   },
   {
-    img: 'https://images.unsplash.com/photo-1561715276-a2d087060f1d?auto=format&fit=crop&w=1800&q=82',
-    title: '数码狂欢节',
-    subtitle: '手机、耳机、充电宝，开学装备一站购齐',
-    tag: '学生专享 9 折',
+    img: 'https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=1800&q=82',
+    title: 'Bala 莫兰迪健身生活',
+    subtitle: '把优雅融入阻力与拉伸，让每一次居家律动更自在',
+    tag: 'Bala 运动专区 · 满分推荐',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=82',
+    title: 'Blue Bottle 咖啡文化',
+    subtitle: '致敬每一杯纯净的手冲咖啡，让咖啡香气溢满晨间',
+    tag: '蓝瓶咖啡豆与周边专场',
   },
 ];
 
@@ -31,7 +50,7 @@ const HomePage = () => {
   const [slide, setSlide] = useState(0);
 
   useEffect(() => {
-    services.good.getGoodList().then((list) => setGoods(list.slice(0, 8)));
+    services.good.getGoodList().then((list) => setGoods(list));
   }, [services.good]);
 
   useEffect(() => {
@@ -52,15 +71,15 @@ const HomePage = () => {
     <>
       <section className="hero-band" style={{ backgroundImage: `linear-gradient(90deg, rgba(25,45,42,0.65), rgba(25,45,42,0.25), rgba(25,45,42,0.04)), url(${HERO_SLIDES[slide].img})` }}>
         <div className="hero-copy">
-          <p className="eyebrow">React Mall</p>
+          <p className="eyebrow apple-font-accent">React Mall</p>
           <h1>{HERO_SLIDES[slide].title}</h1>
           <p className="hero-subtitle">{HERO_SLIDES[slide].subtitle}</p>
-          <div className="search-row">
+          <div className="apple-search-row">
             <input value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
               onKeyDown={(e) => { if (e.key === 'Enter') goSearch(); }}
-              placeholder="搜索商品名称" />
-            <button className="button" onClick={goSearch}>搜索</button>
+              placeholder="搜索三星、宜家、Bala、蓝瓶咖啡..." />
+            <button onClick={goSearch}>搜索</button>
           </div>
         </div>
         <p className="hero-tag">{HERO_SLIDES[slide].tag}</p>
@@ -73,54 +92,47 @@ const HomePage = () => {
 
       <section className="section feature-strip">
         <div>
-          <span>01</span>
+          <span className="apple-font-accent">01</span>
           <strong>今日精选</strong>
-          <p>从通勤数码到居家小物，挑出更适合日常的选择。</p>
+          <p>从通勤数码到居家小物，挑选属于您的质感生活。</p>
         </div>
         <div>
-          <span>02</span>
+          <span className="apple-font-accent">02</span>
           <strong>轻松选购</strong>
-          <p>喜欢的商品先放进购物车，再一起结算更从容。</p>
+          <p>将心仪好物加入购物车，享受极简顺畅的结算流程。</p>
         </div>
         <div>
-          <span>03</span>
-          <strong>新品常备</strong>
-          <p>热门商品持续更新，把新鲜感留在每一次打开商城时。</p>
+          <span className="apple-font-accent">03</span>
+          <strong>品牌保证</strong>
+          <p>精选四大官方来源好物，杜绝山寨与嘈杂的促销宣传。</p>
         </div>
       </section>
 
-      <section className="section">
-        <div className="section-title">
-          <h2>本周推荐</h2>
-          <span>值得先看一眼的人气选择</span>
-        </div>
-        <div className="banner-strip">
-          {goods.slice(0, 4).map((good) => (
-            <Link className="banner-card" key={good.id} to={`/detail/${good.id}`}>
-              <img src={good.img} alt={good.name} />
-              <div>
-                <strong>{good.name}</strong>
-                <span>￥{good.price}</span>
-              </div>
-            </Link>
-          ))}
-        </div>
+      <section className="apple-split-grid">
+        <Link className="apple-promo-card" to="/category?cat=life" style={{ backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.05)), url(https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1000&q=80)` }}>
+          <div className="apple-promo-content">
+            <p className="eyebrow">IKEA 居家美学</p>
+            <h3>营造宁静温馨的专属角落</h3>
+            <p>挑选经典的北欧设计，从舒适的沙发椅到暖光工作台灯，让家充满呼吸感与诗意。</p>
+          </div>
+        </Link>
+        <Link className="apple-promo-card" to="/category?cat=sport" style={{ backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.05)), url(https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=1000&q=80)` }}>
+          <div className="apple-promo-content">
+            <p className="eyebrow">Bala 运动美学</p>
+            <h3>用优雅阻力激活核心力量</h3>
+            <p>加厚双面防滑瑜伽拉伸垫，极具设计感的哑铃球，为日常锻炼增添一份低饱和度色彩。</p>
+          </div>
+        </Link>
       </section>
 
-      <section className="section">
+      <section className="apple-slider-wrapper">
         <div className="section-title">
-          <h2>热门商品</h2>
-          <span>为学习、通勤和休闲准备的实用好物</span>
+          <h2>热门商品推荐</h2>
+          <span>左右滑动浏览三星、宜家、Bala及蓝瓶咖啡的精选好物</span>
         </div>
-        <div className="product-grid">
+        <div className="apple-slider">
           {goods.map((good) => (
-            <Link className="product-card" key={good.id} to={`/detail/${good.id}`}>
-              <img src={good.img} alt={good.name} />
-              <div className="product-card-body">
-                <strong>{good.name}</strong>
-                <span>￥{good.price}</span>
-              </div>
-            </Link>
+            <ProductSlideCard key={good.id} good={good} />
           ))}
         </div>
       </section>
@@ -129,3 +141,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

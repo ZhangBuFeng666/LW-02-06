@@ -1,8 +1,17 @@
 import { buildQuery, request } from './request';
 
 class GoodService {
+  constructor() {
+    this._categoriesCache = null;
+  }
+
   async getCategories() {
-    return request('/categories');
+    if (this._categoriesCache) {
+      return this._categoriesCache;
+    }
+    const data = await request('/categories');
+    this._categoriesCache = data;
+    return data;
   }
 
   getCategoryName(categories, categoryId) {

@@ -21,6 +21,7 @@ const AdminGoodsPage = () => {
   const [filters, setFilters] = useState(initialFilters);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const [showModal, setShowModal] = useState(false);
 
   const fetchGoodsData = useCallback(() => (
     Promise.all([
@@ -66,6 +67,7 @@ const AdminGoodsPage = () => {
     setForm(emptyForm);
     setEditingId(null);
     setError('');
+    setShowModal(false);
   };
 
   const edit = (good) => {
@@ -85,6 +87,7 @@ const AdminGoodsPage = () => {
     });
     setMessage('');
     setError('');
+    setShowModal(true);
   };
 
   const submit = async (event) => {
@@ -151,8 +154,13 @@ const AdminGoodsPage = () => {
           <p>{admin.username} · {admin.roleName} · 权限：{adminService.getPermissionText(admin)}</p>
         </div>
         <div className="row-actions">
-          <Link className="text-button" to="/admin/orders">订单管理</Link>
-          <button className="text-button" onClick={logout}>退出后台</button>
+          {canManage && (
+            <button className="button" onClick={() => { resetForm(); setShowModal(true); }}>
+              + 新增商品
+            </button>
+          )}
+          <Link className="button secondary" to="/admin/orders">订单管理</Link>
+          <button className="button ghost" onClick={logout}>退出后台</button>
         </div>
       </div>
 
@@ -181,50 +189,70 @@ const AdminGoodsPage = () => {
         <button className="button ghost" type="button" onClick={() => setFilters(initialFilters)}>重置筛选</button>
       </div>
 
-      <form className="admin-form" onSubmit={submit}>
-        <div className="admin-form-title">
-          <strong>{editingId ? '编辑商品' : '新增商品'}</strong>
-          {editingId && <button className="text-button" type="button" onClick={resetForm}>取消编辑</button>}
+      {showModal && (
+        <div className="admin-modal-overlay" onClick={resetForm}>
+          <div className="admin-modal-content" onClick={(e) => e.stopPropagation()}>
+            <form className="admin-modal-form" onSubmit={submit}>
+              <div className="admin-form-title">
+                <strong>{editingId ? '编辑商品' : '新增商品'}</strong>
+                <button className="text-button" type="button" onClick={resetForm}>关闭</button>
+              </div>
+              
+              <label className="admin-field">
+                <span>商品名称</span>
+                <input placeholder="例如：静音便携小风扇" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required disabled={!canManage} />
+              </label>
+              
+              <label className="admin-field">
+                <span>商品价格（元）</span>
+                <input placeholder="例如：99.00" type="number" min="0.01" step="0.01" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} required disabled={!canManage} />
+              </label>
+              
+              <label className="admin-field">
+                <span>所属分类</span>
+                <select value={form.categoryId} onChange={(e) => setForm({ ...form, categoryId: e.target.value })} disabled={!canManage}>
+                  {categories.map((category) => <option value={category.id} key={category.id}>{category.name}</option>)}
+                </select>
+              </label>
+              
+              <label className="admin-field">
+                <span>库存数量</span>
+                <input placeholder="例如：100" type="number" min="0" step="1" value={form.stock} onChange={(e) => setForm({ ...form, stock: e.target.value })} required disabled={!canManage} />
+              </label>
+              
+              <label className="admin-field">
+                <span>上下架状态</span>
+                <select value={form.status} onChange={(e) => setForm({ ...form, status: e.target.value })} disabled={!canManage}>
+                  <option value="on">上架</option>
+                  <option value="off">下架</option>
+                </select>
+              </label>
+              
+              <label className="admin-field">
+                <span>商品图片地址</span>
+                <input placeholder="https://..." value={form.img} onChange={(e) => setForm({ ...form, img: e.target.value })} disabled={!canManage} />
+              </label>
+              
+              <label className="admin-field admin-form-wide">
+                <span>商品描述</span>
+                <input placeholder="填写商品卖点、规格或说明" value={form.desc} onChange={(e) => setForm({ ...form, desc: e.target.value })} disabled={!canManage} />
+              </label>
+              
+              {error && <p className="error-text admin-form-wide">{error}</p>}
+              
+              <div className="admin-form-actions">
+                <button className="button ghost" type="button" onClick={resetForm}>取消</button>
+                <button className="button" type="submit" disabled={!canManage}>
+                  {editingId ? '保存修改' : '确认新增'}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        <label className="admin-field">
-          <span>商品名称</span>
-          <input placeholder="例如：静音便携小风扇" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required disabled={!canManage} />
-        </label>
-        <label className="admin-field">
-          <span>商品价格（元）</span>
-          <input placeholder="例如：99.00" type="number" min="0.01" step="0.01" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} required disabled={!canManage} />
-        </label>
-        <label className="admin-field">
-          <span>所属分类</span>
-          <select value={form.categoryId} onChange={(e) => setForm({ ...form, categoryId: e.target.value })} disabled={!canManage}>
-            {categories.map((category) => <option value={category.id} key={category.id}>{category.name}</option>)}
-          </select>
-        </label>
-        <label className="admin-field">
-          <span>库存数量</span>
-          <input placeholder="例如：100" type="number" min="0" step="1" value={form.stock} onChange={(e) => setForm({ ...form, stock: e.target.value })} required disabled={!canManage} />
-        </label>
-        <label className="admin-field">
-          <span>上下架状态</span>
-          <select value={form.status} onChange={(e) => setForm({ ...form, status: e.target.value })} disabled={!canManage}>
-            <option value="on">上架</option>
-            <option value="off">下架</option>
-          </select>
-        </label>
-        <label className="admin-field">
-          <span>商品图片地址</span>
-          <input placeholder="https://..." value={form.img} onChange={(e) => setForm({ ...form, img: e.target.value })} disabled={!canManage} />
-        </label>
-        <label className="admin-field admin-form-wide">
-          <span>商品描述</span>
-          <input placeholder="填写商品卖点、规格或说明" value={form.desc} onChange={(e) => setForm({ ...form, desc: e.target.value })} disabled={!canManage} />
-        </label>
-        <button className="button" type="submit" disabled={!canManage}>{editingId ? '保存修改' : '新增商品'}</button>
-      </form>
+      )}
 
       {!canManage && <p className="notice">运营角色只有查看权限，无法新增、编辑、删除或上下架。</p>}
       {message && <p className="success-text">{message}</p>}
-      {error && <p className="error-text">{error}</p>}
 
       <div className="admin-table">
         <div className="admin-row admin-row-head">
@@ -232,11 +260,34 @@ const AdminGoodsPage = () => {
         </div>
         {filteredGoods.map((good) => (
           <div className="admin-row" key={good.id}>
-            <span>{good.name}</span>
+            <div className="admin-product-cell">
+              <img 
+                src={good.img || '/icons.svg'} 
+                alt={good.name} 
+                className="admin-product-img" 
+                onError={(e) => { e.target.src = '/icons.svg'; }} 
+              />
+              <div className="admin-product-info">
+                <span className="admin-product-name">{good.name}</span>
+                {good.desc && <span className="admin-product-desc">{good.desc}</span>}
+              </div>
+            </div>
             <span>{goodService.getCategoryName(categories, good.categoryId)}</span>
             <span>￥{good.price}</span>
-            <span className={Number(good.stock) <= 50 ? 'danger' : ''}>{good.stock}</span>
-            <span>{good.status === 'off' ? '下架' : '上架'}</span>
+            <span>
+              {Number(good.stock) <= 50 ? (
+                <span className="badge badge-danger" title="库存紧张">{good.stock}</span>
+              ) : (
+                <span>{good.stock}</span>
+              )}
+            </span>
+            <span>
+              {good.status === 'off' ? (
+                <span className="badge badge-neutral">已下架</span>
+              ) : (
+                <span className="badge badge-success">已上架</span>
+              )}
+            </span>
             <span className="row-actions">
               <button className="text-button" onClick={() => edit(good)} disabled={!canManage} title={!canManage ? '运营角色只能查看' : ''}>编辑</button>
               <button className="text-button" onClick={() => toggleStatus(good)} disabled={!canManage} title={!canManage ? '运营角色只能查看' : ''}>

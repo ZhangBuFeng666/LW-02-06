@@ -105,6 +105,17 @@ const AdminOrdersPage = () => {
     navigate('/admin/login');
   };
 
+  const getStatusBadgeClass = (status) => {
+    switch (status) {
+      case 'unpaid': return 'badge-warning';
+      case 'paid': return 'badge-info';
+      case 'shipped': return 'badge-neutral';
+      case 'received': return 'badge-success';
+      case 'closed': return 'badge-danger';
+      default: return 'badge-neutral';
+    }
+  };
+
   return (
     <section className="admin-page">
       <div className="admin-head">
@@ -113,8 +124,8 @@ const AdminOrdersPage = () => {
           <p>{admin.username} · {admin.roleName} · 权限：{adminService.getPermissionText(admin)}</p>
         </div>
         <div className="row-actions">
-          <Link className="text-button" to="/admin/goods">商品管理</Link>
-          <button className="text-button" onClick={logout}>退出后台</button>
+          <Link className="button secondary" to="/admin/goods">商品管理</Link>
+          <button className="button ghost" onClick={logout}>退出后台</button>
         </div>
       </div>
 
@@ -145,7 +156,11 @@ const AdminOrdersPage = () => {
           <div className="admin-row order-admin-row" key={order.id}>
             <span>{order.orderNo}</span>
             <span>￥{order.price}</span>
-            <span>{order.statusText}</span>
+            <span>
+              <span className={`badge ${getStatusBadgeClass(order.status)}`}>
+                {order.statusText}
+              </span>
+            </span>
             <span>{order.receiver?.name || '用户'} {order.receiver?.phone || ''} {order.address}</span>
             <span className="row-actions">
               <Link className="text-button" to={`/admin/orders/${order.id}`}>详情</Link>

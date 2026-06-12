@@ -1,7 +1,22 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState, memo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ServiceContext } from '../contexts/ServiceContext';
 import { SearchIcon } from '../components/icons';
+import { optimizeImageUrl } from '../utils/imageUtil';
+
+const ProductCard = memo(({ good }) => {
+  return (
+    <Link className="product-card" to={`/detail/${good.id}`}>
+      <div className="product-card-media">
+        <img src={optimizeImageUrl(good.img, 400)} alt={good.name} loading="lazy" />
+      </div>
+      <div className="product-card-body">
+        <strong className="product-card-name">{good.name}</strong>
+        <span className="product-card-price"><i className="cny">￥</i>{good.price}</span>
+      </div>
+    </Link>
+  );
+});
 
 const CategoryPage = () => {
   const services = useContext(ServiceContext);
@@ -14,6 +29,8 @@ const CategoryPage = () => {
   const [priceMin, setPriceMin] = useState('');
   const [priceMax, setPriceMax] = useState('');
   const [keyword, setKeyword] = useState(() => searchParams.get('search') || '');
+  const [currentPage, setCurrentPage] = useState(1);
+  const PAGE_SIZE = 6;
   const timerRef = useRef(null);
 
   // 顶栏分类跳转只改 URL，组件不会重挂载，按 React 推荐方式在渲染期同步 active
@@ -52,6 +69,14 @@ const CategoryPage = () => {
     })
     .sort((a, b) => (sortOrder === 'asc' ? a.price - b.price : sortOrder === 'desc' ? b.price - a.price : 0));
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [active, priceMin, priceMax, sortOrder, keyword]);
+
+  const totalItems = filtered.length;
+  const totalPages = Math.ceil(totalItems / PAGE_SIZE);
+  const paginatedGoods = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
   const categoryName = active ? services.good.getCategoryName(categories, active) : '全部商品';
 
   return (
@@ -69,7 +94,7 @@ const CategoryPage = () => {
         <div className="section-title">
           <h2>{categoryName}</h2>
           <div className="filter-bar">
-            <span className="filter-count">共 {goods.length} 件</span>
+            <span className="filter-count">共 {filtered.length} 件</span>
             <span className="filter-pill filter-range">
               <input type="number" placeholder="¥最低" value={priceMin}
                 onChange={(e) => setPriceMin(e.target.value)} />
@@ -88,19 +113,41 @@ const CategoryPage = () => {
         {filtered.length === 0 ? (
           <div className="empty-state">{keyword ? '未找到匹配商品' : '该分类暂无商品'}</div>
         ) : (
-          <div className="product-grid compact">
-            {filtered.map((good) => (
-                <Link className="product-card" key={good.id} to={`/detail/${good.id}`}>
-                  <div className="product-card-media">
-                    <img src={good.img} alt={good.name} />
-                  </div>
-                  <div className="product-card-body">
-                    <strong className="product-card-name">{good.name}</strong>
-                    <span className="product-card-price"><i className="cny">￥</i>{good.price}</span>
-                  </div>
-                </Link>
+          <>
+            <div className="product-grid compact">
+              {paginatedGoods.map((good) => (
+                <ProductCard key={good.id} good={good} />
               ))}
-          </div>
+            </div>
+            {totalPages > 1 && (
+              <div className="pagination">
+                <span className="pagination-info" style={{ marginRight: '12px', fontSize: '14px', color: 'var(--on-surface-variant)' }}>第 {currentPage} / {totalPages} 页</span>
+                <button
+                  className="pagination-btn pagination-arrow"
+                  disabled={currentPage === 1}
+                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                >
+                  <span className="arrow">←</span> 上一页
+                </button>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                  <button
+                    key={p}
+                    className={`pagination-btn${currentPage === p ? ' active' : ''}`}
+                    onClick={() => setCurrentPage(p)}
+                  >
+                    {p}
+                  </button>
+                ))}
+                <button
+                  className="pagination-btn pagination-arrow"
+                  disabled={currentPage === totalPages}
+                  onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                >
+                  下一页 <span className="arrow">→</span>
+                </button>
+              </div>
+            )}
+          </>
         )}
       </div>
     </section>

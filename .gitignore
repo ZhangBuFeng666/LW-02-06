@@ -1,11 +1,8 @@
-# 忽略误传的作业zip
-*.zip
-20260001_组长姓名_第四次作业.zip
-
 # 前端项目通用忽略
 node_modules/
 dist/
 build/
+coverage/
 .env
 .env.local
 .env.*.local

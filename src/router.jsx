@@ -1,23 +1,25 @@
 import { createBrowserRouter } from 'react-router-dom';
+import { lazy } from 'react';
 
 import App from './App';
-import AddressPage from './pages/AddressPage';
-import AdminGoodsPage from './pages/AdminGoodsPage';
-import AdminLoginPage from './pages/AdminLoginPage';
-import AdminOrderDetailPage from './pages/AdminOrderDetailPage';
-import AdminOrdersPage from './pages/AdminOrdersPage';
 import AdminRoute from './pages/AdminRoute';
-import CartPage from './pages/CartPage';
-import CategoryPage from './pages/CategoryPage';
-import CreateOrderPage from './pages/CreateOrderPage';
-import DetailPage from './pages/DetailPage';
-import FavoritePage from './pages/FavoritePage';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import MinePage from './pages/MinePage';
-import OrderDetailPage from './pages/OrderDetailPage';
-import OrderListPage from './pages/OrderListPage';
-import PayPage from './pages/PayPage';
+
+const AddressPage = lazy(() => import('./pages/AddressPage'));
+const AdminGoodsPage = lazy(() => import('./pages/AdminGoodsPage'));
+const AdminLoginPage = lazy(() => import('./pages/AdminLoginPage'));
+const AdminOrderDetailPage = lazy(() => import('./pages/AdminOrderDetailPage'));
+const AdminOrdersPage = lazy(() => import('./pages/AdminOrdersPage'));
+const CartPage = lazy(() => import('./pages/CartPage'));
+const CategoryPage = lazy(() => import('./pages/CategoryPage'));
+const CreateOrderPage = lazy(() => import('./pages/CreateOrderPage'));
+const DetailPage = lazy(() => import('./pages/DetailPage'));
+const FavoritePage = lazy(() => import('./pages/FavoritePage'));
+const HomePage = lazy(() => import('./pages/HomePage'));
+const LoginPage = lazy(() => import('./pages/LoginPage'));
+const MinePage = lazy(() => import('./pages/MinePage'));
+const OrderDetailPage = lazy(() => import('./pages/OrderDetailPage'));
+const OrderListPage = lazy(() => import('./pages/OrderListPage'));
+const PayPage = lazy(() => import('./pages/PayPage'));
 
 const router = createBrowserRouter([
   {

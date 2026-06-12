@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ServiceContext } from '../contexts/ServiceContext';
+import { optimizeImageUrl } from '../utils/imageUtil';
 
 const DetailPage = () => {
   const { goodId } = useParams();
@@ -77,7 +78,7 @@ const DetailPage = () => {
   return (
     <>
       <section className="detail-layout animate-fade-rise">
-        <img className="detail-image img-hover-zoom" src={good.img} alt={good.name}
+        <img className="detail-image img-hover-zoom" src={optimizeImageUrl(good.img, 800)} alt={good.name}
           onClick={() => setZoomed(true)} style={{ cursor: 'zoom-in' }}
         />
         <div className="detail-info animate-stagger">
@@ -137,7 +138,7 @@ const DetailPage = () => {
       </section>
       {zoomed && (
         <div className="image-zoom-overlay" onClick={() => setZoomed(false)}>
-          <img className="image-zoom-preview" src={good.img} alt={good.name} />
+          <img className="image-zoom-preview" src={optimizeImageUrl(good.img, 1200)} alt={good.name} />
         </div>
       )}
     </>

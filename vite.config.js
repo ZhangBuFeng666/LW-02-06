@@ -11,5 +11,19 @@ export default defineConfig({
     proxy: {
       '/api': 'http://127.0.0.1:5174'
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react-router') || id.includes('react-dom') || id.includes('react')) {
+              return 'vendor-react';
+            }
+            return 'vendor';
+          }
+        }
+      }
+    }
   }
 })

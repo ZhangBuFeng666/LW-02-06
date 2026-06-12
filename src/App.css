@@ -106,13 +106,15 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 12px;
+  padding: 7px 16px;
   border-radius: 999px;
+  border: 1px solid transparent;
   font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun", serif;
-  font-size: 17px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   color: var(--on-surface-variant);
-  transition: background 160ms ease, color 160ms ease;
+  background: transparent;
+  transition: all 200ms ease;
 }
 
 .header-action svg {
@@ -123,6 +125,7 @@ body {
 .header-action:hover {
   color: var(--primary);
   background: var(--surface-container);
+  border-color: transparent;
 }
 
 .page-main {
@@ -231,15 +234,31 @@ body {
 .ship-form input {
   width: 100%;
   min-height: 44px;
-  border: 1px solid var(--outline);
-  border-radius: 6px;
-  padding: 0 12px;
-  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0 16px;
+  background: var(--surface-container-low, #f7f7f5);
   color: var(--on-surface);
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.search-row input:focus,
+.wide-label input:focus,
+.form-card input:focus,
+.admin-form input:focus,
+.admin-form select:focus,
+.admin-filters input:focus,
+.admin-filters select:focus,
+.ship-form input:focus {
+  border-color: var(--primary);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(45, 111, 105, 0.12);
+  outline: none;
 }
 
 .search-row input {
-  background: rgba(251, 250, 246, 0.92);
+  background: var(--surface-container, #f1f1ee);
 }
 
 .button,
@@ -437,7 +456,6 @@ body {
 .profile-head,
 .stat-grid a,
 .side-list,
-.admin-page,
 .cart-item,
 .checkout-bar,
 .info-grid {
@@ -612,7 +630,12 @@ body {
 }
 
 .admin-page {
-  padding: 20px;
+  padding: 40px min(5vw, 60px);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .content-panel {
@@ -682,10 +705,9 @@ body {
 .empty-state {
   display: grid;
   place-items: center;
-  min-height: 280px;
-  background: rgba(255,255,255,0.68);
-  border-radius: 8px;
-  border: 1px solid var(--outline);
+  align-content: center;
+  min-height: calc(100vh - 280px);
+  padding-top: 40px;
   color: var(--on-surface-variant);
 }
 
@@ -828,21 +850,36 @@ body {
 
 .admin-stats div {
   display: grid;
-  gap: 8px;
-  padding: 16px;
-  background: rgba(255,255,255,0.76);
+  gap: 6px;
+  padding: 18px 16px;
+  background: rgba(255, 255, 255, 0.85);
   border: 1px solid var(--outline);
-  border-radius: 8px;
+  border-radius: 10px;
+  border-left: 4px solid var(--outline);
+  box-shadow: 0 4px 12px rgba(37, 49, 47, 0.01);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.admin-stats div:nth-child(1) { border-left-color: #466f81; }
+.admin-stats div:nth-child(2) { border-left-color: var(--primary); }
+.admin-stats div:nth-child(3) { border-left-color: var(--secondary); }
+.admin-stats div:nth-child(4) { border-left-color: var(--tertiary); }
+
+.admin-stats div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 49, 47, 0.04);
 }
 
 .admin-stats span {
   color: var(--on-surface-variant);
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .admin-stats strong {
-  font-size: 26px;
-  color: var(--primary);
+  font-size: 28px;
+  color: var(--on-surface);
+  font-family: "Palatino Linotype", Palatino, serif;
 }
 
 .admin-filters {
@@ -859,7 +896,14 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding-bottom: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--outline);
+  margin-bottom: 12px;
+}
+
+.admin-form-title strong {
+  font-size: 18px;
+  color: var(--on-surface);
 }
 
 .admin-form-wide {
@@ -867,24 +911,44 @@ body {
 }
 
 .admin-table {
-  display: grid;
-  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--outline);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(37, 49, 47, 0.02);
 }
 
 .admin-row {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 0.8fr 0.7fr 0.7fr 1.8fr;
+  grid-template-columns: 2.2fr 1fr 0.8fr 0.8fr 0.8fr 1.6fr;
   align-items: center;
-  gap: 10px;
-  padding: 12px;
-  background: rgba(255,255,255,0.76);
-  border: 1px solid var(--outline);
-  border-radius: 6px;
+  gap: 16px;
+  padding: 14px 20px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--outline);
+  transition: background-color 160ms ease;
+}
+
+.admin-row:last-child {
+  border-bottom: 0;
+}
+
+.admin-row:hover {
+  background: rgba(45, 111, 105, 0.04);
 }
 
 .admin-row-head {
   color: var(--on-surface-variant);
   font-weight: 600;
+  background: var(--surface-container);
+  border-bottom: 2px solid var(--outline);
+}
+
+.admin-row-head:hover {
   background: var(--surface-container);
 }
 
@@ -892,6 +956,148 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+/* Modal form styles */
+.admin-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(37, 49, 47, 0.35);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: adminFadeIn 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.admin-modal-content {
+  width: min(680px, 92%);
+  background: var(--surface);
+  border: 1px solid var(--outline);
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(37, 49, 47, 0.16);
+  padding: 24px 32px;
+  animation: adminSlideUp 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes adminFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes adminSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.admin-modal-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.admin-modal-form .admin-form-wide {
+  grid-column: span 2;
+}
+
+.admin-modal-form .admin-form-actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+  border-top: 1px solid var(--outline);
+  padding-top: 16px;
+}
+
+/* Color Badges for state and role */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.badge-success {
+  background: rgba(45, 111, 105, 0.08);
+  color: var(--primary);
+  border: 1px solid rgba(45, 111, 105, 0.18);
+}
+
+.badge-neutral {
+  background: var(--surface-container);
+  color: var(--on-surface-variant);
+  border: 1px solid var(--outline);
+}
+
+.badge-warning {
+  background: rgba(181, 131, 79, 0.1);
+  color: var(--tertiary);
+  border: 1px solid rgba(181, 131, 79, 0.2);
+}
+
+.badge-danger {
+  background: rgba(163, 59, 50, 0.06);
+  color: var(--danger);
+  border: 1px solid rgba(163, 59, 50, 0.15);
+}
+
+.badge-info {
+  background: rgba(70, 111, 129, 0.08);
+  color: #466f81;
+  border: 1px solid rgba(70, 111, 129, 0.18);
+}
+
+/* Product list compound cell styling */
+.admin-product-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.admin-product-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid var(--outline);
+  background: var(--surface-container);
+  flex-shrink: 0;
+}
+
+.admin-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.admin-product-name {
+  font-weight: 500;
+  color: var(--on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-product-desc {
+  font-size: 11px;
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ship-form {
@@ -1525,26 +1731,29 @@ body {
 .qty-control {
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--outline);
-  border-radius: 6px;
+  background: var(--surface-container-low, #f5f5f5);
+  border-radius: 20px;
   overflow: hidden;
+  padding: 2px;
 }
 
 .qty-control button {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border: 0;
+  border-radius: 50%;
   background: transparent;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--on-surface);
   display: grid;
   place-items: center;
-  transition: background 150ms ease;
+  transition: background 200ms ease, transform 150ms ease;
 }
 
-.qty-control button:hover {
-  background: var(--surface-container);
+.qty-control button:hover:not(:disabled) {
+  background: var(--surface-container-high, #e0e0e0);
+  transform: scale(1.05);
 }
 
 .qty-control button:disabled {
@@ -1553,13 +1762,12 @@ body {
 }
 
 .qty-control span {
-  width: 40px;
+  width: 32px;
   text-align: center;
-  font-weight: 600;
-  font-size: 15px;
-  border-left: 1px solid var(--outline);
-  border-right: 1px solid var(--outline);
-  line-height: 32px;
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  line-height: 28px;
 }
 
 /* ========== 订单列表增强 ========== */
@@ -1674,185 +1882,174 @@ body {
 .mine-header {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 28px 24px;
-  background: linear-gradient(135deg, var(--primary), #1e5550);
-  border-radius: 12px;
-  color: #fffaf1;
-  margin-bottom: 18px;
+  gap: 20px;
+  padding: 32px 0 24px;
+  border-bottom: 1px solid var(--outline);
+  margin-bottom: 32px;
 }
 
 .mine-avatar {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--primary);
+  color: #fffaf1;
   display: grid;
   place-items: center;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "Songti SC", "SimSun", serif;
   flex-shrink: 0;
 }
 
+.mine-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .mine-user-info h1 {
-  margin: 0 0 4px;
-  font-size: 22px;
+  margin: 0;
+  font-size: 24px;
   font-weight: 600;
-  color: #fffaf1;
+  font-family: "Songti SC", "SimSun", serif;
+  color: var(--on-surface);
 }
 
 .mine-user-info p {
   margin: 0;
-  opacity: 0.8;
-  font-size: 14px;
-  color: #fffaf1;
-}
-
-.mine-header .text-button {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 13px;
-}
-.mine-header .text-button:hover {
-  color: #fffaf1;
-}
-
-.mine-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid var(--outline);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 18px;
-}
-
-.mine-stat-item {
-  display: grid;
-  place-items: center;
-  padding: 18px 8px;
-  cursor: pointer;
-  transition: background 200ms ease;
-}
-
-.mine-stat-item:hover {
-  background: var(--surface-container);
-}
-
-.mine-stat-item strong {
-  font-size: 22px;
-  font-family: "Palatino Linotype", Palatino, serif;
-  color: var(--primary);
-}
-
-.mine-stat-item span {
   font-size: 13px;
   color: var(--on-surface-variant);
-  margin-top: 4px;
 }
 
+.mine-logout-btn {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--outline);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.mine-logout-btn:hover {
+  background: var(--surface-container-high);
+  color: var(--danger);
+  border-color: rgba(220, 53, 69, 0.2);
+}
+
+/* 订单进度状态栏 */
 .mine-order-tabs {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid var(--outline);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 18px;
+  padding: 16px 0;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--outline);
 }
 
 .mine-tab {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  padding: 18px 8px;
+  gap: 8px;
+  padding: 12px 0;
   position: relative;
-  transition: background 200ms ease;
+  transition: opacity 180ms ease;
 }
 
 .mine-tab:hover {
-  background: var(--surface-container);
+  opacity: 0.8;
 }
 
 .mine-tab-icon {
-  font-size: 24px;
+  font-size: 22px;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mine-tab-label {
   font-size: 13px;
   color: var(--on-surface-variant);
+  font-weight: 500;
 }
 
 .mine-tab-badge {
   position: absolute;
-  top: 10px;
-  right: calc(50% - 22px);
-  min-width: 18px;
-  height: 18px;
-  border-radius: 9px;
+  top: 4px;
+  right: calc(50% - 24px);
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
   background: var(--danger);
   color: white;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   display: grid;
   place-items: center;
-  padding: 0 5px;
+  padding: 0 4px;
+  border: 1.5px solid var(--surface);
 }
 
-.mine-quick-links {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 18px;
+/* 快捷菜单列表 */
+.mine-menu-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  background: transparent;
 }
 
-.mine-quick-item {
+.mine-menu-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid var(--outline);
-  border-radius: 8px;
-  font-weight: 600;
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--outline);
+  color: var(--on-surface);
+  transition: all 180ms ease;
 }
 
-.mine-quick-item:hover {
-  transform: translateY(-2px);
-  border-color: rgba(45, 111, 105, 0.36);
-  box-shadow: 0 12px 32px rgba(37, 49, 47, 0.08);
+.mine-menu-item:hover {
+  padding-left: 6px;
 }
 
-.mine-quick-icon {
-  font-size: 22px;
+.mine-menu-icon {
+  font-size: 20px;
+  color: var(--primary);
+  margin-right: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.mine-menu-label {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Songti SC", "SimSun", serif;
+}
+
+.mine-menu-arrow {
+  margin-left: auto;
+  color: var(--outline);
+  display: flex;
+  align-items: center;
+  transition: transform 180ms ease;
+}
+
+.mine-menu-item:hover .mine-menu-arrow {
+  transform: translateX(4px);
 }
 
 @media (max-width: 860px) {
-  .mine-stats {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   .mine-order-tabs {
     grid-template-columns: repeat(5, 1fr);
-  }
-
-  .mine-quick-links {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  .mine-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .mine-order-tabs {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .mine-quick-links {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -1918,3 +2115,377 @@ body {
 .star-btn.active {
   color: #b5834f;
 }
+
+/* ==================== Apple-Style Homepage ==================== */
+
+.apple-font-serif {
+  font-family: "Songti SC", "SimSun", "Noto Serif CJK SC", serif;
+}
+
+.apple-font-accent {
+  font-family: "STKaiti", "KaiTi", "Noto Serif CJK SC", serif;
+}
+
+.hero-band {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  min-height: 540px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px 10%;
+  overflow: hidden;
+}
+
+.hero-copy {
+  max-width: 520px;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.hero-copy h1 {
+  font-family: "Songti SC", "SimSun", serif;
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin: 12px 0 16px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hero-subtitle {
+  font-family: "Songti SC", "SimSun", serif;
+  font-size: 18px;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.apple-search-row {
+  display: flex;
+  align-items: center;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 30px;
+  padding: 4px 6px 4px 18px;
+  margin-top: 28px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.apple-search-row:focus-within {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+.apple-search-row input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  padding: 8px 0;
+}
+
+.apple-search-row input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.apple-search-row button {
+  border-radius: 20px;
+  padding: 8px 20px;
+  background: #ffffff;
+  color: #1e293b;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s active, background-color 0.2s;
+}
+
+.apple-search-row button:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* 两列大图网格 (Split Promos) */
+.apple-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 40px auto 48px;
+  max-width: 1200px;
+  padding: 0 24px;
+}
+
+.apple-promo-card {
+  position: relative;
+  height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 48px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+.apple-promo-card:hover {
+  transform: scale(1.015);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+}
+
+.apple-promo-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.apple-promo-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  max-width: 85%;
+}
+
+.apple-promo-content .eyebrow {
+  font-family: "STKaiti", "KaiTi", serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  opacity: 0.9;
+  margin: 0 0 8px;
+}
+
+.apple-promo-content h3 {
+  font-family: "Songti SC", "SimSun", serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+}
+
+.apple-promo-content p {
+  font-family: "Songti SC", "SimSun", serif;
+  font-size: 15px;
+  opacity: 0.85;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 热门商品横向滑块 (Horizontal Slider) */
+.apple-slider-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 32px auto 48px;
+  padding: 0 24px;
+}
+
+.apple-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 12px 4px 24px;
+  scrollbar-width: none;
+}
+
+.apple-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.apple-slide-card {
+  flex: 0 0 280px;
+  background: #fdfdfb;
+  border: 1px solid var(--outline);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.apple-slide-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.05);
+  border-color: rgba(45, 111, 105, 0.25);
+}
+
+.apple-slide-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  background: #f7f7fa;
+  transition: transform 0.5s ease;
+}
+
+.apple-slide-card:hover img {
+  transform: scale(1.02);
+}
+
+.apple-slide-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.apple-slide-card-body strong {
+  font-family: "Songti SC", "SimSun", serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--on-surface);
+}
+
+.apple-slide-card-body span {
+  font-family: "Palatino Linotype", Palatino, serif;
+  font-size: 15px;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+@media (max-width: 860px) {
+  .apple-split-grid {
+    grid-template-columns: 1fr;
+  }
+  .apple-promo-card {
+    height: 400px;
+    padding: 32px;
+  }
+  .apple-promo-content h3 {
+    font-size: 26px;
+  }
+}
+
+/* ========== 极致高级的分页器组件 ========== */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px; /* 更宽敞的呼吸感 */
+  margin-top: 56px; /* 加大垂直间距 */
+  padding: 24px 0;
+  border-top: 1px solid var(--outline); /* 增加一条纤细的分隔线，提供边界感 */
+  font-family: "Songti SC", "SimSun", "Noto Serif CJK SC", serif; /* 引入人文感的衬线体 */
+}
+
+/* 分页信息 */
+.pagination-info {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  font-family: "STKaiti", "KaiTi", serif; /* 辅助文字使用楷体，更具有文学气息 */
+}
+
+/* 分页按钮通用样式 */
+.pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  background-color: transparent; /* 抛弃沉重的卡片底色，采用无边框透明设计 */
+  border: none;
+  color: var(--on-surface-variant);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: color 250ms ease;
+  padding: 0 8px;
+}
+
+/* 页码按钮（数字） */
+.pagination-btn:not(.pagination-arrow) {
+  min-width: 32px;
+  font-family: "Times New Roman", Times, serif; /* 数字使用古典的衬线字体，极为优雅 */
+  font-size: 16px;
+}
+
+/* 页码 Hover 状态：颜色渐变，且下方有一条微妙展开的细线 */
+.pagination-btn:not(.pagination-arrow)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--primary);
+  transform: translateX(-50%);
+  transition: width 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pagination-btn:not(.pagination-arrow):hover:not(:disabled) {
+  color: var(--primary);
+}
+
+.pagination-btn:not(.pagination-arrow):hover:not(:disabled)::after {
+  width: 16px; /* Hover 时横线轻展 */
+}
+
+/* 激活的页码：高亮，且下方细线完整展开 */
+.pagination-btn.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.pagination-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 16px;
+  height: 2px;
+  background-color: var(--primary);
+  transform: translateX(-50%);
+}
+
+/* 箭头控制按钮 */
+.pagination-arrow {
+  color: var(--on-surface);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.pagination-arrow .arrow {
+  display: inline-block;
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover 时让箭头有优雅的侧移微动效 */
+.pagination-arrow:first-of-type:hover:not(:disabled) .arrow {
+  transform: translateX(-4px); /* 向左偏移 */
+}
+
+.pagination-arrow:last-of-type:hover:not(:disabled) .arrow {
+  transform: translateX(4px); /* 向右偏移 */
+}
+
+.pagination-arrow:hover:not(:disabled) {
+  color: var(--primary);
+}
+
+/* 禁用状态：半透明度 */
+.pagination-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+

@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, Suspense } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import './App.css';
 import { BrandMark, CartIcon, UserIcon } from './components/icons';
@@ -53,7 +53,9 @@ function App() {
         )}
       </header>
       <main className="page-main">
-        <Outlet context={{ refreshUser: () => setUser(services.user.getCurrentUser()) }} />
+        <Suspense fallback={<div className="page-loading" style={{ padding: '40px 0', textAlign: 'center', color: 'var(--on-surface-variant)', fontFamily: '"STKaiti", "KaiTi", serif', fontSize: '15px' }}>正在加载页面...</div>}>
+          <Outlet context={{ refreshUser: () => setUser(services.user.getCurrentUser()) }} />
+        </Suspense>
       </main>
     </div>
   );
